@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2wsmmjynx08p"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_kp1ik"]
+[ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/ROGdude/happy_boo.tscn" id="1_o5ae3"]
+[ext_resource type="PackedScene" uid="uid://cemgbe80y46kd" path="res://gun.tscn" id="3_6g2xj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rntcu"]
+radius = 13.537
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_741uw"]
+radius = 34.8156
+height = 81.4887
+
+[node name="Player" type="CharacterBody2D"]
+slide_on_ceiling = false
+script = ExtResource("1_kp1ik")
+
+[node name="ROGdude" parent="." instance=ExtResource("1_o5ae3")]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0.5, -10)
+shape = SubResource("CircleShape2D_rntcu")
+one_way_collision_margin = 0.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Gun" parent="." instance=ExtResource("3_6g2xj")]
+position = Vector2(84, -57)
+
+[node name="HurtBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(-2, -59)
+rotation = -1.55885
+shape = SubResource("CapsuleShape2D_741uw")
+debug_color = Color(0.922377, 5.10186e-05, 0.687741, 0.42)
