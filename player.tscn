@@ -27,7 +27,7 @@ one_way_collision_margin = 0.0
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Gun" parent="." instance=ExtResource("3_6g2xj")]
-position = Vector2(84, -57)
+position = Vector2(-1, -59)
 
 [node name="HurtBox" type="Area2D" parent="."]
 unique_name_in_owner = true

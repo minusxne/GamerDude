@@ -1,4 +1,5 @@
 res://survivors_game.tscn
+res://gun.gd
 res://player.tscn
 res://gun.tscn
 res://bullet.tscn
