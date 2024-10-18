@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cksiu5gst6fmp"
-path="res://.godot/imported/square_body.png-e626eaf9fa83d1228c0d95d910b5207a.ctex"
+uid="uid://bjqyiuk2affln"
+path="res://.godot/imported/damage.png-888b74acfa4baf9dbba961fdfa45d7ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/ROGdude/square_body.png"
-dest_files=["res://.godot/imported/square_body.png-e626eaf9fa83d1228c0d95d910b5207a.ctex"]
+source_file="res://characters/ROGdude/damage.png"
+dest_files=["res://.godot/imported/damage.png-888b74acfa4baf9dbba961fdfa45d7ec.ctex"]
 
 [params]
 

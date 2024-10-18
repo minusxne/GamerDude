@@ -1,3 +1,4 @@
+AnimatedSprite2D
 Button
 CanvasLayer
 TouchScreenButton
@@ -12,4 +13,3 @@ Area2D
 Marker2D
 Camera2D
 CharacterBody2D
-StaticBody2D

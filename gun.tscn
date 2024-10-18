@@ -18,12 +18,13 @@ shape = SubResource("CircleShape2D_jc8c0")
 
 [node name="Pistol" type="Sprite2D" parent="WeaponPivot"]
 texture_filter = 1
-position = Vector2(82, 0)
+position = Vector2(50, 0)
+scale = Vector2(0.5, 0.46)
 texture = ExtResource("1_foee1")
 
 [node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Pistol"]
 unique_name_in_owner = true
-position = Vector2(47, -15)
+position = Vector2(72, -15.2174)
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true

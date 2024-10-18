@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhapxq8y8ow57"
-path="res://.godot/imported/square_lower_leg.png-6c69314e894625bf21c7eedf6d958113.ctex"
+uid="uid://dmy0ryhhi4yho"
+path="res://.godot/imported/jump.png-3b1e1df1669662e2b0dc5e73f47e5aac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/ROGdude/square_lower_leg.png"
-dest_files=["res://.godot/imported/square_lower_leg.png-6c69314e894625bf21c7eedf6d958113.ctex"]
+source_file="res://characters/ROGdude/jump.png"
+dest_files=["res://.godot/imported/jump.png-3b1e1df1669662e2b0dc5e73f47e5aac.ctex"]
 
 [params]
 

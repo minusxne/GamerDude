@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvs0lh814pk7h"
-path="res://.godot/imported/square_face.png-bd8d9f38028011d14bd517f57f3bc651.ctex"
+uid="uid://6n8x4j40g5c7"
+path="res://.godot/imported/idle.png-3960f409271728813d6f8f4aba101c82.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/ROGdude/square_face.png"
-dest_files=["res://.godot/imported/square_face.png-bd8d9f38028011d14bd517f57f3bc651.ctex"]
+source_file="res://characters/ROGdude/idle.png"
+dest_files=["res://.godot/imported/idle.png-3960f409271728813d6f8f4aba101c82.ctex"]
 
 [params]
 

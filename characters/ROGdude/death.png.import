@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2ent6mf1y7w7"
-path="res://.godot/imported/square_ref.png-b3a3136af9a6531a4c0a05d6640121ac.ctex"
+uid="uid://dym8datj7cxb0"
+path="res://.godot/imported/death.png-1b7e8de6766040ecb21ef81f85a2b620.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/ROGdude/square_ref.png"
-dest_files=["res://.godot/imported/square_ref.png-b3a3136af9a6531a4c0a05d6640121ac.ctex"]
+source_file="res://characters/ROGdude/death.png"
+dest_files=["res://.godot/imported/death.png-1b7e8de6766040ecb21ef81f85a2b620.ctex"]
 
 [params]
 
