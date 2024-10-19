@@ -21,7 +21,6 @@ func _physics_process(delta):
 	animations()
 
 func animations():
-	print("Velocity X: ", velocity.x, " | Velocity Y: ", velocity.y)
 	
 	if velocity.length() > 0:
 		last_direction = velocity.normalized()
