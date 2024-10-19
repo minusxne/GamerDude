@@ -400,7 +400,7 @@ texture_filter = 1
 position = Vector2(-2.00003, -57)
 scale = Vector2(5.075, 5.525)
 sprite_frames = SubResource("SpriteFrames_ullej")
-animation = &"walk_up"
+animation = &"walk_right"
 autoplay = "default_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
