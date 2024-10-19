@@ -575,19 +575,14 @@ _data = {
 }
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_idp6i"]
-load_path = "res://.godot/imported/square_upper_leg.png-413a0d894592bdb7776c179631ecc7aa.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5p3bp"]
-load_path = "res://.godot/imported/square_lower_leg.png-6c69314e894625bf21c7eedf6d958113.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ai3ir"]
-load_path = "res://.godot/imported/square_foot.png-c9456a625077cb030712ca2264ed963e.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fk2w3"]
-load_path = "res://.godot/imported/square_body.png-e626eaf9fa83d1228c0d95d910b5207a.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ybaak"]
-load_path = "res://.godot/imported/square_face.png-bd8d9f38028011d14bd517f57f3bc651.ctex"
 
 [node name="ROGdude" type="Node2D"]
 
