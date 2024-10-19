@@ -1,6 +1,3 @@
-Here is a simplified version of the `README.md` in a single, copyable format:
-
-```markdown
 # ROG Challenge 2024 - Game Project
 
 This is a game created for the **ROG Challenge 2024**.
@@ -23,4 +20,3 @@ This is a game created for the **ROG Challenge 2024**.
 ## License
 
 This project uses third-party assets with permission and respects their individual licenses.
-```
