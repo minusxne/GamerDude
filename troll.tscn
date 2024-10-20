@@ -1,0 +1,104 @@
+[gd_scene load_steps=12 format=3 uid="uid://dquwfvs1utyvb"]
+
+[ext_resource type="Script" path="res://virus.gd" id="1_3alaj"]
+[ext_resource type="Texture2D" uid="uid://8y8wadvg45uh" path="res://tilemap/Ws.png" id="2_435j1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emcv2"]
+atlas = ExtResource("2_435j1")
+region = Rect2(304, 400, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7at7"]
+atlas = ExtResource("2_435j1")
+region = Rect2(400, 400, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnhl4"]
+atlas = ExtResource("2_435j1")
+region = Rect2(304, 432, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcgl0"]
+atlas = ExtResource("2_435j1")
+region = Rect2(304, 464, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8buw"]
+atlas = ExtResource("2_435j1")
+region = Rect2(400, 432, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uug2m"]
+atlas = ExtResource("2_435j1")
+region = Rect2(400, 464, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_12xa3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_emcv2")
+}],
+"loop": true,
+"name": &"damage_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7at7")
+}],
+"loop": true,
+"name": &"damage_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnhl4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcgl0")
+}],
+"loop": true,
+"name": &"default_left",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8buw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uug2m")
+}],
+"loop": true,
+"name": &"default_right",
+"speed": 4.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yu2d8"]
+radius = 28.0179
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kf0sv"]
+radius = 27.4591
+
+[node name="troll" type="CharacterBody2D"]
+script = ExtResource("1_3alaj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0.999998, -5)
+scale = Vector2(4.1875, 4.375)
+sprite_frames = SubResource("SpriteFrames_12xa3")
+animation = &"default_right"
+
+[node name="hurtarea" type="Area2D" parent="."]
+
+[node name="hurtbox" type="CollisionShape2D" parent="hurtarea"]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_yu2d8")
+debug_color = Color(1, 0, 0, 0.439216)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -4)
+shape = SubResource("CircleShape2D_kf0sv")
+
+[node name="DamageAnimTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.1
+autostart = true
+
+[connection signal="body_entered" from="hurtarea" to="." method="_on_hurtarea_body_entered"]
+[connection signal="timeout" from="DamageAnimTimer" to="." method="_on_timer_timeout"]

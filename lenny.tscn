@@ -1,0 +1,109 @@
+[gd_scene load_steps=12 format=3 uid="uid://dmji5ncfnakrn"]
+
+[ext_resource type="Script" path="res://virus.gd" id="1_csvh3"]
+[ext_resource type="Texture2D" uid="uid://8y8wadvg45uh" path="res://tilemap/Ws.png" id="2_d6p5b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dw525"]
+atlas = ExtResource("2_d6p5b")
+region = Rect2(336, 400, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibiyu"]
+atlas = ExtResource("2_d6p5b")
+region = Rect2(368, 400, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wl7up"]
+atlas = ExtResource("2_d6p5b")
+region = Rect2(336, 432, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fowit"]
+atlas = ExtResource("2_d6p5b")
+region = Rect2(336, 464, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66m8a"]
+atlas = ExtResource("2_d6p5b")
+region = Rect2(368, 432, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3uegs"]
+atlas = ExtResource("2_d6p5b")
+region = Rect2(368, 464, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eh4u4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dw525")
+}],
+"loop": true,
+"name": &"damage_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibiyu")
+}],
+"loop": true,
+"name": &"damage_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wl7up")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fowit")
+}],
+"loop": true,
+"name": &"default_left",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66m8a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3uegs")
+}],
+"loop": true,
+"name": &"default_right",
+"speed": 2.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xotn3"]
+radius = 27.0281
+height = 100.019
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i2woj"]
+radius = 24.0756
+height = 96.0196
+
+[node name="lenny" type="CharacterBody2D"]
+script = ExtResource("1_csvh3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(5, -5)
+scale = Vector2(3.125, 3.1875)
+sprite_frames = SubResource("SpriteFrames_eh4u4")
+animation = &"damage_left"
+
+[node name="hurtarea" type="Area2D" parent="."]
+
+[node name="hurtbox" type="CollisionShape2D" parent="hurtarea"]
+position = Vector2(5, -3)
+rotation = 1.55509
+shape = SubResource("CapsuleShape2D_xotn3")
+debug_color = Color(1, 0, 0, 0.439216)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, -4)
+rotation = -1.55509
+shape = SubResource("CapsuleShape2D_i2woj")
+
+[node name="DamageAnimTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.1
+autostart = true
+
+[connection signal="body_entered" from="hurtarea" to="." method="_on_hurtarea_body_entered"]
+[connection signal="timeout" from="DamageAnimTimer" to="." method="_on_timer_timeout"]

@@ -1,10 +1,14 @@
-[gd_scene load_steps=9 format=4 uid="uid://crfgpgvybr827"]
+[gd_scene load_steps=13 format=4 uid="uid://crfgpgvybr827"]
 
 [ext_resource type="PackedScene" uid="uid://c2wsmmjynx08p" path="res://player.tscn" id="1_owmx7"]
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_p6fy1"]
 [ext_resource type="Shader" path="res://survivors_game.gdshader" id="2_1ia4y"]
 [ext_resource type="PackedScene" uid="uid://dtkngk0ftv5ak" path="res://progress_bar.tscn" id="2_q5vui"]
 [ext_resource type="Texture2D" uid="uid://8y8wadvg45uh" path="res://tilemap/Ws.png" id="4_yvf77"]
+[ext_resource type="PackedScene" uid="uid://8u8bvc56rl2q" path="res://virus.tscn" id="6_v8r07"]
+[ext_resource type="PackedScene" uid="uid://dquwfvs1utyvb" path="res://troll.tscn" id="7_k8lwu"]
+[ext_resource type="PackedScene" uid="uid://bg044kwt1trhk" path="res://anon.tscn" id="8_fb6is"]
+[ext_resource type="PackedScene" uid="uid://dmji5ncfnakrn" path="res://lenny.tscn" id="9_nod2w"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sigjn"]
 shader = ExtResource("2_1ia4y")
@@ -291,10 +295,10 @@ texture = ExtResource("4_yvf77")
 12:13/0 = 0
 13:13/0 = 0
 14:13/0 = 0
-20:16/0 = 0
-21:16/0 = 0
 11:15/0 = 0
 8:13/0 = 0
+20:16/size_in_atlas = Vector2i(2, 1)
+20:16/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_8i6lo"]
 sources/0 = SubResource("TileSetAtlasSource_g51mg")
@@ -360,8 +364,20 @@ texture_filter = 1
 use_parent_material = true
 position = Vector2(1, 2)
 scale = Vector2(5.255, 5.255)
-tile_map_data = PackedByteArray("AAAVAAIAAAAPABsAAAAVAAQAAAARABsAAAAVAAYAAAATABsAAAAVAAgAAAAVABsAAAASAAcAAAAIABkAAAASAAYAAAAQABgAAAACAAIAAAAWAA4AAAAHAAMAAAAYAA4AAAABAAgAAAAcAA4AAAAPAAEAAAAeAA4AAAAOAAoAAAAaAA4AAAABAAoAAAABABIAAAACAAQAAAABABIAAAAHAAUAAAAEAAoAAAAPAAMAAAABABIAAAAOAAwAAAABABIAAAAFAAoAAAAFAA4AAAAFAAsAAAAFAA8AAAAGAAoAAAAGAA4AAAAGAAsAAAAGAA8AAAAFAAYAAAAMAAoAAAAFAAUAAAACAAoAAAAFAAQAAAACAAkAAAAEAAQAAAABAAkAAAAEAAUAAAABAAoAAAAEAAYAAAABAAsAAAAFAAcAAAACAAwAAAAFAAgAAAACAA0AAAAGAAgAAAACAA0AAAAHAAgAAAACAA0AAAAGAAcAAAADAAwAAAAHAAcAAAAEAAwAAAAHAAYAAAAOAAoAAAAHAAQAAAAEAAkAAAAIAAQAAAAFAAkAAAAIAAUAAAAFAAoAAAAIAAYAAAAFAAsAAAAGAAYAAAAKAAoAAAAGAAUAAAAKAAcAAAA=")
+tile_map_data = PackedByteArray("AAAOAAEAAAAUAA4AAAAGAAoAAAAUAA4AAAARAAkAAAAUAA4AAAAEAAUAAAAYAA4AAAAHAAAAAAAcAA4AAAAVAAoAAAAQAAsAAAAWAAoAAAARAAsAAAAVAAsAAAAMAAwAAAAWAAsAAAAOAAwAAAAVAAwAAAAMAA0AAAAWAAwAAAAMAA0AAAAVAAkAAAAMAAoAAAAWAAkAAAAOAAoAAAAVAAgAAAAMAAkAAAAWAAgAAAAOAAkAAAARAAsAAAAUABAAAAAOAAMAAAAUABAAAAAHAAIAAAAUABAAAAAGAAwAAAAUABAAAAAEAAcAAAAUABAAAAA=")
 tile_set = SubResource("TileSet_8i6lo")
+
+[node name="virus" parent="." instance=ExtResource("6_v8r07")]
+position = Vector2(91, 689)
+
+[node name="troll" parent="." instance=ExtResource("7_k8lwu")]
+position = Vector2(1777, 650)
+
+[node name="anon" parent="." instance=ExtResource("8_fb6is")]
+position = Vector2(1616, 194)
+
+[node name="lenny" parent="." instance=ExtResource("9_nod2w")]
+position = Vector2(287, 230)
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

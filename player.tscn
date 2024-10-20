@@ -405,7 +405,7 @@ autoplay = "default_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 y_sort_enabled = true
-position = Vector2(0.5, -10)
+position = Vector2(-1.5, -32)
 shape = SubResource("CircleShape2D_rntcu")
 one_way_collision_margin = 0.0
 
