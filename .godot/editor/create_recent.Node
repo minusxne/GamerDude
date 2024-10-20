@@ -1,6 +1,8 @@
 AnimatedSprite2D
-Timer
 CollisionShape2D
+Sprite2D
+StaticBody2D
+Timer
 Area2D
 CharacterBody2D
 TileMapLayer
@@ -10,5 +12,3 @@ TileMap
 Button
 TouchScreenButton
 Label
-PathFollow2D
-Path2D
