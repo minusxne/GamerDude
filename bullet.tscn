@@ -8,6 +8,8 @@ radius = 13.0
 
 [node name="Bullet" type="Area2D"]
 top_level = true
+z_index = -1
+y_sort_enabled = true
 texture_filter = 1
 rotation = 0.568112
 collision_layer = 0

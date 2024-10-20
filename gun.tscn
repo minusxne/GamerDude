@@ -24,7 +24,7 @@ texture = ExtResource("1_foee1")
 
 [node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Pistol"]
 unique_name_in_owner = true
-position = Vector2(14.4007, -3.07665)
+position = Vector2(10.2321, -3.07665)
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true

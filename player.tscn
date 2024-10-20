@@ -384,8 +384,8 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_rntcu"]
-radius = 13.537
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_flw65"]
+height = 32.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rtbhd"]
 radius = 31.0
@@ -405,8 +405,8 @@ autoplay = "default_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 y_sort_enabled = true
-position = Vector2(-1.5, -32)
-shape = SubResource("CircleShape2D_rntcu")
+position = Vector2(-1.5, -33)
+shape = SubResource("CapsuleShape2D_flw65")
 one_way_collision_margin = 0.0
 
 [node name="Camera2D" type="Camera2D" parent="."]

@@ -7,8 +7,8 @@ var last_direction = Vector2(0, 1)
 
 func _physics_process(delta):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	velocity = direction * 10
-	move_and_collide(velocity)
+	velocity = direction * 500
+	move_and_slide()
 
 	const DAMAGE_RATE = 5.0
 	var overlapping_mobs = %HurtBox.get_overlapping_bodies()
