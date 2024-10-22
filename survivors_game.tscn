@@ -1,34 +1,37 @@
-[gd_scene load_steps=9 format=4 uid="uid://crfgpgvybr827"]
+[gd_scene load_steps=12 format=4 uid="uid://crfgpgvybr827"]
 
 [ext_resource type="PackedScene" uid="uid://c2wsmmjynx08p" path="res://player.tscn" id="1_owmx7"]
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_p6fy1"]
 [ext_resource type="Shader" path="res://survivors_game.gdshader" id="2_1ia4y"]
 [ext_resource type="PackedScene" uid="uid://dtkngk0ftv5ak" path="res://progress_bar.tscn" id="2_q5vui"]
 [ext_resource type="Texture2D" uid="uid://8y8wadvg45uh" path="res://tilemap/Ws.png" id="4_yvf77"]
+[ext_resource type="PackedScene" uid="uid://dquwfvs1utyvb" path="res://troll.tscn" id="6_xmsys"]
+[ext_resource type="PackedScene" uid="uid://8u8bvc56rl2q" path="res://virus.tscn" id="7_0tv0f"]
+[ext_resource type="PackedScene" uid="uid://dmji5ncfnakrn" path="res://lenny.tscn" id="8_ioblc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sigjn"]
 shader = ExtResource("2_1ia4y")
 shader_parameter/overlay = true
-shader_parameter/scanlines_opacity = 0.034
+shader_parameter/scanlines_opacity = 0.0
 shader_parameter/scanlines_width = 0.0
-shader_parameter/grille_opacity = 0.258
+shader_parameter/grille_opacity = 0.259
 shader_parameter/resolution = Vector2(640, 480)
 shader_parameter/pixelate = false
-shader_parameter/roll = false
+shader_parameter/roll = true
 shader_parameter/roll_speed = 8.0
-shader_parameter/roll_size = 0.0
-shader_parameter/roll_variation = 1.855
-shader_parameter/distort_intensity = 0.05
-shader_parameter/noise_opacity = 0.31
+shader_parameter/roll_size = 100.0
+shader_parameter/roll_variation = 0.1
+shader_parameter/distort_intensity = 0.001
+shader_parameter/noise_opacity = 0.03
 shader_parameter/noise_speed = 5.0
-shader_parameter/static_noise_intensity = 0.06
+shader_parameter/static_noise_intensity = 0.049
 shader_parameter/aberration = -0.00499995
 shader_parameter/brightness = 1.4
 shader_parameter/discolor = true
-shader_parameter/warp_amount = 0.326
+shader_parameter/warp_amount = 0.164
 shader_parameter/clip_warp = true
 shader_parameter/vignette_intensity = 0.4
-shader_parameter/vignette_opacity = 0.5
+shader_parameter/vignette_opacity = 1.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g51mg"]
 texture = ExtResource("4_yvf77")
@@ -347,7 +350,7 @@ texture = ExtResource("4_yvf77")
 1:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:9/0 = 0
 1:9/0/z_index = -1
-1:9/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, 4.125, 8, 4.125, 8, 8, -8, 8)
+1:9/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, 4.375, -6.71751, 3.97748, -5.65685, 2.91682, -5.17072, 3.97748, 8, 4.125, 8, 8, -8, 8)
 2:9/0 = 0
 2:9/0/z_index = -1
 2:9/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, 4.125, 8, 4.125, 8, 8, -8, 8)
@@ -393,6 +396,7 @@ texture = ExtResource("4_yvf77")
 8:13/0 = 0
 20:16/size_in_atlas = Vector2i(2, 1)
 20:16/0 = 0
+20:16/0/y_sort_origin = -20
 
 [sub_resource type="TileSet" id="TileSet_8i6lo"]
 physics_layer_0/collision_layer = 1
@@ -445,10 +449,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="staticCanvasLayer"]
 material = SubResource("ShaderMaterial_sigjn")
-offset_left = -120.0
-offset_top = -133.0
-offset_right = 2029.0
-offset_bottom = 1217.0
+offset_left = -226.0
+offset_top = -209.0
+offset_right = 2194.0
+offset_bottom = 1311.0
 
 [node name="Player" parent="." instance=ExtResource("1_owmx7")]
 y_sort_enabled = true
@@ -466,8 +470,17 @@ texture_filter = 1
 use_parent_material = true
 position = Vector2(1, 2)
 scale = Vector2(5.255, 5.255)
-tile_map_data = PackedByteArray("AAABAAcAAAABAAoAAAABAAYAAAABAAkAAAACAAYAAAACAAkAAAABAAgAAAABAAsAAAACAAcAAAACAAoAAAACAAgAAAAIAAoAAAAEAAgAAAAIAAoAAAAEAAcAAAAEAAoAAAAEAAYAAAAEAAkAAAAFAAYAAAAFAAkAAAAFAAcAAAAFAAoAAAAFAAgAAAAFAAsAAAACAAkAAAACAAwAAAADAAkAAAADAAwAAAAEAAkAAAAEAAwAAAADAAgAAAADAAsAAAACAAoAAAACAA0AAAADAAoAAAADAA0AAAAEAAoAAAAEAA0AAAAOAAoAAAAUAA4AAAARAAcAAAAYAA4AAAATAAMAAAAcAA4AAAATAAoAAAAaAA4AAAAVAAYAAAAWAA4AAAAXAAMAAAAeAA4AAAAHAAMAAAATAA8AAAAKAAkAAAARAA8AAAAPAAUAAAAPAA8AAAAAAAIAAAAHABAAAAADAAIAAAANABAAAAAAAAUAAAAJABEAAAADAAUAAAALABEAAAAHAAoAAAAKAAcAAAAHAAsAAAAKAAgAAAAHAAwAAAAFAAsAAAAOAAEAAAAKAAoAAAANAAEAAAAQAAsAAAAPAAEAAAARAAsAAAANAAIAAAAMAAwAAAAOAAIAAAANAAwAAAAPAAIAAAAOAAwAAAANAAMAAAAMAA0AAAAOAAMAAAANAA0AAAAPAAMAAAAOAA0AAAAPAAAAAAAOAAoAAAANAAAAAAAMAAoAAAAOAAAAAAANAAoAAAANAP//AAAMAAkAAAAOAP//AAANAAkAAAAPAP//AAAOAAkAAAA=")
+tile_map_data = PackedByteArray("AAACAAMAAAANAAwAAAADAAMAAAANAAwAAAAEAAMAAAANAAwAAAAFAAMAAAANAAwAAAAGAAMAAAANAAwAAAAHAAMAAAANAAwAAAAIAAMAAAANAAwAAAAJAAMAAAANAAwAAAAKAAMAAAANAAwAAAALAAMAAAANAAwAAAAMAAMAAAANAAwAAAANAAMAAAANAAwAAAAOAAMAAAANAAwAAAAPAAMAAAANAAwAAAAQAAMAAAANAAwAAAARAAMAAAANAAwAAAASAAMAAAANAAwAAAATAAMAAAANAAwAAAAUAAMAAAANAAwAAAAVAAMAAAANAAwAAAAWAAMAAAANAAwAAAAXAAMAAAANAAwAAAAYAAMAAAANAAwAAAAZAAMAAAANAAwAAAAaAAMAAAANAAwAAAABAAMAAAAEAAoAAAABAAsAAAANAAwAAAACAAsAAAANAAwAAAADAAsAAAANAAwAAAAEAAsAAAANAAwAAAAFAAsAAAANAAwAAAAGAAsAAAANAAwAAAAHAAsAAAANAAwAAAAIAAsAAAANAAwAAAAJAAsAAAANAAwAAAAKAAsAAAANAAwAAAALAAsAAAANAAwAAAAMAAsAAAANAAwAAAANAAsAAAANAAwAAAAOAAsAAAANAAwAAAAQAAkAAAAEAAoAAAARAAkAAAANAAwAAAASAAkAAAANAAwAAAATAAkAAAANAAwAAAAUAAkAAAANAAwAAAAWAAsAAAANAAwAAAAXAAsAAAANAAwAAAAYAAsAAAANAAwAAAAZAAsAAAANAAwAAAAaAAsAAAANAAwAAAAbAAMAAAACAAoAAAAbAAIAAAAOAAkAAAABAAIAAAAMAAkAAAACAAIAAAANAAkAAAADAAIAAAANAAkAAAAEAAIAAAANAAkAAAAFAAIAAAANAAkAAAAGAAIAAAANAAkAAAAHAAIAAAANAAkAAAAIAAIAAAANAAkAAAAJAAIAAAANAAkAAAAKAAIAAAANAAkAAAALAAIAAAANAAkAAAAMAAIAAAANAAkAAAANAAIAAAANAAkAAAAOAAIAAAANAAkAAAAPAAIAAAANAAkAAAAQAAIAAAANAAkAAAARAAIAAAANAAkAAAASAAIAAAANAAkAAAATAAIAAAANAAkAAAAUAAIAAAANAAkAAAAVAAIAAAANAAkAAAAWAAIAAAANAAkAAAAXAAIAAAANAAkAAAAYAAIAAAANAAkAAAAZAAIAAAANAAkAAAAaAAIAAAANAAkAAAABAAQAAAAIAAoAAAABAAUAAAAIAAoAAAABAAYAAAAIAAoAAAABAAcAAAAIAAoAAAABAAgAAAAIAAoAAAABAAkAAAAIAAoAAAABAAoAAAAIAAoAAAAbAAQAAAAIAAoAAAARAAgAAAANAAkAAAASAAgAAAANAAkAAAATAAgAAAANAAkAAAAVAAkAAAACAAoAAAAVAAsAAAACAAwAAAAQAAsAAAAEAAwAAAAQAAgAAAAEAAkAAAAVAAgAAAAFAAkAAAAUAAgAAAANAAkAAAAQAAoAAAAIAAoAAAAVAAoAAAAIAAoAAAAPAAsAAAADAAwAAAADAAoAAAANAAkAAAAEAAoAAAANAAkAAAAFAAoAAAANAAkAAAAGAAoAAAANAAkAAAAHAAoAAAANAAkAAAAIAAoAAAANAAkAAAAJAAoAAAANAAkAAAAKAAoAAAANAAkAAAALAAoAAAANAAkAAAAMAAoAAAANAAkAAAANAAoAAAANAAkAAAAOAAoAAAANAAkAAAACAAoAAAAEAAkAAAAPAAoAAAACAAkAAAABAAwAAAAIAA0AAAACAAwAAAAIAA0AAAADAAwAAAAIAA0AAAAEAAwAAAANAA0AAAAFAAwAAAANAA0AAAAGAAwAAAANAA0AAAAHAAwAAAAIAA0AAAAIAAwAAAAIAA0AAAAJAAwAAAAIAA0AAAAKAAwAAAAIAA0AAAALAAwAAAANAA0AAAAMAAwAAAANAA0AAAANAAwAAAANAA0AAAAOAAwAAAAIAA0AAAAPAAwAAAAIAA0AAAAQAAwAAAAIAA0AAAARAAoAAAAIAA0AAAASAAoAAAANAA0AAAATAAoAAAAIAA0AAAAUAAoAAAANAA0AAAAVAAwAAAAIAA0AAAAWAAwAAAANAA0AAAAXAAwAAAAIAA0AAAAYAAwAAAANAA0AAAAZAAwAAAAIAA0AAAAaAAwAAAANAA0AAAAaAAQAAAAIAA0AAAAZAAQAAAAIAA0AAAAYAAQAAAANAA0AAAAXAAQAAAAIAA0AAAAWAAQAAAANAA0AAAAVAAQAAAANAA0AAAAUAAQAAAANAA0AAAATAAQAAAANAA0AAAASAAQAAAANAA0AAAARAAQAAAANAA0AAAAQAAQAAAANAA0AAAAPAAQAAAANAA0AAAAOAAQAAAANAA0AAAANAAQAAAAIAA0AAAAMAAQAAAAIAA0AAAALAAQAAAAIAA0AAAAKAAQAAAAIAA0AAAAJAAQAAAAIAA0AAAAIAAQAAAANAA0AAAAHAAQAAAANAA0AAAAGAAQAAAANAA0AAAAFAAQAAAANAA0AAAAEAAQAAAANAA0AAAADAAQAAAAIAA0AAAACAAQAAAAIAA0AAAAXAAgAAAANABAAAAAVAAUAAAALABEAAAAFAAkAAAALABEAAAAFAAUAAAAHABAAAAAMAAgAAAAUAA4AAAAQAAUAAAAUAA4AAAAQAAcAAAAUABAAAAA=")
 tile_set = SubResource("TileSet_8i6lo")
+
+[node name="troll" parent="." instance=ExtResource("6_xmsys")]
+position = Vector2(2524, 789)
+
+[node name="virus" parent="." instance=ExtResource("7_0tv0f")]
+position = Vector2(2603, 547)
+
+[node name="lenny" parent="." instance=ExtResource("8_ioblc")]
+position = Vector2(2852, 697)
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
