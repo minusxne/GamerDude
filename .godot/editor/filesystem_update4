@@ -9,3 +9,5 @@ res://lenny.tscn
 res://tree.tscn
 res://gun.tscn
 res://shotgun.tscn
+res://player.gd
+res://progress_bar.tscn

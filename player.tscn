@@ -388,7 +388,7 @@ animations = [{
 height = 32.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rtbhd"]
-radius = 31.0
+radius = 40.0
 
 [node name="Player" type="CharacterBody2D"]
 slide_on_ceiling = false
@@ -417,7 +417,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(1, -52)
+position = Vector2(0, -52)
 rotation = -1.55885
 shape = SubResource("CircleShape2D_rtbhd")
 debug_color = Color(0.922377, 5.10186e-05, 0.687741, 0.42)

@@ -75,6 +75,7 @@ radius = 28.0179
 radius = 27.4591
 
 [node name="anon" type="CharacterBody2D"]
+collision_layer = 3
 script = ExtResource("1_uvxyo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

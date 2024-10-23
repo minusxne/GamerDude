@@ -73,10 +73,11 @@ radius = 27.0281
 height = 100.019
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i2woj"]
-radius = 24.0756
-height = 96.0196
+radius = 26.9967
+height = 104.019
 
 [node name="lenny" type="CharacterBody2D"]
+collision_layer = 3
 script = ExtResource("1_csvh3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

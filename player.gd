@@ -2,23 +2,26 @@ extends CharacterBody2D
 
 signal health_depleted
 
-var health = 100
+var health = 100.0
 var last_direction = Vector2(0, 1)
+var damage_timer = 0.0
+const damage_interval = 0.5
+const damage_rate = 5
+
 
 func _physics_process(delta):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = direction * 500
 	move_and_slide()
-
-	const DAMAGE_RATE = 5.0
-	var overlapping_mobs = %HurtBox.get_overlapping_bodies()
-	if overlapping_mobs.size() > 0:
-		health -= DAMAGE_RATE * overlapping_mobs.size() * delta
-		%ProgressBar.value = health
-		if health <= 0:
-			health_depleted.emit()
-	
 	animations()
+	var overlapping_bodies = %HurtBox.get_overlapping_bodies()
+	damage_timer -= delta
+	if damage_timer <= 0:
+		if overlapping_bodies.size() > 0:
+			%Health.value -= damage_rate * overlapping_bodies.size()
+			if %Health.value <= 0:
+				game_over()
+		damage_timer = damage_interval
 
 func animations():
 	
@@ -43,3 +46,6 @@ func animations():
 			$Player_Sprite.play("default_down")
 		else:
 			$Player_Sprite.play("default_up")
+
+func game_over():
+	print("Game Over")

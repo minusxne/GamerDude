@@ -332,6 +332,7 @@ texture = ExtResource("4_yvf77")
 5:16/0 = 0
 7:16/size_in_atlas = Vector2i(2, 2)
 7:16/0 = 0
+7:16/0/y_sort_origin = 9
 7:16/0/physics_layer_3/polygon_0/points = PackedVector2Array(11.25, 5.5, 14.75, 10, 15.5, 15.75, -11.5, 16, -10.75, 9, -5.5, 5.25)
 9:17/size_in_atlas = Vector2i(2, 1)
 9:17/0 = 0
@@ -341,7 +342,7 @@ texture = ExtResource("4_yvf77")
 11:17/0/physics_layer_3/polygon_0/points = PackedVector2Array(8, 2.25, 6, 8, -6.25, 8, -8, 2)
 13:16/size_in_atlas = Vector2i(2, 2)
 13:16/0 = 0
-13:16/0/y_sort_origin = 5
+13:16/0/y_sort_origin = 9
 13:16/0/physics_layer_3/polygon_0/points = PackedVector2Array(12, 9, 7.75, 15.25, -6.5, 15.5, -10.75, 9.25)
 15:17/0 = 0
 1:11/0 = 0
@@ -411,7 +412,6 @@ script = ExtResource("1_p6fy1")
 
 [node name="GUI" type="CanvasLayer" parent="."]
 layer = 2
-visible = false
 
 [node name="Health" parent="GUI" instance=ExtResource("2_q5vui")]
 unique_name_in_owner = true
