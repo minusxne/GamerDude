@@ -6,7 +6,7 @@ var health = 100.0
 var last_direction = Vector2(0, 1)
 var damage_timer = 0.0
 const damage_interval = 0.5
-const damage_rate = 5
+const damage_rate = 1
 
 
 func _physics_process(delta):
