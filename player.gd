@@ -6,7 +6,8 @@ var health = 100.0
 var last_direction = Vector2(0, 1)
 var damage_timer = 0.0
 const damage_interval = 0.5
-const damage_rate = 1
+const damage_rate = 5
+
 
 
 func _physics_process(delta):
@@ -25,7 +26,9 @@ func _physics_process(delta):
 
 func animations():
 	
-	if velocity.length() > 0:
+	if velocity.length() > 10:
+		print(velocity.x)
+		print(velocity.y)
 		last_direction = velocity.normalized()
 		if abs(velocity.x) > abs(velocity.y):
 			if velocity.x > 0:
