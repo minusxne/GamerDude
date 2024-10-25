@@ -27,8 +27,6 @@ func _physics_process(delta):
 func animations():
 	
 	if velocity.length() > 10:
-		print(velocity.x)
-		print(velocity.y)
 		last_direction = velocity.normalized()
 		if abs(velocity.x) > abs(velocity.y):
 			if velocity.x > 0:
