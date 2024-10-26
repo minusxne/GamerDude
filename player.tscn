@@ -385,7 +385,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h0frg"]
-radius = 12.5
+radius = 10.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rtbhd"]
 radius = 40.0
@@ -397,7 +397,7 @@ script = ExtResource("1_kp1ik")
 [node name="Player_Sprite" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 texture_filter = 1
-position = Vector2(-2.00003, -57)
+position = Vector2(-2.00003, -5)
 scale = Vector2(5.075, 5.525)
 sprite_frames = SubResource("SpriteFrames_ullej")
 animation = &"walk_right"
@@ -405,7 +405,7 @@ autoplay = "default_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 y_sort_enabled = true
-position = Vector2(-1.5, -33)
+position = Vector2(-1.5, 19)
 shape = SubResource("CapsuleShape2D_h0frg")
 one_way_collision_margin = 0.0
 
@@ -417,10 +417,10 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(0, -52)
+position = Vector2(0, -5)
 rotation = -1.55885
 shape = SubResource("CircleShape2D_rtbhd")
 debug_color = Color(0.922377, 5.10186e-05, 0.687741, 0.42)
 
 [node name="Shotgun" parent="." instance=ExtResource("5_c75a5")]
-position = Vector2(1, -35)
+position = Vector2(1, 17)

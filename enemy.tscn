@@ -1,24 +1,77 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmc6vbae6ysuv"]
+[gd_scene load_steps=12 format=3 uid="uid://cmc6vbae6ysuv"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_1h2po"]
 [ext_resource type="Texture2D" uid="uid://8y8wadvg45uh" path="res://tilemap/Ws.png" id="2_oetur"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xw0cv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jx51"]
 atlas = ExtResource("2_oetur")
-region = Rect2(16, 435, 31, 31)
+region = Rect2(240, 432, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cagt"]
+atlas = ExtResource("2_oetur")
+region = Rect2(240, 464, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_my4a0"]
+atlas = ExtResource("2_oetur")
+region = Rect2(464, 432, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jky0m"]
+atlas = ExtResource("2_oetur")
+region = Rect2(464, 464, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tapob"]
+atlas = ExtResource("2_oetur")
+region = Rect2(240, 400, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kw8h"]
+atlas = ExtResource("2_oetur")
+region = Rect2(464, 400, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_muuui"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xw0cv")
+"texture": SubResource("AtlasTexture_1jx51")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cagt")
 }],
 "loop": true,
-"name": &"default",
+"name": &"default_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_my4a0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jky0m")
+}],
+"loop": true,
+"name": &"default_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tapob")
+}],
+"loop": true,
+"name": &"hurt_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kw8h")
+}],
+"loop": true,
+"name": &"hurt_right",
 "speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_24mqb"]
+radius = 28.0179
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tmsed"]
 radius = 28.0179
 
 [node name="enemy" type="CharacterBody2D"]
@@ -29,20 +82,35 @@ script = ExtResource("1_1h2po")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(22.75, -22.25)
-scale = Vector2(2.46774, 2.43548)
+position = Vector2(2, 1)
+scale = Vector2(3.01512, 2.96774)
 sprite_frames = SubResource("SpriteFrames_muuui")
+animation = &"default_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(26, -17)
+position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_24mqb")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 unique_name_in_owner = true
+radius = 38.57
 debug_enabled = true
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
+[node name="PathTimer" type="Timer" parent="."]
+wait_time = 0.15
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="hurtarea" type="Area2D" parent="."]
+position = Vector2(0, 1)
+
+[node name="hurtbox" type="CollisionShape2D" parent="hurtarea"]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_tmsed")
+debug_color = Color(1, 0, 0, 0.439216)
+
+[node name="DamageAnimTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.25
+
+[connection signal="timeout" from="PathTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="DamageAnimTimer" to="." method="_on_damage_anim_timer_timeout"]
