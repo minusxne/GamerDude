@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmc6vbae6ysuv"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_1h2po"]
+[ext_resource type="Texture2D" uid="uid://8y8wadvg45uh" path="res://tilemap/Ws.png" id="2_oetur"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xw0cv"]
+atlas = ExtResource("2_oetur")
+region = Rect2(16, 435, 31, 31)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_muuui"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xw0cv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_24mqb"]
+radius = 28.0179
+
+[node name="enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+motion_mode = 1
+script = ExtResource("1_1h2po")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(22.75, -22.25)
+scale = Vector2(2.46774, 2.43548)
+sprite_frames = SubResource("SpriteFrames_muuui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(26, -17)
+shape = SubResource("CircleShape2D_24mqb")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+unique_name_in_owner = true
+debug_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

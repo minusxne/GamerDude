@@ -10,3 +10,6 @@ res://tree.tscn
 res://gun.tscn
 res://shotgun.tscn
 res://progress_bar.tscn
+res://enemy.gd
+res://enemy.tscn
+res://virus.gd
