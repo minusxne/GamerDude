@@ -1,0 +1,116 @@
+[gd_scene load_steps=12 format=3 uid="uid://dodvlx7ww6880"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_wkx8n"]
+[ext_resource type="Texture2D" uid="uid://8y8wadvg45uh" path="res://tilemap/Ws.png" id="2_f6gev"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0tba"]
+atlas = ExtResource("2_f6gev")
+region = Rect2(304, 432, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2pxu"]
+atlas = ExtResource("2_f6gev")
+region = Rect2(304, 464, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wo60d"]
+atlas = ExtResource("2_f6gev")
+region = Rect2(400, 432, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmkgd"]
+atlas = ExtResource("2_f6gev")
+region = Rect2(400, 464, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3o5a8"]
+atlas = ExtResource("2_f6gev")
+region = Rect2(304, 400, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32tv2"]
+atlas = ExtResource("2_f6gev")
+region = Rect2(400, 400, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u4ylx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0tba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2pxu")
+}],
+"loop": true,
+"name": &"default_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wo60d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmkgd")
+}],
+"loop": true,
+"name": &"default_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3o5a8")
+}],
+"loop": true,
+"name": &"hurt_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32tv2")
+}],
+"loop": true,
+"name": &"hurt_right",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_24mqb"]
+radius = 28.0179
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tmsed"]
+radius = 26.0
+
+[node name="enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+motion_mode = 1
+script = ExtResource("1_wkx8n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-2, -2)
+scale = Vector2(2.96875, 3.15625)
+sprite_frames = SubResource("SpriteFrames_u4ylx")
+animation = &"hurt_right"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_24mqb")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+unique_name_in_owner = true
+radius = 38.57
+debug_enabled = true
+
+[node name="PathTimer" type="Timer" parent="."]
+wait_time = 0.15
+autostart = true
+
+[node name="hurtarea" type="Area2D" parent="."]
+position = Vector2(0, 1)
+
+[node name="hurtbox" type="CollisionShape2D" parent="hurtarea"]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_tmsed")
+debug_color = Color(1, 0, 0, 0.439216)
+
+[node name="DamageAnimTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.25
+
+[connection signal="timeout" from="PathTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="DamageAnimTimer" to="." method="_on_damage_anim_timer_timeout"]

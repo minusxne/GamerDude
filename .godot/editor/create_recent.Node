@@ -1,6 +1,6 @@
+AnimatedSprite2D
 Timer
 NavigationAgent2D
-AnimatedSprite2D
 CollisionShape2D
 Sprite2D
 CharacterBody2D

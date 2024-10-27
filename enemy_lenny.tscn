@@ -1,0 +1,121 @@
+[gd_scene load_steps=12 format=3 uid="uid://bt2rab5k2tnj7"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_fqeny"]
+[ext_resource type="Texture2D" uid="uid://8y8wadvg45uh" path="res://tilemap/Ws.png" id="2_4w04n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmty2"]
+atlas = ExtResource("2_4w04n")
+region = Rect2(336, 432, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1587"]
+atlas = ExtResource("2_4w04n")
+region = Rect2(336, 464, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0h32"]
+atlas = ExtResource("2_4w04n")
+region = Rect2(368, 432, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhhtf"]
+atlas = ExtResource("2_4w04n")
+region = Rect2(368, 464, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1m7dq"]
+atlas = ExtResource("2_4w04n")
+region = Rect2(336, 400, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2i03"]
+atlas = ExtResource("2_4w04n")
+region = Rect2(368, 400, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fr3i2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmty2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1587")
+}],
+"loop": true,
+"name": &"default_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0h32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhhtf")
+}],
+"loop": true,
+"name": &"default_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1m7dq")
+}],
+"loop": true,
+"name": &"hurt_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2i03")
+}],
+"loop": true,
+"name": &"hurt_right",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2a35r"]
+radius = 25.0665
+height = 88.4676
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2vlsb"]
+radius = 24.0
+height = 90.0
+
+[node name="enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+motion_mode = 1
+script = ExtResource("1_fqeny")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -1)
+scale = Vector2(3.10156, 3.15625)
+sprite_frames = SubResource("SpriteFrames_fr3i2")
+animation = &"hurt_right"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+rotation = 1.52367
+shape = SubResource("CapsuleShape2D_2a35r")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+unique_name_in_owner = true
+radius = 38.57
+debug_enabled = true
+
+[node name="PathTimer" type="Timer" parent="."]
+wait_time = 0.15
+autostart = true
+
+[node name="hurtarea" type="Area2D" parent="."]
+position = Vector2(0, 1)
+
+[node name="hurtbox" type="CollisionShape2D" parent="hurtarea"]
+position = Vector2(-1, -2)
+rotation = 1.55509
+scale = Vector2(1.055, 1.055)
+shape = SubResource("CapsuleShape2D_2vlsb")
+debug_color = Color(1, 0, 0, 0.439216)
+
+[node name="DamageAnimTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.25
+
+[connection signal="timeout" from="PathTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="DamageAnimTimer" to="." method="_on_damage_anim_timer_timeout"]
