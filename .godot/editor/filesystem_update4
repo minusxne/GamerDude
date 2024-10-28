@@ -2,8 +2,6 @@ res://survivors_game.tscn
 res://survivors_game.gdshader
 res://player.tscn
 res://bullet.tscn
-res://virus.tscn
-res://enemy.tscn
 res://enemy_virus.tscn
 res://enemy_troll.tscn
 res://enemy_anon.tscn
