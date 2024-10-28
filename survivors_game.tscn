@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://crfgpgvybr827"]
+[gd_scene load_steps=29 format=4 uid="uid://crfgpgvybr827"]
 
 [ext_resource type="PackedScene" uid="uid://c2wsmmjynx08p" path="res://player.tscn" id="1_owmx7"]
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_p6fy1"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://bu8ksvemwyy6m" path="res://enemy_anon.tscn" id="8_mm500"]
 [ext_resource type="PackedScene" uid="uid://cmc6vbae6ysuv" path="res://enemy_virus.tscn" id="9_iugxf"]
 [ext_resource type="PackedScene" uid="uid://bt2rab5k2tnj7" path="res://enemy_lenny.tscn" id="9_w20ad"]
-[ext_resource type="Texture2D" uid="uid://bbhwqndrapauq" path="res://assets/socialmedia_icons/7Social-media-icons_11.png" id="10_ucxq0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sigjn"]
 shader = ExtResource("2_1ia4y")
@@ -665,11 +664,6 @@ position = Vector2(1781, 518)
 
 [node name="enemy4" parent="." instance=ExtResource("9_w20ad")]
 position = Vector2(1763, 688)
-
-[node name="7Social-media-icons11" type="Sprite2D" parent="."]
-position = Vector2(1210, 665)
-scale = Vector2(5.78125, 6.6875)
-texture = ExtResource("10_ucxq0")
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

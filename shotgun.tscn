@@ -12,6 +12,7 @@ collision_mask = 2
 script = ExtResource("1_mlsk5")
 
 [node name="Shotgun" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 texture_filter = 1
 position = Vector2(31, -3)
 scale = Vector2(2.58101, 2.49792)

@@ -14,13 +14,11 @@ const speed = 150
 
 func _physics_process(_delta: float) -> void:
 	if knockback:
-		print(knockback_dir)
 		velocity = knockback_dir * knockback_strength
 		move_and_slide()
 		play_animation()
 	else:
 		dir = to_local(nav_agent.get_next_path_position()).normalized()
-		print(dir)
 		velocity = dir*speed
 		move_and_slide()
 		play_animation()

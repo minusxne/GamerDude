@@ -17,6 +17,7 @@ shape = SubResource("CircleShape2D_jc8c0")
 [node name="WeaponPivot" type="Marker2D" parent="."]
 
 [node name="Pistol" type="Sprite2D" parent="WeaponPivot"]
+unique_name_in_owner = true
 texture_filter = 1
 position = Vector2(60, -9.53674e-07)
 scale = Vector2(2.63876, 2.60023)
