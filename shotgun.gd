@@ -15,8 +15,10 @@ func _physics_process(delta):
 
 func shoot():
 	const BULLET = preload("res://bullet.tscn")
-	const BULLET_COUNT = 5  # Number of bullets to shoot (spread)
+	const BULLET_COUNT = 4  # Number of bullets to shoot (spread)
 	const SPREAD_ANGLE = deg_to_rad(10)  # Spread angle in radians (adjust as needed)
+	%Shotgun.play("shoot")
+	%Shotgun.frame = 0
 	for i in range(BULLET_COUNT):
 		var new_bullet = BULLET.instantiate()
 		new_bullet.global_position = %ShootingPoint.global_position
@@ -25,6 +27,9 @@ func shoot():
 		new_bullet.global_rotation = %ShootingPoint.global_rotation + spread
 		# Add the bullet to the scene
 		%ShootingPoint.add_child(new_bullet)
+	
+	
+	
 
 func flipGun():
 	var should_flip = mouse_position.x < player.global_position.x
@@ -37,3 +42,7 @@ func flipGun():
 func _on_timer_timeout() -> void:
 	shootcooldown = true
 	$Timer.start()
+
+
+func _on_shotgun_animation_looped() -> void:
+	%Shotgun.play("default")

@@ -81,6 +81,7 @@ motion_mode = 1
 script = ExtResource("1_1h2po")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
 texture_filter = 1
 position = Vector2(2, 1)
 scale = Vector2(3.01512, 2.96774)
@@ -94,7 +95,6 @@ shape = SubResource("CircleShape2D_24mqb")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 unique_name_in_owner = true
 radius = 38.57
-debug_enabled = true
 
 [node name="PathTimer" type="Timer" parent="."]
 wait_time = 0.15

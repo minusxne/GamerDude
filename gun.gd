@@ -14,6 +14,8 @@ func _physics_process(delta):
 		shootcooldown = false
 
 func shoot():
+	%Pistol.play("shoot")
+	%Pistol.frame = 0
 	const BULLET = preload("res://bullet.tscn")
 	var new_bullet = BULLET.instantiate()
 	new_bullet.global_position = %ShootingPoint.global_position
@@ -31,3 +33,7 @@ func flipGun():
 func _on_timer_timeout() -> void:
 	shootcooldown = true
 	$Timer.start()
+
+
+func _on_animated_sprite_2d_animation_looped() -> void:
+	%Pistol.play("default")

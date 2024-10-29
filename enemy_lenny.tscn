@@ -97,7 +97,6 @@ shape = SubResource("CapsuleShape2D_2a35r")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 unique_name_in_owner = true
 radius = 38.57
-debug_enabled = true
 
 [node name="PathTimer" type="Timer" parent="."]
 wait_time = 0.15

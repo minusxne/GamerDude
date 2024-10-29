@@ -1,10 +1,65 @@
-[gd_scene load_steps=4 format=3 uid="uid://cemgbe80y46kd"]
+[gd_scene load_steps=11 format=3 uid="uid://cemgbe80y46kd"]
 
 [ext_resource type="Texture2D" uid="uid://cswb5do8rrj7q" path="res://pistol/pistol.png" id="1_foee1"]
 [ext_resource type="Script" path="res://gun.gd" id="1_l4sfd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jc8c0"]
 radius = 591.03
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3phhl"]
+atlas = ExtResource("1_foee1")
+region = Rect2(0, 0, 20, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2d85w"]
+atlas = ExtResource("1_foee1")
+region = Rect2(0, 0, 20, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0hth"]
+atlas = ExtResource("1_foee1")
+region = Rect2(20, 0, 20, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8u3xx"]
+atlas = ExtResource("1_foee1")
+region = Rect2(40, 0, 20, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2n1m7"]
+atlas = ExtResource("1_foee1")
+region = Rect2(60, 0, 20, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ekvg"]
+atlas = ExtResource("1_foee1")
+region = Rect2(80, 0, 20, 11)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q2a0s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3phhl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2d85w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0hth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8u3xx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2n1m7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ekvg")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 24.0
+}]
 
 [node name="Gun" type="Area2D"]
 collision_layer = 0
@@ -16,20 +71,21 @@ shape = SubResource("CircleShape2D_jc8c0")
 
 [node name="WeaponPivot" type="Marker2D" parent="."]
 
-[node name="Pistol" type="Sprite2D" parent="WeaponPivot"]
+[node name="Pistol" type="AnimatedSprite2D" parent="WeaponPivot"]
 unique_name_in_owner = true
 texture_filter = 1
-position = Vector2(60, -9.53674e-07)
-scale = Vector2(2.63876, 2.60023)
-texture = ExtResource("1_foee1")
+position = Vector2(56, 1)
+scale = Vector2(2.3375, 2.01136)
+sprite_frames = SubResource("SpriteFrames_q2a0s")
 
 [node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Pistol"]
 unique_name_in_owner = true
-position = Vector2(10.2321, -3.07665)
+position = Vector2(6.2069, -4.52601)
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
 wait_time = 0.3
 autostart = true
 
+[connection signal="animation_looped" from="WeaponPivot/Pistol" to="." method="_on_animated_sprite_2d_animation_looped"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

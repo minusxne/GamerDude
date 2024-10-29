@@ -1,27 +1,82 @@
-[gd_scene load_steps=4 format=3 uid="uid://u44hfyodoymr"]
+[gd_scene load_steps=11 format=3 uid="uid://u44hfyodoymr"]
 
 [ext_resource type="Script" path="res://shotgun.gd" id="1_mlsk5"]
 [ext_resource type="Texture2D" uid="uid://b6wiegly2wiy2" path="res://pistol/shotgun.png" id="2_lrv3c"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gouko"]
+atlas = ExtResource("2_lrv3c")
+region = Rect2(0, 0, 53, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5crb"]
+atlas = ExtResource("2_lrv3c")
+region = Rect2(0, 0, 53, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_734t0"]
+atlas = ExtResource("2_lrv3c")
+region = Rect2(53, 0, 53, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0ly8"]
+atlas = ExtResource("2_lrv3c")
+region = Rect2(106, 0, 53, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmv4h"]
+atlas = ExtResource("2_lrv3c")
+region = Rect2(159, 0, 53, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajuqb"]
+atlas = ExtResource("2_lrv3c")
+region = Rect2(212, 0, 53, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ocq7o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gouko")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5crb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_734t0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0ly8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmv4h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajuqb")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 24.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_jc8c0"]
-radius = 591.03
+radius = 574.0
 
 [node name="Shotgun" type="Area2D"]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_mlsk5")
 
-[node name="Shotgun" type="Sprite2D" parent="."]
+[node name="Shotgun" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 texture_filter = 1
-position = Vector2(31, -3)
-scale = Vector2(2.58101, 2.49792)
-texture = ExtResource("2_lrv3c")
+position = Vector2(30, -0.499999)
+scale = Vector2(2.46512, 2.16667)
+sprite_frames = SubResource("SpriteFrames_ocq7o")
+frame_progress = 0.487852
 
 [node name="ShootingPoint" type="Marker2D" parent="Shotgun"]
 unique_name_in_owner = true
-z_index = -1
-position = Vector2(10.2321, -3.07665)
+position = Vector2(18.7158, -1.29412)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_jc8c0")
@@ -29,10 +84,13 @@ shape = SubResource("CircleShape2D_jc8c0")
 [node name="WeaponPivot" type="Marker2D" parent="."]
 z_index = -1
 y_sort_enabled = true
+texture_filter = 1
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
-wait_time = 1.031
+wait_time = 0.784
 autostart = true
 
+[connection signal="animation_finished" from="Shotgun" to="." method="_on_shotgun_animation_finished"]
+[connection signal="animation_looped" from="Shotgun" to="." method="_on_shotgun_animation_looped"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
