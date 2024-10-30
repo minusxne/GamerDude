@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://crfgpgvybr827"]
+[gd_scene load_steps=30 format=4 uid="uid://crfgpgvybr827"]
 
 [ext_resource type="PackedScene" uid="uid://c2wsmmjynx08p" path="res://player.tscn" id="1_owmx7"]
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_p6fy1"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bu8ksvemwyy6m" path="res://enemy_anon.tscn" id="8_mm500"]
 [ext_resource type="PackedScene" uid="uid://cmc6vbae6ysuv" path="res://enemy_virus.tscn" id="9_iugxf"]
 [ext_resource type="PackedScene" uid="uid://bt2rab5k2tnj7" path="res://enemy_lenny.tscn" id="9_w20ad"]
+[ext_resource type="PackedScene" uid="uid://c2kvcybcbtvu7" path="res://powerup.tscn" id="10_v228s"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sigjn"]
 shader = ExtResource("2_1ia4y")
@@ -664,6 +665,9 @@ position = Vector2(1781, 518)
 
 [node name="enemy4" parent="." instance=ExtResource("9_w20ad")]
 position = Vector2(1763, 688)
+
+[node name="powerup" parent="." instance=ExtResource("10_v228s")]
+position = Vector2(390, 616)
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

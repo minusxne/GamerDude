@@ -30,6 +30,9 @@ func flipGun():
 		flipped = should_flip
 	
 
+func fire_rate_up():
+	%Timer.wait_time = %Timer.wait_time - 0.05
+
 func _on_timer_timeout() -> void:
 	shootcooldown = true
 	$Timer.start()

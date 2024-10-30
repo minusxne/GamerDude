@@ -28,8 +28,9 @@ func shoot():
 		# Add the bullet to the scene
 		%ShootingPoint.add_child(new_bullet)
 	
-	
-	
+
+func fire_rate_up():
+	%Timer.wait_time = %Timer.wait_time - 0.05
 
 func flipGun():
 	var should_flip = mouse_position.x < player.global_position.x

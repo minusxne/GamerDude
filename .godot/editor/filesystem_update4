@@ -1,13 +1,14 @@
-res://enemy_virus.tscn
 res://survivors_game.gdshader
+res://powerup.tscn
 res://survivors_game.tscn
 res://player.tscn
 res://bullet.tscn
+res://enemy_virus.tscn
 res://enemy_troll.tscn
 res://enemy_anon.tscn
 res://enemy_lenny.tscn
 res://shotgun.tscn
 res://gun.tscn
-res://enemy.gd
+res://powerup.gd
 res://shotgun.gd
 res://gun.gd

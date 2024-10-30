@@ -15,6 +15,7 @@ func _physics_process(delta):
 	velocity = direction * 500
 	move_and_slide()
 	animations()
+	cameraoffset()
 	var overlapping_bodies = %HurtBox.get_overlapping_bodies()
 	damage_timer -= delta
 	if damage_timer <= 0:
@@ -47,6 +48,9 @@ func animations():
 			$Player_Sprite.play("default_down")
 		else:
 			$Player_Sprite.play("default_up")
+
+func cameraoffset():
+	$Camera2D.offset = (get_global_mouse_position() - global_position) * 0.1
 
 func game_over():
 	print("Game Over")
