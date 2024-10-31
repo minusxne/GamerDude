@@ -16,7 +16,7 @@ func _physics_process(delta):
 func shoot():
 	const BULLET = preload("res://bullet.tscn")
 	const BULLET_COUNT = 4  # Number of bullets to shoot (spread)
-	const SPREAD_ANGLE = deg_to_rad(10)  # Spread angle in radians (adjust as needed)
+	const SPREAD_ANGLE = deg_to_rad(20)  # Spread angle in radians (adjust as needed)
 	%Shotgun.play("shoot")
 	%Shotgun.frame = 0
 	for i in range(BULLET_COUNT):
@@ -30,7 +30,8 @@ func shoot():
 	
 
 func fire_rate_up():
-	%Timer.wait_time = %Timer.wait_time - 0.05
+	%Timer.wait_time = %Timer.wait_time - 0.10
+	print(%Timer.wait_time)
 
 func flipGun():
 	var should_flip = mouse_position.x < player.global_position.x

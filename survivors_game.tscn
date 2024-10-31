@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bu8ksvemwyy6m" path="res://enemy_anon.tscn" id="8_mm500"]
 [ext_resource type="PackedScene" uid="uid://cmc6vbae6ysuv" path="res://enemy_virus.tscn" id="9_iugxf"]
 [ext_resource type="PackedScene" uid="uid://bt2rab5k2tnj7" path="res://enemy_lenny.tscn" id="9_w20ad"]
-[ext_resource type="PackedScene" uid="uid://c2kvcybcbtvu7" path="res://powerup.tscn" id="10_v228s"]
+[ext_resource type="PackedScene" uid="uid://c2kvcybcbtvu7" path="res://fire_rate_up.tscn" id="10_v228s"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sigjn"]
 shader = ExtResource("2_1ia4y")
@@ -668,6 +668,24 @@ position = Vector2(1763, 688)
 
 [node name="powerup" parent="." instance=ExtResource("10_v228s")]
 position = Vector2(390, 616)
+
+[node name="powerup_fire_rate_up" parent="." instance=ExtResource("10_v228s")]
+position = Vector2(484, 786)
+
+[node name="powerup_fire_rate_up2" parent="." instance=ExtResource("10_v228s")]
+position = Vector2(496, 448)
+
+[node name="powerup_fire_rate_up3" parent="." instance=ExtResource("10_v228s")]
+position = Vector2(508, 618)
+
+[node name="powerup_fire_rate_up4" parent="." instance=ExtResource("10_v228s")]
+position = Vector2(455, 565)
+
+[node name="powerup_fire_rate_up5" parent="." instance=ExtResource("10_v228s")]
+position = Vector2(514, 554)
+
+[node name="powerup_fire_rate_up6" parent="." instance=ExtResource("10_v228s")]
+position = Vector2(396, 512)
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

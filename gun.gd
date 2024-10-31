@@ -4,6 +4,9 @@ var shootcooldown = false
 var flipped = false
 var mouse_position = get_global_mouse_position()
 @onready var player = get_node("/root/Game/Player")
+@onready var marker = %ShootingPoint
+@onready var pistol = %Pistol
+@onready var marker_offset_y = marker.position.y - 1
 
 func _physics_process(delta):
 	mouse_position = get_global_mouse_position()
@@ -14,20 +17,27 @@ func _physics_process(delta):
 		shootcooldown = false
 
 func shoot():
-	%Pistol.play("shoot")
-	%Pistol.frame = 0
+	pistol.play("shoot")
+	pistol.frame = 0
 	const BULLET = preload("res://bullet.tscn")
 	var new_bullet = BULLET.instantiate()
-	new_bullet.global_position = %ShootingPoint.global_position
-	new_bullet.global_rotation = %ShootingPoint.global_rotation
-	%ShootingPoint.add_child(new_bullet)
+	new_bullet.global_position = marker.global_position
+	new_bullet.global_rotation = marker.global_rotation
+	marker.add_child(new_bullet)
 
 func flipGun():
 	var should_flip = mouse_position.x < player.global_position.x
+	pistol.flip_v = should_flip
+	
+	if flipped:
+		marker.position.y = -marker_offset_y
+	else:
+		marker.position.y = marker_offset_y
+	
+	flipped = should_flip
 	
 	if (should_flip != flipped):
-		%Pistol.flip_v = should_flip
-		flipped = should_flip
+		pistol.flip_v = should_flip
 	
 
 func fire_rate_up():
