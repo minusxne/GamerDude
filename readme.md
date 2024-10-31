@@ -10,7 +10,7 @@ This is a game created for the **ROG Challenge 2024**.
    cd ROG
    ```
 
-2. Open the project godot.
+2. Open the project in godot.
 
 ## Assets Used
 

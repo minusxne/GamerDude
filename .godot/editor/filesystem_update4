@@ -13,3 +13,5 @@ res://powerup.gd
 res://gun.gd
 res://shotgun.gd
 res://fire_rate_up.tscn
+res://speed_up.tscn
+res://player.gd

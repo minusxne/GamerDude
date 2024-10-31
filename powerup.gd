@@ -1,7 +1,6 @@
 extends Area2D
 
-@onready var gun = get_node("/root/Game/Player/Gun")
-@onready var shotgun = get_node("/root/Game/Player/Shotgun")
+@onready var player = get_node("/root/Game/Player")
 var picked_up = false
 
 func _physics_process(delta):
@@ -15,11 +14,8 @@ func _on_body_entered(body: Node2D) -> void:
 	picked_up = true
 	if (%pickupeffect != null):
 		%pickupeffect.play("default")
-	# increase fire rate of current weapon
-	if (gun != null):
-		gun.fire_rate_up()
-	if (shotgun != null):
-		shotgun.fire_rate_up()
+	# increase speed
+	player.increase_speed()
 
 
 func _on_animated_sprite_2d_animation_looped() -> void:
