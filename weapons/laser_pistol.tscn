@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhubpcx2cyf28"]
+
+[ext_resource type="Script" path="res://weapons/laser_pistol.gd" id="1_yfj1l"]
+[ext_resource type="Texture2D" uid="uid://dq7564jwrmf3m" path="res://assets/weapons/laser_pistol.png" id="2_ywj8a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jc8c0"]
+radius = 591.03
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r051v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ywj8a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="laser_pistol" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_yfj1l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jc8c0")
+
+[node name="WeaponPivot" type="Marker2D" parent="."]
+
+[node name="Pistol" type="AnimatedSprite2D" parent="WeaponPivot"]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(56, 0)
+scale = Vector2(2.58437, 2.36648)
+sprite_frames = SubResource("SpriteFrames_r051v")
+
+[node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Pistol"]
+unique_name_in_owner = true
+position = Vector2(4.32529, -2.61191)
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.3
+autostart = true
+
+[connection signal="animation_looped" from="WeaponPivot/Pistol" to="." method="_on_animated_sprite_2d_animation_looped"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

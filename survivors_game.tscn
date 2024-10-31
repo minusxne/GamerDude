@@ -1,11 +1,15 @@
-[gd_scene load_steps=27 format=4 uid="uid://crfgpgvybr827"]
+[gd_scene load_steps=31 format=4 uid="uid://crfgpgvybr827"]
 
 [ext_resource type="PackedScene" uid="uid://c2wsmmjynx08p" path="res://player.tscn" id="1_owmx7"]
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_p6fy1"]
 [ext_resource type="Shader" path="res://survivors_game.gdshader" id="2_1ia4y"]
 [ext_resource type="PackedScene" uid="uid://dtkngk0ftv5ak" path="res://progress_bar.tscn" id="2_q5vui"]
 [ext_resource type="Texture2D" uid="uid://8y8wadvg45uh" path="res://assets/Ws.png" id="4_yvf77"]
+[ext_resource type="PackedScene" uid="uid://bu8ksvemwyy6m" path="res://enemy_anon.tscn" id="8_pjcmy"]
+[ext_resource type="PackedScene" uid="uid://bt2rab5k2tnj7" path="res://enemy_lenny.tscn" id="9_phul3"]
+[ext_resource type="PackedScene" uid="uid://dodvlx7ww6880" path="res://enemy_troll.tscn" id="10_cxq8m"]
 [ext_resource type="PackedScene" uid="uid://c2kvcybcbtvu7" path="res://fire_rate_up.tscn" id="10_v228s"]
+[ext_resource type="PackedScene" uid="uid://cmc6vbae6ysuv" path="res://enemy_virus.tscn" id="11_frmow"]
 [ext_resource type="PackedScene" uid="uid://bva7db4okt7js" path="res://speed_up.tscn" id="11_w2mip"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sigjn"]
@@ -569,6 +573,7 @@ offset_bottom = 1055.0
 layer = -1
 
 [node name="white" type="ColorRect" parent="CanvasLayer"]
+visible = false
 anchors_preset = -1
 anchor_left = -0.0609375
 anchor_top = -0.125926
@@ -652,19 +657,22 @@ tile_map_data = PackedByteArray("AAAGAAUAAAALAAcAAAAHAAQAAAAKAAkAAAAGAAQAAAAKAAk
 tile_set = SubResource("TileSet_8i6lo")
 
 [node name="powerup" parent="." instance=ExtResource("10_v228s")]
-position = Vector2(390, 616)
+position = Vector2(330, 565)
 
 [node name="powerup_speed_up" parent="." instance=ExtResource("11_w2mip")]
-position = Vector2(494, 765)
+position = Vector2(330, 765)
 
-[node name="powerup_speed_up2" parent="." instance=ExtResource("11_w2mip")]
-position = Vector2(283, 786)
+[node name="enemy" parent="." instance=ExtResource("8_pjcmy")]
+position = Vector2(1779, 438)
 
-[node name="powerup_speed_up3" parent="." instance=ExtResource("11_w2mip")]
-position = Vector2(233, 605)
+[node name="enemy2" parent="." instance=ExtResource("9_phul3")]
+position = Vector2(1999, 551)
 
-[node name="powerup_speed_up4" parent="." instance=ExtResource("11_w2mip")]
-position = Vector2(262, 433)
+[node name="enemy3" parent="." instance=ExtResource("10_cxq8m")]
+position = Vector2(1696, 562)
+
+[node name="enemy4" parent="." instance=ExtResource("11_frmow")]
+position = Vector2(2003, 741)
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
