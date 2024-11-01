@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://dq2gcvj2vt48t" path="res://assets/Smoke4.png" id="2_hx7j0"]
 [ext_resource type="Texture2D" uid="uid://bsujaivph16jf" path="res://assets/weapons/bullets/4_1.png" id="2_mlkxt"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v7x27"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7iuw"]
 atlas = ExtResource("2_mlkxt")
-region = Rect2(0, 0, 6, 4)
+region = Rect2(0, 0, 7, 4)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4nrg7"]
 atlas = ExtResource("2_hx7j0")
@@ -40,7 +40,7 @@ region = Rect2(384, 320, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_v7x27")
+"texture": SubResource("AtlasTexture_x7iuw")
 }],
 "loop": true,
 "name": &"default",
@@ -74,7 +74,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6b7or"]
-radius = 13.0
+radius = 15.8114
 
 [node name="laser_bullet" type="Area2D"]
 top_level = true
@@ -91,7 +91,6 @@ unique_name_in_owner = true
 position = Vector2(-8.59064, -0.4483)
 scale = Vector2(2.85557, 3.05297)
 sprite_frames = SubResource("SpriteFrames_ipsny")
-animation = &"explode"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

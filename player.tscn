@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://player.gd" id="1_kp1ik"]
 [ext_resource type="Texture2D" uid="uid://6n8x4j40g5c7" path="res://characters/ROGdude/idle.png" id="2_xn5gq"]
 [ext_resource type="Texture2D" uid="uid://bec380iew8qpu" path="res://characters/ROGdude/walk.png" id="3_3b055"]
-[ext_resource type="PackedScene" uid="uid://dhubpcx2cyf28" path="res://weapons/laser_pistol.tscn" id="4_tjqr7"]
+[ext_resource type="PackedScene" uid="uid://icbl8stqe4lo" path="res://weapons/red_pistol.tscn" id="4_ab452"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_urqs1"]
 atlas = ExtResource("2_xn5gq")
@@ -424,4 +424,4 @@ rotation = -1.55885
 shape = SubResource("CircleShape2D_rtbhd")
 debug_color = Color(0.922377, 5.10186e-05, 0.687741, 0.42)
 
-[node name="Gun" parent="." instance=ExtResource("4_tjqr7")]
+[node name="red_pistol" parent="." instance=ExtResource("4_ab452")]

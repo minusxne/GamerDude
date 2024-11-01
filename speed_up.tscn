@@ -1,6 +1,6 @@
 [gd_scene load_steps=40 format=3 uid="uid://bva7db4okt7js"]
 
-[ext_resource type="Script" path="res://powerup.gd" id="1_couoc"]
+[ext_resource type="Script" path="res://speed_up.gd" id="1_kwcp8"]
 [ext_resource type="Texture2D" uid="uid://dnxdqk8yqh07x" path="res://assets/powerup_effects/up_speed.png" id="2_icqgf"]
 [ext_resource type="Texture2D" uid="uid://bjge1ig1cru1f" path="res://assets/blank.png" id="3_xc8e3"]
 [ext_resource type="Texture2D" uid="uid://wi0gbdxrkj20" path="res://assets/fire_explosion1.png" id="4_j1pvv"]
@@ -256,7 +256,7 @@ height = 121.137
 [node name="powerup_speed_up" type="Area2D"]
 collision_layer = 8
 collision_mask = 8
-script = ExtResource("1_couoc")
+script = ExtResource("1_kwcp8")
 
 [node name="pickupeffect" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
