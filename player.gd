@@ -52,7 +52,25 @@ func increase_speed():
 	speed = speed + 25
 
 func increase_dps():
-	pass
+	 # List of valid gun names
+	var gun_names = ["red_pistol", "laser_pistol", "Shotgun", "Gun"]
+	var decrease_amount = 0.1
+	# Loop through each gun name and check if the player node has a matching child
+	for gun_name in gun_names:
+		if has_node(gun_name):
+			var gun_node = get_node(gun_name)
+			decrease_fire_rate(gun_node, decrease_amount)
+
+func decrease_fire_rate(gun_node: Node, decrease_amount: float) -> void:
+	if gun_node.has_node("Timer"):
+		var fire_timer = gun_node.get_node("Timer")
+		if fire_timer is Timer:
+			fire_timer.wait_time = max(0.1, fire_timer.wait_time - decrease_amount)
+			fire_timer.start()
+		else:
+			print("Error: Timer node is not of type Timer")
+	else:
+		print("Error: No Timer node found in gun")
 
 
 func cameraoffset():
