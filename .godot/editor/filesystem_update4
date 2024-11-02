@@ -9,3 +9,4 @@ res://speed_up.tscn
 res://shotgun.tscn
 res://fire_rate_up.gd
 res://weapons/red_pistol.gd
+res://weapons/bullets/red_bullet.gd
