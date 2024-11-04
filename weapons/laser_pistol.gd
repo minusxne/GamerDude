@@ -8,6 +8,9 @@ var mouse_position = get_global_mouse_position()
 @onready var pistol = %Pistol
 @onready var marker_offset_y = marker.position.y - 0
 
+func _ready():
+	add_to_group("guns")
+
 func _physics_process(delta):
 	mouse_position = get_global_mouse_position()
 	look_at(mouse_position)
@@ -24,7 +27,6 @@ func shoot():
 	new_bullet.global_position = marker.global_position
 	new_bullet.global_rotation = marker.global_rotation
 	marker.add_child(new_bullet)
-
 
 func flipGun():
 	var should_flip = mouse_position.x < player.global_position.x

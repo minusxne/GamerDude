@@ -8,6 +8,9 @@ var flipped = false
 @onready var pistol = %Pistol
 @onready var marker_offset_y = marker.position.y - 0
 
+func _ready():
+	add_to_group("guns")
+
 func _physics_process(delta):
 	mouse_position = get_global_mouse_position()
 	look_at(mouse_position)

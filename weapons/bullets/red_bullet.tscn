@@ -136,8 +136,7 @@ animations = [{
 "speed": 96.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6b7or"]
-radius = 28.8444
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cqunn"]
 
 [node name="red_bullet" type="Area2D"]
 top_level = true
@@ -158,7 +157,8 @@ animation = &"explode"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_6b7or")
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_cqunn")
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true

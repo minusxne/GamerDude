@@ -5,6 +5,9 @@ var flipped = false
 var mouse_position = get_global_mouse_position()
 @onready var player = get_node("/root/Game/Player")
 
+func _ready():
+	add_to_group("guns")
+
 func _physics_process(delta):
 	mouse_position = get_global_mouse_position()
 	flipGun()

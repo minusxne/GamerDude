@@ -12,8 +12,16 @@ func _ready():
 func _on_item_pressed(id: int):
 	match id:
 		0:
-			print("Option 1 was selected!")
+			get_tree().call_group("guns", "queue_free")
+			const laser_pistol = preload("res://weapons/laser_pistol.tscn")
+			var new_gun = laser_pistol.instantiate()
+			player.add_child(new_gun)
+			#new_gun.global_position = player.global_position
 		1:
-			print("Option 2 was selected!")
+			get_tree().call_group("guns", "queue_free")
+			const red_pistol = preload("res://weapons/red_pistol.tscn")
+			var new_gun = red_pistol.instantiate()
+			player.add_child(new_gun)
+			#new_gun.global_position = player.global_position
 		_:
-			print("Unknown option selected!")
+			pass
