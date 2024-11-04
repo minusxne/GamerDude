@@ -15,3 +15,8 @@ res://shotgun.tscn
 res://shotgun.gd
 res://weapons/laser_pistol.gd
 res://gun.gd
+res://weapons/bullets/red_bullet_old.gd
+res://red_bullet.tscn
+res://weapons/bullets/red_bullet_old.tscn
+res://red_bullet.gd
+res://player.gd

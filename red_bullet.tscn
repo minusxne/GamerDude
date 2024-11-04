@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://vhrh3p3xeiws"]
+
+[ext_resource type="Script" path="res://red_bullet.gd" id="1_rdf2x"]
+[ext_resource type="Texture2D" uid="uid://b0ieii2iopb4y" path="res://assets/weapons/bullets/9.png" id="1_vy7c5"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_w1vyk"]
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rxc31"]
+radius = 12.0416
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ef4a7"]
+atlas = ExtResource("1_vy7c5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j0feo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ef4a7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
+
+[node name="red_bullet" type="RigidBody2D"]
+mass = 0.001
+physics_material_override = SubResource("PhysicsMaterial_w1vyk")
+gravity_scale = 0.0
+script = ExtResource("1_rdf2x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rxc31")
+one_way_collision_margin = 0.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(-2, 2.98023e-08)
+scale = Vector2(-1.76268, 1.67258)
+sprite_frames = SubResource("SpriteFrames_j0feo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

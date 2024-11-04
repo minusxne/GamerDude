@@ -1,75 +1,75 @@
 [gd_scene load_steps=23 format=3 uid="uid://dh7jj7lcwiivb"]
 
-[ext_resource type="Script" path="res://weapons/bullets/red_bullet.gd" id="1_x56o8"]
-[ext_resource type="Texture2D" uid="uid://b0ieii2iopb4y" path="res://assets/weapons/bullets/9.png" id="2_f1b32"]
-[ext_resource type="Texture2D" uid="uid://bck5pot8kug3n" path="res://assets/Smoke7.png" id="3_g37yf"]
+[ext_resource type="Script" path="res://weapons/bullets/red_bullet_old.gd" id="1_w7tqy"]
+[ext_resource type="Texture2D" uid="uid://b0ieii2iopb4y" path="res://assets/weapons/bullets/9.png" id="2_5gkmx"]
+[ext_resource type="Texture2D" uid="uid://bck5pot8kug3n" path="res://assets/Smoke7.png" id="3_ijk4n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rq2wc"]
-atlas = ExtResource("2_f1b32")
+atlas = ExtResource("2_5gkmx")
 region = Rect2(0, 0, 5, 5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hlyt0"]
-atlas = ExtResource("3_g37yf")
+atlas = ExtResource("3_ijk4n")
 region = Rect2(0, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0h1nj"]
-atlas = ExtResource("3_g37yf")
+atlas = ExtResource("3_ijk4n")
 region = Rect2(64, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4112w"]
-atlas = ExtResource("3_g37yf")
+atlas = ExtResource("3_ijk4n")
 region = Rect2(128, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u82q6"]
-atlas = ExtResource("3_g37yf")
+atlas = ExtResource("3_ijk4n")
 region = Rect2(192, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5gq13"]
-atlas = ExtResource("3_g37yf")
+atlas = ExtResource("3_ijk4n")
 region = Rect2(256, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_frwda"]
-atlas = ExtResource("3_g37yf")
+atlas = ExtResource("3_ijk4n")
 region = Rect2(320, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6aq1i"]
-atlas = ExtResource("3_g37yf")
+atlas = ExtResource("3_ijk4n")
 region = Rect2(384, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ss1a8"]
-atlas = ExtResource("3_g37yf")
+atlas = ExtResource("3_ijk4n")
 region = Rect2(448, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xypr3"]
-atlas = ExtResource("3_g37yf")
+atlas = ExtResource("3_ijk4n")
 region = Rect2(512, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7sp01"]
-atlas = ExtResource("3_g37yf")
+atlas = ExtResource("3_ijk4n")
 region = Rect2(576, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0k6vi"]
-atlas = ExtResource("3_g37yf")
+atlas = ExtResource("3_ijk4n")
 region = Rect2(640, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1hijb"]
-atlas = ExtResource("3_g37yf")
+atlas = ExtResource("3_ijk4n")
 region = Rect2(704, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rmfan"]
-atlas = ExtResource("3_g37yf")
+atlas = ExtResource("3_ijk4n")
 region = Rect2(768, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ux2q"]
-atlas = ExtResource("3_g37yf")
+atlas = ExtResource("3_ijk4n")
 region = Rect2(832, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_li135"]
-atlas = ExtResource("3_g37yf")
+atlas = ExtResource("3_ijk4n")
 region = Rect2(896, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bdolq"]
-atlas = ExtResource("3_g37yf")
+atlas = ExtResource("3_ijk4n")
 region = Rect2(960, 192, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2qjmn"]
@@ -146,7 +146,7 @@ texture_filter = 1
 rotation = 0.568112
 collision_layer = 0
 collision_mask = 3
-script = ExtResource("1_x56o8")
+script = ExtResource("1_w7tqy")
 
 [node name="Projectile" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
@@ -157,7 +157,6 @@ animation = &"explode"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_cqunn")
 
 [node name="Timer" type="Timer" parent="."]

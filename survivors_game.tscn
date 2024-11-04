@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://crfgpgvybr827"]
+[gd_scene load_steps=36 format=4 uid="uid://crfgpgvybr827"]
 
 [ext_resource type="PackedScene" uid="uid://c2wsmmjynx08p" path="res://player.tscn" id="1_owmx7"]
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_p6fy1"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://8y8wadvg45uh" path="res://assets/Ws.png" id="4_yvf77"]
 [ext_resource type="Texture2D" uid="uid://dbrsnxfhnpdgy" path="res://assets/weapons/3_1.png" id="5_h3ay5"]
 [ext_resource type="Script" path="res://menu_button.gd" id="6_smpit"]
+[ext_resource type="Texture2D" uid="uid://bmcimv4a4rbgu" path="res://weapons/shotgun.png" id="6_wm8x7"]
+[ext_resource type="Texture2D" uid="uid://ct8n46gkpelw3" path="res://weapons/pistol.png" id="7_au0mt"]
 [ext_resource type="PackedScene" uid="uid://bu8ksvemwyy6m" path="res://enemy_anon.tscn" id="8_pjcmy"]
 [ext_resource type="PackedScene" uid="uid://bt2rab5k2tnj7" path="res://enemy_lenny.tscn" id="9_phul3"]
 [ext_resource type="PackedScene" uid="uid://dodvlx7ww6880" path="res://enemy_troll.tscn" id="10_cxq8m"]
@@ -612,12 +614,18 @@ offset_bottom = 31.0
 toggle_mode = false
 text = "inventory"
 switch_on_hover = true
-item_count = 2
+item_count = 4
 popup/item_0/text = "laser pistol"
 popup/item_0/icon = ExtResource("4_1oxjk")
 popup/item_1/text = "laser gun"
 popup/item_1/icon = ExtResource("5_h3ay5")
 popup/item_1/id = 1
+popup/item_2/text = "shotgun"
+popup/item_2/icon = ExtResource("6_wm8x7")
+popup/item_2/id = 2
+popup/item_3/text = "pistol"
+popup/item_3/icon = ExtResource("7_au0mt")
+popup/item_3/id = 3
 script = ExtResource("6_smpit")
 
 [node name="Player" parent="." instance=ExtResource("1_owmx7")]

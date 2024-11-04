@@ -9,6 +9,9 @@ var speed = 450
 const damage_interval = 0.5
 const damage_rate = 5
 
+func _ready() -> void:
+	add_to_group("character")
+
 func _physics_process(delta):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = direction * speed
@@ -74,7 +77,7 @@ func decrease_fire_rate(gun_node: Node, decrease_amount: float) -> void:
 
 
 func cameraoffset():
-	$Camera2D.offset = (get_global_mouse_position() - global_position) * 0.1
+	$Camera2D.offset = (get_global_mouse_position() - global_position) * 0.12
 
 func game_over():
 	print("Game Over")

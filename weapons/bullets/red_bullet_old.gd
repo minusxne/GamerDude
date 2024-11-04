@@ -1,3 +1,5 @@
+# unused
+
 extends Area2D
 
 var travelled_distance = 0
@@ -5,8 +7,6 @@ var range = 1200
 var speed = 1000
 var velocity = Vector2.ZERO
 var bounce_factor = 0.9  # Reduced slightly to prevent endless bouncing
-
-# TODO: fix broken bouncing mechanic that goes through tilemap walls
 
 func _ready():
 	velocity = Vector2(speed, 0).rotated(rotation)
@@ -22,14 +22,15 @@ func _physics_process(delta):
 		queue_free()
 
 func _on_body_entered(body: Node2D) -> void:
-	# Check if the bullet hit a horizontal or vertical surface and adjust accordingly
-	if abs(velocity.x) > abs(velocity.y):
-		# If moving horizontally, invert x-component for horizontal bounce
-		velocity.x = -velocity.x * bounce_factor
-	else:
-		# If moving vertically, invert y-component for vertical bounce
-		velocity.y = -velocity.y * bounce_factor
-
+	# Assuming `self` is an Area2D with a velocity property and a bounce_factor property
+	# Get the normal of the collision from the collision shape
+	var collision_shape = $CollisionShape2D.shape
+	if collision_shape:
+		# Calculate the normal at the point of collision
+		var collision_point = body.global_position - global_position
+		var collision_normal = collision_point.normalized()
+		# Reflect the velocity over the collision normal
+		velocity = velocity.bounce(collision_normal) * bounce_factor
 	# Check for a damage-taking function on the hit body
 	if body.has_method("take_damage"):
 		body.take_damage()
