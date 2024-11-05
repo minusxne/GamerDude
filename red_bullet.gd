@@ -6,6 +6,7 @@ var bounces = 0
 var range = 750
 var speed = 1200
 var bounce_factor = 0.9
+var bounced = false
 
 # TODO: fix sprite rotation according to velocity angle debugging
 
@@ -22,17 +23,21 @@ func _physics_process(delta):
 	# Track distance traveled using the actual movement
 	travelled_distance += linear_velocity.length() * delta
 	var velocity = linear_velocity
-	$AnimatedSprite2D.rotation = velocity.angle()
+	if (bounced):
+		#TODO: fix this so that it bounces with a 180 degree offset when bouncing down
+		$AnimatedSprite2D.rotation = 2*velocity.angle()
 	if travelled_distance > range:
 		queue_free()
 
 func _on_body_entered(body):
+	bounced = true
 	#if ((linear_velocity < Vector2(0,100) || linear_velocity < Vector2(100,0)) && (linear_velocity > Vector2(0,-100) || linear_velocity > Vector2(-100,0))):
 		#queue_free()
 	if body.is_in_group("character"):
 		queue_free()
 	if body.has_method("take_damage"):
 		queue_free()
+		body.take_damage()
 		body.take_damage()
 	if (bounces == max_bounces):
 		queue_free()

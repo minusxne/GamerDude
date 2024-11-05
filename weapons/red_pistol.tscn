@@ -6,18 +6,23 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_jc8c0"]
 radius = 591.03
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ph7nh"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_yek1n"]
 atlas = ExtResource("2_8k5tc")
-region = Rect2(0, 0, 9, 6)
+region = Rect2(0, 48, 30, 12)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8e4l7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ph7nh")
+"texture": SubResource("AtlasTexture_yek1n")
 }],
 "loop": true,
 "name": &"default",
+"speed": 0.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"shoot",
 "speed": 5.0
 }]
 
@@ -34,17 +39,17 @@ shape = SubResource("CircleShape2D_jc8c0")
 [node name="Pistol" type="AnimatedSprite2D" parent="WeaponPivot"]
 unique_name_in_owner = true
 texture_filter = 1
-position = Vector2(56, 0)
-scale = Vector2(2.58437, 2.36648)
+position = Vector2(74, 0)
+scale = Vector2(2.68125, 2.01042)
 sprite_frames = SubResource("SpriteFrames_8e4l7")
 
 [node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Pistol"]
 unique_name_in_owner = true
-position = Vector2(3.93835, -0.0764991)
+position = Vector2(3.93835, -2.06614)
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
-wait_time = 0.15
+wait_time = 0.6
 autostart = true
 
 [connection signal="animation_looped" from="WeaponPivot/Pistol" to="." method="_on_animated_sprite_2d_animation_looped"]
