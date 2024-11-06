@@ -274,7 +274,7 @@ texture_filter = 1
 position = Vector2(1.90735e-06, -1)
 scale = Vector2(3.8125, 3.58594)
 sprite_frames = SubResource("SpriteFrames_oynfy")
-animation = &"float"
+animation = &"explode"
 autoplay = "float"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

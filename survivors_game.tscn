@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://dtkngk0ftv5ak" path="res://progress_bar.tscn" id="2_q5vui"]
 [ext_resource type="Texture2D" uid="uid://dq7564jwrmf3m" path="res://assets/weapons/laser_pistol.png" id="4_1oxjk"]
 [ext_resource type="Texture2D" uid="uid://8y8wadvg45uh" path="res://assets/Ws.png" id="4_yvf77"]
-[ext_resource type="Texture2D" uid="uid://dbrsnxfhnpdgy" path="res://assets/weapons/3_1.png" id="5_h3ay5"]
 [ext_resource type="Script" path="res://menu_button.gd" id="6_smpit"]
 [ext_resource type="Texture2D" uid="uid://bmcimv4a4rbgu" path="res://weapons/shotgun.png" id="6_wm8x7"]
 [ext_resource type="Texture2D" uid="uid://ct8n46gkpelw3" path="res://weapons/pistol.png" id="7_au0mt"]
@@ -16,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c2kvcybcbtvu7" path="res://fire_rate_up.tscn" id="10_v228s"]
 [ext_resource type="PackedScene" uid="uid://cmc6vbae6ysuv" path="res://enemy_virus.tscn" id="11_frmow"]
 [ext_resource type="PackedScene" uid="uid://bva7db4okt7js" path="res://speed_up.tscn" id="11_w2mip"]
+[ext_resource type="PackedScene" uid="uid://bldl0ayus5ofo" path="res://shotgun_item.tscn" id="16_5ndcg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sigjn"]
 shader = ExtResource("2_1ia4y")
@@ -618,7 +618,6 @@ item_count = 4
 popup/item_0/text = "laser pistol"
 popup/item_0/icon = ExtResource("4_1oxjk")
 popup/item_1/text = "laser gun"
-popup/item_1/icon = ExtResource("5_h3ay5")
 popup/item_1/id = 1
 popup/item_2/text = "shotgun"
 popup/item_2/icon = ExtResource("6_wm8x7")
@@ -687,6 +686,9 @@ position = Vector2(330, 565)
 [node name="powerup_speed_up" parent="." instance=ExtResource("11_w2mip")]
 position = Vector2(330, 765)
 
+[node name="shotgun_item1" parent="." instance=ExtResource("16_5ndcg")]
+position = Vector2(762, 733)
+
 [node name="enemy" parent="." instance=ExtResource("8_pjcmy")]
 position = Vector2(1779, 438)
 
@@ -698,6 +700,24 @@ position = Vector2(1696, 562)
 
 [node name="enemy4" parent="." instance=ExtResource("11_frmow")]
 position = Vector2(2003, 741)
+
+[node name="powerup_fire_rate_up" parent="." instance=ExtResource("10_v228s")]
+position = Vector2(428, 564)
+
+[node name="powerup_fire_rate_up2" parent="." instance=ExtResource("10_v228s")]
+position = Vector2(233, 572)
+
+[node name="powerup_fire_rate_up3" parent="." instance=ExtResource("10_v228s")]
+position = Vector2(272, 625)
+
+[node name="powerup_fire_rate_up4" parent="." instance=ExtResource("10_v228s")]
+position = Vector2(383, 623)
+
+[node name="powerup_fire_rate_up5" parent="." instance=ExtResource("10_v228s")]
+position = Vector2(274, 513)
+
+[node name="powerup_fire_rate_up6" parent="." instance=ExtResource("10_v228s")]
+position = Vector2(377, 512)
 
 [connection signal="pressed" from="staticCanvasLayer/MenuButton" to="staticCanvasLayer/MenuButton" method="_on_pressed"]
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]

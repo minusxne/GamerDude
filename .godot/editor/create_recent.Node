@@ -1,10 +1,10 @@
 AnimatedSprite2D
+Timer
 CollisionShape2D
 RigidBody2D
 Area2D
 OptionButton
 MenuButton
-Timer
 AnimationPlayer
 Sprite2D
 StaticBody2D

@@ -39,8 +39,8 @@ shape = SubResource("CircleShape2D_jc8c0")
 [node name="Pistol" type="AnimatedSprite2D" parent="WeaponPivot"]
 unique_name_in_owner = true
 texture_filter = 1
-position = Vector2(74, 0)
-scale = Vector2(2.68125, 2.01042)
+position = Vector2(75, 1)
+scale = Vector2(2.60729, 2.08854)
 sprite_frames = SubResource("SpriteFrames_8e4l7")
 
 [node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Pistol"]

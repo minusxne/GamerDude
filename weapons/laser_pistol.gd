@@ -1,5 +1,6 @@
 extends Area2D
 
+var active = true
 var shootcooldown = false
 var flipped = false
 var mouse_position = get_global_mouse_position()
@@ -20,8 +21,10 @@ func _physics_process(delta):
 		shootcooldown = false
 
 func shoot():
-	pistol.play("shoot")
-	pistol.frame = 0
+	#pistol.play("shoot")
+	#pistol.frame = 0
+	if (!active):
+		return
 	const BULLET = preload("res://weapons/bullets/laser_bullet.tscn")
 	var new_bullet = BULLET.instantiate()
 	new_bullet.global_position = marker.global_position

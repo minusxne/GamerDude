@@ -62,7 +62,8 @@ func increase_dps():
 	for gun_name in gun_names:
 		if has_node(gun_name):
 			var gun_node = get_node(gun_name)
-			decrease_fire_rate(gun_node, decrease_amount)
+			if gun_node.active:
+				decrease_fire_rate(gun_node, decrease_amount)
 
 func decrease_fire_rate(gun_node: Node, decrease_amount: float) -> void:
 	if gun_node.has_node("Timer"):

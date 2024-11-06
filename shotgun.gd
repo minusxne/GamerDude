@@ -1,5 +1,6 @@
 extends Area2D
 
+var active = true
 var shootcooldown = false
 var flipped = false
 var mouse_position = get_global_mouse_position()
@@ -17,6 +18,8 @@ func _physics_process(delta):
 		shootcooldown = false
 
 func shoot():
+	if (!active):
+		return
 	const BULLET = preload("res://bullet.tscn")
 	const BULLET_COUNT = 4  # Number of bullets to shoot (spread)
 	const SPREAD_ANGLE = deg_to_rad(20)  # Spread angle in radians (adjust as needed)

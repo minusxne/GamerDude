@@ -34,11 +34,22 @@ func _on_body_entered(body):
 	#if ((linear_velocity < Vector2(0,100) || linear_velocity < Vector2(100,0)) && (linear_velocity > Vector2(0,-100) || linear_velocity > Vector2(-100,0))):
 		#queue_free()
 	if body.is_in_group("character"):
-		queue_free()
+		linear_velocity=Vector2(0,0)
+		explode()
 	if body.has_method("take_damage"):
-		queue_free()
+		linear_velocity=Vector2(0,0)
+		explode()
 		body.take_damage()
 		body.take_damage()
 	if (bounces == max_bounces):
-		queue_free()
+		linear_velocity=Vector2(0,0)
+		explode()
 	bounces += 1
+
+func explode():
+	%Timer.start()
+	%AnimatedSprite2D.play("explode")
+	%AnimatedSprite2D.scale = Vector2(1,1)
+
+func _on_timer_timeout() -> void:
+	queue_free()

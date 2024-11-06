@@ -1,9 +1,9 @@
-res://red_bullet.tscn
+res://shotgun_item.tscn
 res://survivors_game.gdshader
-res://red_bullet.gd
-res://survivors_game.tscn
+res://shotgun_item.gd
 res://player.tscn
+res://menu_button.gd
+res://survivors_game.tscn
 res://fire_rate_up.tscn
-res://weapons/red_pistol.tscn
-res://speed_up.tscn
-res://shotgun.tscn
+res://weapons/laser_pistol.tscn
+res://GlobalSignals.gd

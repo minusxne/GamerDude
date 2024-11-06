@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://vhrh3p3xeiws"]
+[gd_scene load_steps=21 format=3 uid="uid://vhrh3p3xeiws"]
 
 [ext_resource type="Script" path="res://red_bullet.gd" id="1_rdf2x"]
 [ext_resource type="Texture2D" uid="uid://b0ieii2iopb4y" path="res://assets/weapons/bullets/9.png" id="1_vy7c5"]
+[ext_resource type="Texture2D" uid="uid://bck5pot8kug3n" path="res://assets/Smoke7.png" id="3_dob7r"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_w1vyk"]
 bounce = 1.0
@@ -13,6 +14,58 @@ radius = 12.0416
 atlas = ExtResource("1_vy7c5")
 region = Rect2(0, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jb43g"]
+atlas = ExtResource("3_dob7r")
+region = Rect2(0, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbfo4"]
+atlas = ExtResource("3_dob7r")
+region = Rect2(64, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtrdk"]
+atlas = ExtResource("3_dob7r")
+region = Rect2(128, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6u17r"]
+atlas = ExtResource("3_dob7r")
+region = Rect2(192, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wonfu"]
+atlas = ExtResource("3_dob7r")
+region = Rect2(256, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ips5"]
+atlas = ExtResource("3_dob7r")
+region = Rect2(384, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbj2c"]
+atlas = ExtResource("3_dob7r")
+region = Rect2(448, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmki1"]
+atlas = ExtResource("3_dob7r")
+region = Rect2(512, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhfmq"]
+atlas = ExtResource("3_dob7r")
+region = Rect2(576, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxd2j"]
+atlas = ExtResource("3_dob7r")
+region = Rect2(640, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmwwl"]
+atlas = ExtResource("3_dob7r")
+region = Rect2(704, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pk4co"]
+atlas = ExtResource("3_dob7r")
+region = Rect2(768, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mu40y"]
+atlas = ExtResource("3_dob7r")
+region = Rect2(832, 768, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_j0feo"]
 animations = [{
 "frames": [{
@@ -22,6 +75,50 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jb43g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbfo4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtrdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6u17r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wonfu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ips5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbj2c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmki1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhfmq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxd2j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmwwl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pk4co")
+}, {
+"duration": 20.0,
+"texture": SubResource("AtlasTexture_mu40y")
+}],
+"loop": true,
+"name": &"explode",
+"speed": 42.0
 }]
 
 [node name="red_bullet" type="RigidBody2D"]
@@ -30,7 +127,7 @@ physics_material_override = SubResource("PhysicsMaterial_w1vyk")
 gravity_scale = 0.0
 script = ExtResource("1_rdf2x")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Projectile" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_rxc31")
 one_way_collision_margin = 0.0
 
@@ -40,5 +137,12 @@ texture_filter = 1
 position = Vector2(-2, 2.98023e-08)
 scale = Vector2(-1.76268, 1.67258)
 sprite_frames = SubResource("SpriteFrames_j0feo")
+animation = &"explode"
+autoplay = "default"
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.3
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
