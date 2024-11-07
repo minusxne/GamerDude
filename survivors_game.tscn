@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://crfgpgvybr827"]
+[gd_scene load_steps=40 format=4 uid="uid://crfgpgvybr827"]
 
 [ext_resource type="PackedScene" uid="uid://c2wsmmjynx08p" path="res://player.tscn" id="1_owmx7"]
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_p6fy1"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dtkngk0ftv5ak" path="res://progress_bar.tscn" id="2_q5vui"]
 [ext_resource type="Texture2D" uid="uid://dq7564jwrmf3m" path="res://assets/weapons/laser_pistol.png" id="4_1oxjk"]
 [ext_resource type="Texture2D" uid="uid://8y8wadvg45uh" path="res://assets/Ws.png" id="4_yvf77"]
+[ext_resource type="Texture2D" uid="uid://5mf3yeldowcc" path="res://assets/weapons/red_gun_sprite.png" id="5_lc0ia"]
 [ext_resource type="Script" path="res://menu_button.gd" id="6_smpit"]
 [ext_resource type="Texture2D" uid="uid://bmcimv4a4rbgu" path="res://weapons/shotgun.png" id="6_wm8x7"]
 [ext_resource type="Texture2D" uid="uid://ct8n46gkpelw3" path="res://weapons/pistol.png" id="7_au0mt"]
@@ -16,6 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://cmc6vbae6ysuv" path="res://enemy_virus.tscn" id="11_frmow"]
 [ext_resource type="PackedScene" uid="uid://bva7db4okt7js" path="res://speed_up.tscn" id="11_w2mip"]
 [ext_resource type="PackedScene" uid="uid://bldl0ayus5ofo" path="res://shotgun_item.tscn" id="16_5ndcg"]
+[ext_resource type="PackedScene" uid="uid://bu83ucr47qqvx" path="res://gun_item.tscn" id="17_suk1k"]
+[ext_resource type="PackedScene" uid="uid://i2gw1ykunnvj" path="res://red_gun_item.tscn" id="18_1kjf3"]
+[ext_resource type="PackedScene" uid="uid://sm117af56046" path="res://laser_gun_item.tscn" id="18_xopa2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sigjn"]
 shader = ExtResource("2_1ia4y")
@@ -617,7 +621,8 @@ switch_on_hover = true
 item_count = 4
 popup/item_0/text = "laser pistol"
 popup/item_0/icon = ExtResource("4_1oxjk")
-popup/item_1/text = "laser gun"
+popup/item_1/text = "red gun"
+popup/item_1/icon = ExtResource("5_lc0ia")
 popup/item_1/id = 1
 popup/item_2/text = "shotgun"
 popup/item_2/icon = ExtResource("6_wm8x7")
@@ -684,7 +689,7 @@ tile_set = SubResource("TileSet_8i6lo")
 position = Vector2(330, 565)
 
 [node name="powerup_speed_up" parent="." instance=ExtResource("11_w2mip")]
-position = Vector2(330, 765)
+position = Vector2(501, 409)
 
 [node name="shotgun_item1" parent="." instance=ExtResource("16_5ndcg")]
 position = Vector2(762, 733)
@@ -718,6 +723,15 @@ position = Vector2(274, 513)
 
 [node name="powerup_fire_rate_up6" parent="." instance=ExtResource("10_v228s")]
 position = Vector2(377, 512)
+
+[node name="gun_item2" parent="." instance=ExtResource("17_suk1k")]
+position = Vector2(592, 822)
+
+[node name="laser_gun_item" parent="." instance=ExtResource("18_xopa2")]
+position = Vector2(463, 797)
+
+[node name="red_gun_item" parent="." instance=ExtResource("18_1kjf3")]
+position = Vector2(309, 790)
 
 [connection signal="pressed" from="staticCanvasLayer/MenuButton" to="staticCanvasLayer/MenuButton" method="_on_pressed"]
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
