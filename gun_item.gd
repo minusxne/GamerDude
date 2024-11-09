@@ -12,6 +12,7 @@ func _on_body_entered(body: Node2D) -> void:
 		%item.scale = Vector2(2.2, 2.2)
 		%item.position = %item.position - Vector2(0, 15)
 		%item.play("explode")
+		%CollisionShape2D.queue_free()
 	picked_up = true
 	if (%pickupeffect != null):
 		%pickupeffect.play("default")
