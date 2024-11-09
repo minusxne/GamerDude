@@ -19,7 +19,7 @@ func _on_body_entered(body: Node2D) -> void:
 	addweapon()
 
 func addweapon():
-	inventory._on_item_pressed(5)
+	inventory._on_item_pressed(3)
 
 func _on_pickupeffect_animation_looped() -> void:
 	%pickupeffect.queue_free()
