@@ -52,7 +52,10 @@ func animations():
 			$Player_Sprite.play("default_up")
 
 func increase_speed():
-	speed = speed + 25
+	speed += 17.5
+
+func increase_health():
+	%Health.value += 10
 
 func increase_dps():
 	 # List of valid gun names
@@ -72,9 +75,9 @@ func decrease_fire_rate(gun_node: Node, decrease_amount: float) -> void:
 			fire_timer.wait_time = max(0.1, fire_timer.wait_time - decrease_amount)
 			fire_timer.start()
 		else:
-			print("Error: Timer node is not of type Timer")
+			pass
 	else:
-		print("Error: No Timer node found in gun")
+		pass
 
 
 func cameraoffset():

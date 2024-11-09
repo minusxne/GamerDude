@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://csyyaldxfy56g"]
+
+[ext_resource type="Script" path="res://mac_10.gd" id="1_sv2gn"]
+[ext_resource type="Texture2D" uid="uid://bb0rllpe2ivw2" path="res://assets/weapons/mac_10.png" id="2_qukvg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jc8c0"]
+radius = 591.03
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1aq6"]
+atlas = ExtResource("2_qukvg")
+region = Rect2(0, 0, 24, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3r2uy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1aq6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
+
+[node name="mac_10" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_sv2gn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jc8c0")
+
+[node name="WeaponPivot" type="Marker2D" parent="."]
+
+[node name="Pistol" type="AnimatedSprite2D" parent="WeaponPivot"]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(68, 5)
+scale = Vector2(2.29219, 1.96895)
+sprite_frames = SubResource("SpriteFrames_3r2uy")
+
+[node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Pistol"]
+unique_name_in_owner = true
+position = Vector2(9.16588, -4.05025)
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.1
+autostart = true
+
+[connection signal="animation_looped" from="WeaponPivot/Pistol" to="." method="_on_animated_sprite_2d_animation_looped"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

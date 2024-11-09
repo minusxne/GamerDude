@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://crfgpgvybr827"]
+[gd_scene load_steps=45 format=4 uid="uid://crfgpgvybr827"]
 
 [ext_resource type="PackedScene" uid="uid://c2wsmmjynx08p" path="res://player.tscn" id="1_owmx7"]
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_p6fy1"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ct8n46gkpelw3" path="res://weapons/pistol.png" id="7_au0mt"]
 [ext_resource type="Texture2D" uid="uid://dw5nlkgu7h8ej" path="res://pistol/sawn_off.png" id="8_p42qu"]
 [ext_resource type="PackedScene" uid="uid://bu8ksvemwyy6m" path="res://enemy_anon.tscn" id="8_pjcmy"]
+[ext_resource type="Texture2D" uid="uid://bb0rllpe2ivw2" path="res://assets/weapons/mac_10.png" id="9_mv6iy"]
 [ext_resource type="PackedScene" uid="uid://bt2rab5k2tnj7" path="res://enemy_lenny.tscn" id="9_phul3"]
 [ext_resource type="PackedScene" uid="uid://dodvlx7ww6880" path="res://enemy_troll.tscn" id="10_cxq8m"]
 [ext_resource type="PackedScene" uid="uid://c2kvcybcbtvu7" path="res://fire_rate_up.tscn" id="10_v228s"]
@@ -22,6 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://i2gw1ykunnvj" path="res://red_gun_item.tscn" id="18_1kjf3"]
 [ext_resource type="PackedScene" uid="uid://sm117af56046" path="res://laser_gun_item.tscn" id="18_xopa2"]
 [ext_resource type="PackedScene" uid="uid://c32i3hntjx8vj" path="res://sawn_off_item.tscn" id="19_qaaes"]
+[ext_resource type="PackedScene" uid="uid://dyjn4p1k5bkts" path="res://powerup_health_up.tscn" id="23_uiuom"]
+[ext_resource type="PackedScene" uid="uid://mvmddrdlk367" path="res://mac_10_item.tscn" id="25_h2af3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sigjn"]
 shader = ExtResource("2_1ia4y")
@@ -620,7 +623,7 @@ offset_bottom = 31.0
 toggle_mode = false
 text = "inventory"
 switch_on_hover = true
-item_count = 5
+item_count = 6
 popup/item_0/text = "laser pistol"
 popup/item_0/icon = ExtResource("4_1oxjk")
 popup/item_1/text = "glove gun"
@@ -635,6 +638,9 @@ popup/item_3/id = 3
 popup/item_4/text = "sawn off"
 popup/item_4/icon = ExtResource("8_p42qu")
 popup/item_4/id = 4
+popup/item_5/text = "mac 10"
+popup/item_5/icon = ExtResource("9_mv6iy")
+popup/item_5/id = 5
 script = ExtResource("6_smpit")
 
 [node name="Player" parent="." instance=ExtResource("1_owmx7")]
@@ -722,6 +728,12 @@ position = Vector2(454, 584)
 
 [node name="powerup_speed_up2" parent="." instance=ExtResource("11_w2mip")]
 position = Vector2(337, 431)
+
+[node name="powerup_health_up" parent="." instance=ExtResource("23_uiuom")]
+position = Vector2(299, 590)
+
+[node name="mac_10_item" parent="." instance=ExtResource("25_h2af3")]
+position = Vector2(786, 809)
 
 [connection signal="pressed" from="staticCanvasLayer/MenuButton" to="staticCanvasLayer/MenuButton" method="_on_pressed"]
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]

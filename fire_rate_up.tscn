@@ -264,6 +264,7 @@ texture_filter = 1
 position = Vector2(1, -65)
 scale = Vector2(3.08594, 2.84375)
 sprite_frames = SubResource("SpriteFrames_ih8on")
+animation = &"invisible"
 autoplay = "invisible"
 
 [node name="item" type="AnimatedSprite2D" parent="."]
