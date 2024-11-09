@@ -1,29 +1,43 @@
-[gd_scene load_steps=6 format=3 uid="uid://icbl8stqe4lo"]
+[gd_scene load_steps=8 format=3 uid="uid://icbl8stqe4lo"]
 
 [ext_resource type="Script" path="res://weapons/red_pistol.gd" id="1_mbd82"]
-[ext_resource type="Texture2D" uid="uid://dbrsnxfhnpdgy" path="res://assets/weapons/3_1.png" id="2_8k5tc"]
+[ext_resource type="Texture2D" uid="uid://5mf3yeldowcc" path="res://assets/weapons/red_gun_sprite.png" id="2_s85ch"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jc8c0"]
 radius = 591.03
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yek1n"]
-atlas = ExtResource("2_8k5tc")
-region = Rect2(0, 48, 30, 12)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssfew"]
+atlas = ExtResource("2_s85ch")
+region = Rect2(0, 11, 19, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8k8u"]
+atlas = ExtResource("2_s85ch")
+region = Rect2(0, 11, 19, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofajo"]
+atlas = ExtResource("2_s85ch")
+region = Rect2(0, 0, 19, 11)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8e4l7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yek1n")
+"texture": SubResource("AtlasTexture_ssfew")
 }],
 "loop": true,
 "name": &"default",
 "speed": 0.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8k8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofajo")
+}],
 "loop": true,
 "name": &"shoot",
-"speed": 5.0
+"speed": 24.0
 }]
 
 [node name="red_pistol" type="Area2D"]
@@ -39,9 +53,11 @@ shape = SubResource("CircleShape2D_jc8c0")
 [node name="Pistol" type="AnimatedSprite2D" parent="WeaponPivot"]
 unique_name_in_owner = true
 texture_filter = 1
-position = Vector2(75, 1)
-scale = Vector2(2.60729, 2.08854)
+position = Vector2(55, -1)
+scale = Vector2(2.09312, 1.58972)
 sprite_frames = SubResource("SpriteFrames_8e4l7")
+animation = &"shoot"
+autoplay = "default"
 
 [node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Pistol"]
 unique_name_in_owner = true

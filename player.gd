@@ -78,7 +78,7 @@ func decrease_fire_rate(gun_node: Node, decrease_amount: float) -> void:
 
 
 func cameraoffset():
-	$Camera2D.offset = (get_global_mouse_position() - global_position) * 0.12
+	$Camera2D.offset = (get_global_mouse_position() - global_position) * 0.10
 
 func game_over():
 	print("Game Over")

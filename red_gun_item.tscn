@@ -4,43 +4,43 @@
 [ext_resource type="Texture2D" uid="uid://bxxhrhk0r03iq" path="res://assets/powerups/red_gun_item.png" id="2_tiqs3"]
 [ext_resource type="Texture2D" uid="uid://wi0gbdxrkj20" path="res://assets/fire_explosion1.png" id="3_vn7vb"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y5tsk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxlko"]
 atlas = ExtResource("2_tiqs3")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dlnnd"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_th5xe"]
 atlas = ExtResource("2_tiqs3")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_avee5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bum4o"]
 atlas = ExtResource("2_tiqs3")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vq3o2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5i1cw"]
 atlas = ExtResource("2_tiqs3")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uaarc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_33pi3"]
 atlas = ExtResource("2_tiqs3")
 region = Rect2(128, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_meoey"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bcpul"]
 atlas = ExtResource("2_tiqs3")
 region = Rect2(160, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wyqoo"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vujh0"]
 atlas = ExtResource("2_tiqs3")
 region = Rect2(192, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w2kb4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkslp"]
 atlas = ExtResource("2_tiqs3")
 region = Rect2(224, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cad5a"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wi1ic"]
 atlas = ExtResource("2_tiqs3")
 region = Rect2(256, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ftnyp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xaphe"]
 atlas = ExtResource("2_tiqs3")
 region = Rect2(288, 0, 32, 32)
 
@@ -96,34 +96,34 @@ region = Rect2(704, 0, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_y5tsk")
+"texture": SubResource("AtlasTexture_wxlko")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dlnnd")
+"texture": SubResource("AtlasTexture_th5xe")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_avee5")
+"texture": SubResource("AtlasTexture_bum4o")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vq3o2")
+"texture": SubResource("AtlasTexture_5i1cw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uaarc")
+"texture": SubResource("AtlasTexture_33pi3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_meoey")
+"texture": SubResource("AtlasTexture_bcpul")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wyqoo")
+"texture": SubResource("AtlasTexture_vujh0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_w2kb4")
+"texture": SubResource("AtlasTexture_mkslp")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cad5a")
+"texture": SubResource("AtlasTexture_wi1ic")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ftnyp")
+"texture": SubResource("AtlasTexture_xaphe")
 }],
 "loop": true,
 "name": &"default",
@@ -188,7 +188,6 @@ texture_filter = 1
 position = Vector2(1.90735e-06, -1)
 scale = Vector2(3.8125, 3.58594)
 sprite_frames = SubResource("SpriteFrames_bnkxp")
-animation = &"explode"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -197,5 +196,5 @@ scale = Vector2(1.41731, 1.02363)
 shape = SubResource("CapsuleShape2D_osar3")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="animation_looped" from="item" to="." method="_on_animated_sprite_2d_animation_looped"]
 [connection signal="animation_looped" from="item" to="." method="_on_item_animation_looped"]
+[connection signal="animation_looped" from="item" to="." method="_on_animated_sprite_2d_animation_looped"]

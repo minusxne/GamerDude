@@ -1,0 +1,89 @@
+[gd_scene load_steps=10 format=3 uid="uid://b6g345ccdxx1n"]
+
+[ext_resource type="Script" path="res://sawn_off.gd" id="1_6ypog"]
+[ext_resource type="Texture2D" uid="uid://cpcbap0dmwlaw" path="res://assets/weapons/sawn_off.png" id="2_0vfwo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cc1oy"]
+atlas = ExtResource("2_0vfwo")
+region = Rect2(0, 0, 33, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fwxl"]
+atlas = ExtResource("2_0vfwo")
+region = Rect2(0, 0, 33, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rupu"]
+atlas = ExtResource("2_0vfwo")
+region = Rect2(33, 0, 33, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27df3"]
+atlas = ExtResource("2_0vfwo")
+region = Rect2(66, 0, 33, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11odq"]
+atlas = ExtResource("2_0vfwo")
+region = Rect2(99, 0, 33, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wpirw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cc1oy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fwxl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rupu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27df3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11odq")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 24.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jc8c0"]
+radius = 574.0
+
+[node name="SawnOff" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_6ypog")
+
+[node name="Shotgun" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(57.5116, -2.25001)
+scale = Vector2(1.83256, 1.54167)
+sprite_frames = SubResource("SpriteFrames_wpirw")
+animation = &"shoot"
+frame_progress = 0.115682
+
+[node name="ShootingPoint" type="Marker2D" parent="Shotgun"]
+unique_name_in_owner = true
+position = Vector2(13.8046, -1.29412)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jc8c0")
+
+[node name="WeaponPivot" type="Marker2D" parent="."]
+z_index = -1
+y_sort_enabled = true
+texture_filter = 1
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+autostart = true
+
+[connection signal="animation_finished" from="Shotgun" to="." method="_on_shotgun_animation_finished"]
+[connection signal="animation_looped" from="Shotgun" to="." method="_on_shotgun_animation_looped"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

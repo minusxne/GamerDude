@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://t8j6fcv4w7w8"]
+
+[ext_resource type="Script" path="res://shell.gd" id="1_ua6uf"]
+[ext_resource type="Texture2D" uid="uid://dq2xeddkrol51" path="res://assets/weapons/bullets/shell.png" id="2_xhlr0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6b7or"]
+radius = 13.0
+
+[node name="Shell" type="Area2D"]
+top_level = true
+z_index = -1
+y_sort_enabled = true
+texture_filter = 1
+rotation = 0.568112
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_ua6uf")
+
+[node name="Projectile" type="Sprite2D" parent="."]
+position = Vector2(-5.76734, -1.19079)
+scale = Vector2(0.60151, 0.603966)
+texture = ExtResource("2_xhlr0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6b7or")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

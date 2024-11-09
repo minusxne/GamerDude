@@ -6,6 +6,7 @@ const LASER_PISTOL = preload("res://weapons/laser_pistol.tscn")
 const RED_PISTOL = preload("res://weapons/red_pistol.tscn")
 const SHOTGUN = preload("res://shotgun.tscn")
 const GUN = preload("res://gun.tscn")
+const SAWN_OFF = preload("res://sawn_off.tscn")
 var guns = []
 var current_gun_id = -1  # Track the currently equipped gun ID
 
@@ -14,7 +15,8 @@ func _ready():
 		LASER_PISTOL.instantiate(),
 		RED_PISTOL.instantiate(),
 		SHOTGUN.instantiate(),
-		GUN.instantiate()
+		GUN.instantiate(),
+		SAWN_OFF.instantiate()
 	]
 	
 	for gun in guns:
@@ -47,6 +49,9 @@ func _on_item_pressed(id: int):
 			guns[id].active = true
 			guns[id].global_position = player.global_position + Vector2(0, 20)  # Adjust position for shotgun
 		3:
+			guns[id].visible = true
+			guns[id].active = true
+		4:
 			guns[id].visible = true
 			guns[id].active = true
 		_:

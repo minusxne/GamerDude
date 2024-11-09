@@ -22,8 +22,7 @@ func _physics_process(delta):
 		shootcooldown = false
 
 func shoot():
-	#pistol.play("shoot")
-	#pistol.frame = 0
+	pistol.play("shoot")
 	if (!active):
 		return
 	const BULLET = preload("res://red_bullet.tscn")
