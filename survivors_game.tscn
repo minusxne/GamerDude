@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://crfgpgvybr827"]
+[gd_scene load_steps=49 format=4 uid="uid://crfgpgvybr827"]
 
 [ext_resource type="PackedScene" uid="uid://c2wsmmjynx08p" path="res://player.tscn" id="1_owmx7"]
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_p6fy1"]
@@ -15,8 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://bb0rllpe2ivw2" path="res://assets/weapons/mac_10.png" id="9_mv6iy"]
 [ext_resource type="PackedScene" uid="uid://bt2rab5k2tnj7" path="res://enemy_lenny.tscn" id="9_phul3"]
 [ext_resource type="PackedScene" uid="uid://dodvlx7ww6880" path="res://enemy_troll.tscn" id="10_cxq8m"]
+[ext_resource type="Texture2D" uid="uid://n4kthwy5e0rr" path="res://assets/weapons/nurf.png" id="10_s3qq8"]
 [ext_resource type="PackedScene" uid="uid://c2kvcybcbtvu7" path="res://fire_rate_up.tscn" id="10_v228s"]
 [ext_resource type="PackedScene" uid="uid://cmc6vbae6ysuv" path="res://enemy_virus.tscn" id="11_frmow"]
+[ext_resource type="Texture2D" uid="uid://delw503udsquq" path="res://pistol/bk47.png" id="11_lk8nq"]
 [ext_resource type="PackedScene" uid="uid://bva7db4okt7js" path="res://speed_up.tscn" id="11_w2mip"]
 [ext_resource type="PackedScene" uid="uid://bldl0ayus5ofo" path="res://shotgun_item.tscn" id="16_5ndcg"]
 [ext_resource type="PackedScene" uid="uid://bu83ucr47qqvx" path="res://gun_item.tscn" id="17_suk1k"]
@@ -25,6 +27,8 @@
 [ext_resource type="PackedScene" uid="uid://c32i3hntjx8vj" path="res://sawn_off_item.tscn" id="19_qaaes"]
 [ext_resource type="PackedScene" uid="uid://dyjn4p1k5bkts" path="res://powerup_health_up.tscn" id="23_uiuom"]
 [ext_resource type="PackedScene" uid="uid://mvmddrdlk367" path="res://mac_10_item.tscn" id="25_h2af3"]
+[ext_resource type="PackedScene" uid="uid://cs7u60q0yajiy" path="res://bk_47_item.tscn" id="25_no8cl"]
+[ext_resource type="PackedScene" uid="uid://lw70am8frmtd" path="res://nurf_item.tscn" id="27_0v6bb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sigjn"]
 shader = ExtResource("2_1ia4y")
@@ -623,7 +627,7 @@ offset_bottom = 31.0
 toggle_mode = false
 text = "inventory"
 switch_on_hover = true
-item_count = 6
+item_count = 8
 popup/item_0/text = "laser pistol"
 popup/item_0/icon = ExtResource("4_1oxjk")
 popup/item_1/text = "glove gun"
@@ -641,6 +645,12 @@ popup/item_4/id = 4
 popup/item_5/text = "mac 10"
 popup/item_5/icon = ExtResource("9_mv6iy")
 popup/item_5/id = 5
+popup/item_6/text = "nurf"
+popup/item_6/icon = ExtResource("10_s3qq8")
+popup/item_6/id = 6
+popup/item_7/text = "bk47"
+popup/item_7/icon = ExtResource("11_lk8nq")
+popup/item_7/id = 7
 script = ExtResource("6_smpit")
 
 [node name="Player" parent="." instance=ExtResource("1_owmx7")]
@@ -709,22 +719,25 @@ position = Vector2(1696, 562)
 position = Vector2(2003, 741)
 
 [node name="laser_gun_item" parent="." instance=ExtResource("18_xopa2")]
-position = Vector2(345, 800)
+position = Vector2(399, 807)
 
 [node name="red_gun_item" parent="." instance=ExtResource("18_1kjf3")]
-position = Vector2(240, 798)
+position = Vector2(486, 811)
 
 [node name="shotgun_item1" parent="." instance=ExtResource("16_5ndcg")]
-position = Vector2(559, 809)
+position = Vector2(324, 806)
 
 [node name="sawn_off_item" parent="." instance=ExtResource("19_qaaes")]
-position = Vector2(671, 809)
+position = Vector2(575, 809)
 
 [node name="gun_item" parent="." instance=ExtResource("17_suk1k")]
-position = Vector2(456, 799)
+position = Vector2(253, 806)
+
+[node name="bk47_item" parent="." instance=ExtResource("25_no8cl")]
+position = Vector2(846, 808)
 
 [node name="powerup_fire_rate_up" parent="." instance=ExtResource("10_v228s")]
-position = Vector2(454, 584)
+position = Vector2(463, 530)
 
 [node name="powerup_speed_up2" parent="." instance=ExtResource("11_w2mip")]
 position = Vector2(337, 431)
@@ -733,7 +746,10 @@ position = Vector2(337, 431)
 position = Vector2(299, 590)
 
 [node name="mac_10_item" parent="." instance=ExtResource("25_h2af3")]
-position = Vector2(786, 809)
+position = Vector2(667, 809)
+
+[node name="nurf_item" parent="." instance=ExtResource("27_0v6bb")]
+position = Vector2(758, 807)
 
 [connection signal="pressed" from="staticCanvasLayer/MenuButton" to="staticCanvasLayer/MenuButton" method="_on_pressed"]
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]

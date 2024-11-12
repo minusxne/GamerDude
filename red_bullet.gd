@@ -4,7 +4,7 @@ var travelled_distance = 0
 var max_bounces = 5
 var bounces = 0
 var range = 750
-var speed = 1200
+var speed = 1900
 var bounce_factor = 0.9
 var bounced = false
 

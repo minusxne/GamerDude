@@ -1,0 +1,149 @@
+[gd_scene load_steps=21 format=3 uid="uid://cfpt6bho23j51"]
+
+[ext_resource type="Script" path="res://balloon.gd" id="1_n6qbt"]
+[ext_resource type="Texture2D" uid="uid://c65vnb3xlcfse" path="res://assets/weapons/bullets/balloon.png" id="2_3xtfg"]
+[ext_resource type="Texture2D" uid="uid://bck5pot8kug3n" path="res://assets/Smoke7.png" id="3_x78il"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_w1vyk"]
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rxc31"]
+radius = 12.0416
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ips3q"]
+atlas = ExtResource("2_3xtfg")
+region = Rect2(0, 0, 19, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emw5k"]
+atlas = ExtResource("3_x78il")
+region = Rect2(0, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ande5"]
+atlas = ExtResource("3_x78il")
+region = Rect2(64, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ege8e"]
+atlas = ExtResource("3_x78il")
+region = Rect2(128, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hcnd"]
+atlas = ExtResource("3_x78il")
+region = Rect2(192, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjnu8"]
+atlas = ExtResource("3_x78il")
+region = Rect2(256, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_elsnj"]
+atlas = ExtResource("3_x78il")
+region = Rect2(320, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_poehg"]
+atlas = ExtResource("3_x78il")
+region = Rect2(384, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71vyj"]
+atlas = ExtResource("3_x78il")
+region = Rect2(448, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8fxg"]
+atlas = ExtResource("3_x78il")
+region = Rect2(512, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwww1"]
+atlas = ExtResource("3_x78il")
+region = Rect2(576, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pi2wk"]
+atlas = ExtResource("3_x78il")
+region = Rect2(640, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcpdf"]
+atlas = ExtResource("3_x78il")
+region = Rect2(704, 768, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4ubp"]
+atlas = ExtResource("3_x78il")
+region = Rect2(768, 768, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ob4yl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ips3q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_emw5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ande5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ege8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hcnd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjnu8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_elsnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_poehg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71vyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8fxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwww1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pi2wk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcpdf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4ubp")
+}],
+"loop": false,
+"name": &"explode",
+"speed": 40.0
+}]
+
+[node name="balloon" type="RigidBody2D"]
+mass = 0.001
+physics_material_override = SubResource("PhysicsMaterial_w1vyk")
+gravity_scale = 0.0
+script = ExtResource("1_n6qbt")
+
+[node name="Projectile" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rxc31")
+one_way_collision_margin = 0.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(-2, 2.98023e-08)
+rotation = 3.14159
+scale = Vector2(-1.76268, 1.67258)
+sprite_frames = SubResource("SpriteFrames_ob4yl")
+animation = &"explode"
+autoplay = "default"
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.3
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

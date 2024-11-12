@@ -59,7 +59,7 @@ func increase_health():
 
 func increase_dps():
 	 # List of valid gun names
-	var gun_names = ["red_pistol", "laser_pistol", "Shotgun", "Gun"]
+	var gun_names = ["red_pistol", "laser_pistol", "Shotgun", "Gun", "SawnOff", "mac_10", "bk47", "nurf"]
 	var decrease_amount = 0.1
 	# Loop through each gun name and check if the player node has a matching child
 	for gun_name in gun_names:

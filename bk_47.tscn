@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://cv5vedn0sdf3s"]
+
+[ext_resource type="Script" path="res://bk_47.gd" id="1_s1lnl"]
+[ext_resource type="Texture2D" uid="uid://b5hhkj1555itv" path="res://assets/weapons/bk47.png" id="2_432m0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jc8c0"]
+radius = 591.03
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g38hg"]
+atlas = ExtResource("2_432m0")
+region = Rect2(0, 0, 30, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dr6g6"]
+atlas = ExtResource("2_432m0")
+region = Rect2(0, 0, 30, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsq1t"]
+atlas = ExtResource("2_432m0")
+region = Rect2(0, 11, 30, 11)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8e4l7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g38hg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dr6g6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bsq1t")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 24.0
+}]
+
+[node name="bk47" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_s1lnl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jc8c0")
+
+[node name="WeaponPivot" type="Marker2D" parent="."]
+
+[node name="Pistol" type="AnimatedSprite2D" parent="WeaponPivot"]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(55, -2)
+scale = Vector2(2.09312, 1.79486)
+sprite_frames = SubResource("SpriteFrames_8e4l7")
+autoplay = "default"
+
+[node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Pistol"]
+unique_name_in_owner = true
+position = Vector2(3.93835, -2.06614)
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.563
+autostart = true
+
+[connection signal="animation_looped" from="WeaponPivot/Pistol" to="." method="_on_animated_sprite_2d_animation_looped"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

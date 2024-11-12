@@ -6,23 +6,23 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_jc8c0"]
 radius = 591.03
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ssfew"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcmxw"]
 atlas = ExtResource("2_s85ch")
 region = Rect2(0, 11, 19, 11)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f8k8u"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wk3qq"]
 atlas = ExtResource("2_s85ch")
 region = Rect2(0, 11, 19, 11)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ofajo"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3vko"]
 atlas = ExtResource("2_s85ch")
 region = Rect2(0, 0, 19, 11)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_8e4l7"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_6kvj1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ssfew")
+"texture": SubResource("AtlasTexture_tcmxw")
 }],
 "loop": true,
 "name": &"default",
@@ -30,10 +30,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_f8k8u")
+"texture": SubResource("AtlasTexture_wk3qq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ofajo")
+"texture": SubResource("AtlasTexture_p3vko")
 }],
 "loop": true,
 "name": &"shoot",
@@ -53,10 +53,9 @@ shape = SubResource("CircleShape2D_jc8c0")
 [node name="Pistol" type="AnimatedSprite2D" parent="WeaponPivot"]
 unique_name_in_owner = true
 texture_filter = 1
-position = Vector2(55, -1)
-scale = Vector2(2.09312, 1.58972)
-sprite_frames = SubResource("SpriteFrames_8e4l7")
-animation = &"shoot"
+position = Vector2(55, -2)
+scale = Vector2(2.09312, 1.79486)
+sprite_frames = SubResource("SpriteFrames_6kvj1")
 autoplay = "default"
 
 [node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Pistol"]
