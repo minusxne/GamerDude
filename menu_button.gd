@@ -11,6 +11,7 @@ const MAC_10 = preload("res://mac_10.tscn")
 const NURF = preload("res://nurf.tscn")
 const BK47 = preload("res://bk_47.tscn")
 const POISON_GUN = preload("res://poison_gun.tscn")
+const GOLDEN_GUN = preload("res://golden_gun.tscn")
 var guns = []
 var current_gun_id = -1  # Track the currently equipped gun ID
 
@@ -24,7 +25,8 @@ func _ready():
 		MAC_10.instantiate(),
 		NURF.instantiate(),
 		BK47.instantiate(),
-		POISON_GUN.instantiate()
+		POISON_GUN.instantiate(),
+		GOLDEN_GUN.instantiate()
 	]
 	
 	for gun in guns:
@@ -46,13 +48,13 @@ func _on_item_pressed(id: int):
 		gun.active = false
 	
 	match id:
+		#TODO make an if instead of a match here
 		0:
 			guns[id].visible = true
 			guns[id].active = true
 		1:
 			guns[id].visible = true
 			guns[id].active = true
-			
 		2:
 			guns[id].visible = true
 			guns[id].active = true
@@ -73,6 +75,9 @@ func _on_item_pressed(id: int):
 			guns[id].visible = true
 			guns[id].active = true
 		8:
+			guns[id].visible = true
+			guns[id].active = true
+		9:
 			guns[id].visible = true
 			guns[id].active = true
 		_:

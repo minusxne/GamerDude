@@ -24,3 +24,9 @@ res://poison_gun.tscn
 res://poison_gun_item.gd
 res://poison_cloud.tscn
 res://poison_gun_item.tscn
+res://golden_bullet.gd
+res://golden_gun.gd
+res://golden_gun_item.gd
+res://golden_gun.tscn
+res://golden_gun_item.tscn
+res://golden_bullet.tscn
