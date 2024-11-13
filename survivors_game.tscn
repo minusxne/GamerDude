@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://crfgpgvybr827"]
+[gd_scene load_steps=51 format=4 uid="uid://crfgpgvybr827"]
 
 [ext_resource type="PackedScene" uid="uid://c2wsmmjynx08p" path="res://player.tscn" id="1_owmx7"]
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_p6fy1"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cmc6vbae6ysuv" path="res://enemy_virus.tscn" id="11_frmow"]
 [ext_resource type="Texture2D" uid="uid://delw503udsquq" path="res://pistol/bk47.png" id="11_lk8nq"]
 [ext_resource type="PackedScene" uid="uid://bva7db4okt7js" path="res://speed_up.tscn" id="11_w2mip"]
+[ext_resource type="Texture2D" uid="uid://bl0c4ijw7t4lu" path="res://assets/weapons/poison_gun.png" id="12_1qb50"]
 [ext_resource type="PackedScene" uid="uid://bldl0ayus5ofo" path="res://shotgun_item.tscn" id="16_5ndcg"]
 [ext_resource type="PackedScene" uid="uid://bu83ucr47qqvx" path="res://gun_item.tscn" id="17_suk1k"]
 [ext_resource type="PackedScene" uid="uid://i2gw1ykunnvj" path="res://red_gun_item.tscn" id="18_1kjf3"]
@@ -29,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://mvmddrdlk367" path="res://mac_10_item.tscn" id="25_h2af3"]
 [ext_resource type="PackedScene" uid="uid://cs7u60q0yajiy" path="res://bk_47_item.tscn" id="25_no8cl"]
 [ext_resource type="PackedScene" uid="uid://lw70am8frmtd" path="res://nurf_item.tscn" id="27_0v6bb"]
+[ext_resource type="PackedScene" uid="uid://c7ayrn0d2sk6p" path="res://poison_gun_item.tscn" id="31_f4kwv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sigjn"]
 shader = ExtResource("2_1ia4y")
@@ -627,7 +629,7 @@ offset_bottom = 31.0
 toggle_mode = false
 text = "inventory"
 switch_on_hover = true
-item_count = 8
+item_count = 9
 popup/item_0/text = "laser pistol"
 popup/item_0/icon = ExtResource("4_1oxjk")
 popup/item_1/text = "glove gun"
@@ -651,6 +653,9 @@ popup/item_6/id = 6
 popup/item_7/text = "bk47"
 popup/item_7/icon = ExtResource("11_lk8nq")
 popup/item_7/id = 7
+popup/item_8/text = "poison gun"
+popup/item_8/icon = ExtResource("12_1qb50")
+popup/item_8/id = 8
 script = ExtResource("6_smpit")
 
 [node name="Player" parent="." instance=ExtResource("1_owmx7")]
@@ -734,7 +739,7 @@ position = Vector2(575, 809)
 position = Vector2(253, 806)
 
 [node name="bk47_item" parent="." instance=ExtResource("25_no8cl")]
-position = Vector2(846, 808)
+position = Vector2(799, 810)
 
 [node name="powerup_fire_rate_up" parent="." instance=ExtResource("10_v228s")]
 position = Vector2(463, 530)
@@ -749,7 +754,10 @@ position = Vector2(299, 590)
 position = Vector2(667, 809)
 
 [node name="nurf_item" parent="." instance=ExtResource("27_0v6bb")]
-position = Vector2(758, 807)
+position = Vector2(735, 809)
+
+[node name="poison_gun_item" parent="." instance=ExtResource("31_f4kwv")]
+position = Vector2(885, 808)
 
 [connection signal="pressed" from="staticCanvasLayer/MenuButton" to="staticCanvasLayer/MenuButton" method="_on_pressed"]
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]

@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var knockback = false
 var is_damaged = false
-var health = 7
+var health = 20
 var knockback_strength = 100  # Adjust this value to change knockback strength
 var normal_speed = 100  # Normal movement speed
 var dir = 1

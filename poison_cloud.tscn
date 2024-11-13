@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6mhl6xyw4bua"]
+
+[ext_resource type="Script" path="res://poison_cloud.gd" id="1_fh1un"]
+[ext_resource type="Texture2D" uid="uid://d3fn8nu7ovlni" path="res://assets/weapons/bullets/poison_cloud.png" id="2_u2ahu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6b7or"]
+radius = 13.0
+
+[node name="poison_cloud" type="Area2D"]
+top_level = true
+z_index = -1
+y_sort_enabled = true
+texture_filter = 1
+rotation = 0.568112
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_fh1un")
+
+[node name="Projectile" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-7.36479, 0.204984)
+scale = Vector2(2.57189, 2.86229)
+texture = ExtResource("2_u2ahu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+shape = SubResource("CircleShape2D_6b7or")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

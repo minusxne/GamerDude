@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://bi238ng3q37tf"]
+
+[ext_resource type="Script" path="res://poison_gun.gd" id="1_drgn8"]
+[ext_resource type="Texture2D" uid="uid://bl0c4ijw7t4lu" path="res://assets/weapons/poison_gun.png" id="2_8tkwj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jc8c0"]
+radius = 591.03
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rr6jc"]
+atlas = ExtResource("2_8tkwj")
+region = Rect2(0, 0, 14, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1xpxl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rr6jc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
+
+[node name="poison_gun" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_drgn8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jc8c0")
+
+[node name="WeaponPivot" type="Marker2D" parent="."]
+
+[node name="Pistol" type="AnimatedSprite2D" parent="WeaponPivot"]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(55, -1.48715)
+scale = Vector2(2.09312, 1.89743)
+sprite_frames = SubResource("SpriteFrames_1xpxl")
+autoplay = "default"
+
+[node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Pistol"]
+unique_name_in_owner = true
+position = Vector2(3.93835, -2.06614)
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 1.2
+autostart = true
+
+[connection signal="animation_looped" from="WeaponPivot/Pistol" to="." method="_on_animated_sprite_2d_animation_looped"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

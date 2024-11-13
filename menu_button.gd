@@ -10,6 +10,7 @@ const SAWN_OFF = preload("res://sawn_off.tscn")
 const MAC_10 = preload("res://mac_10.tscn")
 const NURF = preload("res://nurf.tscn")
 const BK47 = preload("res://bk_47.tscn")
+const POISON_GUN = preload("res://poison_gun.tscn")
 var guns = []
 var current_gun_id = -1  # Track the currently equipped gun ID
 
@@ -22,7 +23,8 @@ func _ready():
 		SAWN_OFF.instantiate(),
 		MAC_10.instantiate(),
 		NURF.instantiate(),
-		BK47.instantiate()
+		BK47.instantiate(),
+		POISON_GUN.instantiate()
 	]
 	
 	for gun in guns:
@@ -50,6 +52,7 @@ func _on_item_pressed(id: int):
 		1:
 			guns[id].visible = true
 			guns[id].active = true
+			
 		2:
 			guns[id].visible = true
 			guns[id].active = true
@@ -69,5 +72,10 @@ func _on_item_pressed(id: int):
 		7:
 			guns[id].visible = true
 			guns[id].active = true
+		8:
+			guns[id].visible = true
+			guns[id].active = true
 		_:
 			return
+	
+	current_gun_id = id

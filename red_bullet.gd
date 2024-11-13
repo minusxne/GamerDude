@@ -41,6 +41,9 @@ func _on_body_entered(body):
 		explode()
 		body.take_damage()
 		body.take_damage()
+		body.take_damage()
+		body.take_damage()
+		body.take_damage()
 	if (bounces == max_bounces):
 		linear_velocity=Vector2(0,0)
 		explode()
