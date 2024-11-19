@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://pmf6qf2h3k3a"]
+
+[ext_resource type="Script" path="res://gun_item.gd" id="1_a2q7f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4utuf"]
+size = Vector2(45.2781, 59.8227)
+
+[node name="leveltransition" type="Area2D"]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_a2q7f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-1.90735e-06, -3.8147e-06)
+scale = Vector2(1.41731, 1.02363)
+shape = SubResource("RectangleShape2D_4utuf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
