@@ -1,27 +1,22 @@
-[gd_scene load_steps=43 format=3 uid="uid://ugbgpgc2m7oa"]
+[gd_scene load_steps=41 format=3 uid="uid://dss86mmg0qfpr"]
 
-[ext_resource type="Script" path="res://levels/level_1.gd" id="1_hw741"]
-[ext_resource type="Shader" path="res://levels/leveltransition.gdshader" id="2_odj3t"]
-[ext_resource type="PackedScene" uid="uid://dtkngk0ftv5ak" path="res://progress_bar.tscn" id="2_y4m1g"]
-[ext_resource type="Shader" path="res://survivors_game.gdshader" id="3_cjbcc"]
-[ext_resource type="Texture2D" uid="uid://dq7564jwrmf3m" path="res://assets/weapons/laser_pistol.png" id="4_dy2jg"]
-[ext_resource type="Texture2D" uid="uid://d1btexf1xj42m" path="res://pistol/red_gun_sprite.png" id="5_nrags"]
-[ext_resource type="Texture2D" uid="uid://bmcimv4a4rbgu" path="res://weapons/shotgun.png" id="6_2266e"]
-[ext_resource type="Texture2D" uid="uid://ct8n46gkpelw3" path="res://weapons/pistol.png" id="7_ka7l0"]
-[ext_resource type="Texture2D" uid="uid://dw5nlkgu7h8ej" path="res://pistol/sawn_off.png" id="8_yiljk"]
-[ext_resource type="Texture2D" uid="uid://bb0rllpe2ivw2" path="res://assets/weapons/mac_10.png" id="9_7ngoe"]
-[ext_resource type="Texture2D" uid="uid://n4kthwy5e0rr" path="res://assets/weapons/nurf.png" id="10_k2ubj"]
-[ext_resource type="Texture2D" uid="uid://delw503udsquq" path="res://pistol/bk47.png" id="11_spawu"]
-[ext_resource type="Texture2D" uid="uid://bl0c4ijw7t4lu" path="res://assets/weapons/poison_gun.png" id="12_oakja"]
-[ext_resource type="Texture2D" uid="uid://c5vroay6g3mqf" path="res://assets/weapons/golden_gun.png" id="13_c86mm"]
-[ext_resource type="Script" path="res://menu_button.gd" id="14_xyiip"]
-[ext_resource type="PackedScene" uid="uid://c2wsmmjynx08p" path="res://player.tscn" id="15_503c6"]
-[ext_resource type="Texture2D" uid="uid://8y8wadvg45uh" path="res://assets/Ws.png" id="16_68va0"]
-[ext_resource type="PackedScene" uid="uid://pmf6qf2h3k3a" path="res://leveltransition.tscn" id="17_4uyvb"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_n6tru"]
-shader = ExtResource("2_odj3t")
-shader_parameter/pixelFactor = 1.0
+[ext_resource type="Script" path="res://levels/level_2.gd" id="1_khruf"]
+[ext_resource type="PackedScene" uid="uid://dtkngk0ftv5ak" path="res://progress_bar.tscn" id="2_ww6tv"]
+[ext_resource type="Shader" path="res://survivors_game.gdshader" id="3_dqj4g"]
+[ext_resource type="Texture2D" uid="uid://dq7564jwrmf3m" path="res://assets/weapons/laser_pistol.png" id="4_q01it"]
+[ext_resource type="Texture2D" uid="uid://d1btexf1xj42m" path="res://pistol/red_gun_sprite.png" id="5_xkhbn"]
+[ext_resource type="Texture2D" uid="uid://bmcimv4a4rbgu" path="res://weapons/shotgun.png" id="6_mt4uq"]
+[ext_resource type="Texture2D" uid="uid://ct8n46gkpelw3" path="res://weapons/pistol.png" id="7_n2ru8"]
+[ext_resource type="Texture2D" uid="uid://dw5nlkgu7h8ej" path="res://pistol/sawn_off.png" id="8_d4aws"]
+[ext_resource type="Texture2D" uid="uid://bb0rllpe2ivw2" path="res://assets/weapons/mac_10.png" id="9_8jm72"]
+[ext_resource type="Texture2D" uid="uid://n4kthwy5e0rr" path="res://assets/weapons/nurf.png" id="10_l3h4h"]
+[ext_resource type="Texture2D" uid="uid://delw503udsquq" path="res://pistol/bk47.png" id="11_pomam"]
+[ext_resource type="Texture2D" uid="uid://bl0c4ijw7t4lu" path="res://assets/weapons/poison_gun.png" id="12_x3q4a"]
+[ext_resource type="Texture2D" uid="uid://c5vroay6g3mqf" path="res://assets/weapons/golden_gun.png" id="13_6aceo"]
+[ext_resource type="Script" path="res://menu_button.gd" id="14_txpam"]
+[ext_resource type="PackedScene" uid="uid://c2wsmmjynx08p" path="res://player.tscn" id="15_2eo6q"]
+[ext_resource type="Texture2D" uid="uid://8y8wadvg45uh" path="res://assets/Ws.png" id="16_lsp73"]
+[ext_resource type="PackedScene" uid="uid://pmf6qf2h3k3a" path="res://leveltransition.tscn" id="17_ju22u"]
 
 [sub_resource type="Animation" id="Animation_ljxdv"]
 length = 0.001
@@ -76,7 +71,7 @@ _data = {
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sigjn"]
-shader = ExtResource("3_cjbcc")
+shader = ExtResource("3_dqj4g")
 shader_parameter/overlay = true
 shader_parameter/scanlines_opacity = 0.0
 shader_parameter/scanlines_width = 0.0
@@ -196,7 +191,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(8, -4.125, 8, 3.875, -8
 agent_radius = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0p0e7"]
-texture = ExtResource("16_68va0")
+texture = ExtResource("16_lsp73")
 2:1/0 = 0
 6:1/0 = 0
 1:2/0 = 0
@@ -620,8 +615,7 @@ sources/0 = SubResource("TileSetAtlasSource_0p0e7")
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
-material = SubResource("ShaderMaterial_n6tru")
-script = ExtResource("1_hw741")
+script = ExtResource("1_khruf")
 
 [node name="transition" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
@@ -640,7 +634,7 @@ color = Color(0, 0, 0, 0)
 [node name="GUI" type="CanvasLayer" parent="."]
 layer = 2
 
-[node name="Health" parent="GUI" instance=ExtResource("2_y4m1g")]
+[node name="Health" parent="GUI" instance=ExtResource("2_ww6tv")]
 unique_name_in_owner = true
 offset_left = 34.0
 offset_top = 1023.0
@@ -682,6 +676,7 @@ offset_right = 2200.0
 offset_bottom = 1320.0
 
 [node name="MenuButton" type="MenuButton" parent="staticCanvasLayer"]
+visible = false
 offset_right = 151.0
 offset_bottom = 31.0
 toggle_mode = false
@@ -689,37 +684,37 @@ text = "inventory"
 switch_on_hover = true
 item_count = 10
 popup/item_0/text = "laser pistol"
-popup/item_0/icon = ExtResource("4_dy2jg")
+popup/item_0/icon = ExtResource("4_q01it")
 popup/item_1/text = "glove gun"
-popup/item_1/icon = ExtResource("5_nrags")
+popup/item_1/icon = ExtResource("5_xkhbn")
 popup/item_1/id = 1
 popup/item_2/text = "shotgun"
-popup/item_2/icon = ExtResource("6_2266e")
+popup/item_2/icon = ExtResource("6_mt4uq")
 popup/item_2/id = 2
 popup/item_3/text = "pistol"
-popup/item_3/icon = ExtResource("7_ka7l0")
+popup/item_3/icon = ExtResource("7_n2ru8")
 popup/item_3/id = 3
 popup/item_4/text = "sawn off"
-popup/item_4/icon = ExtResource("8_yiljk")
+popup/item_4/icon = ExtResource("8_d4aws")
 popup/item_4/id = 4
 popup/item_5/text = "mac 10"
-popup/item_5/icon = ExtResource("9_7ngoe")
+popup/item_5/icon = ExtResource("9_8jm72")
 popup/item_5/id = 5
 popup/item_6/text = "nurf"
-popup/item_6/icon = ExtResource("10_k2ubj")
+popup/item_6/icon = ExtResource("10_l3h4h")
 popup/item_6/id = 6
 popup/item_7/text = "bk47"
-popup/item_7/icon = ExtResource("11_spawu")
+popup/item_7/icon = ExtResource("11_pomam")
 popup/item_7/id = 7
 popup/item_8/text = "poison gun"
-popup/item_8/icon = ExtResource("12_oakja")
+popup/item_8/icon = ExtResource("12_x3q4a")
 popup/item_8/id = 8
 popup/item_9/text = "golden gun"
-popup/item_9/icon = ExtResource("13_c86mm")
+popup/item_9/icon = ExtResource("13_6aceo")
 popup/item_9/id = 9
-script = ExtResource("14_xyiip")
+script = ExtResource("14_txpam")
 
-[node name="Player" parent="." instance=ExtResource("15_503c6")]
+[node name="Player" parent="." instance=ExtResource("15_2eo6q")]
 y_sort_enabled = true
 position = Vector2(976, 519)
 
@@ -727,10 +722,18 @@ position = Vector2(976, 519)
 wait_time = 0.3
 autostart = true
 
-[node name="pereti" type="TileMapLayer" parent="."]
+[node name="cornerFix" type="TileMapLayer" parent="."]
 light_mask = 2
 visibility_layer = 8
-z_index = -1
+y_sort_enabled = true
+texture_filter = 1
+use_parent_material = true
+scale = Vector2(5.255, 5.255)
+tile_set = SubResource("TileSet_8i6lo")
+
+[node name="obstacole" type="TileMapLayer" parent="."]
+light_mask = 2
+visibility_layer = 8
 y_sort_enabled = true
 texture_filter = 1
 use_parent_material = true
@@ -738,9 +741,10 @@ position = Vector2(1, 2)
 scale = Vector2(5.255, 5.255)
 tile_set = SubResource("TileSet_8i6lo")
 
-[node name="obstacole" type="TileMapLayer" parent="."]
+[node name="pereti" type="TileMapLayer" parent="."]
 light_mask = 2
 visibility_layer = 8
+z_index = -1
 y_sort_enabled = true
 texture_filter = 1
 use_parent_material = true
@@ -759,17 +763,8 @@ position = Vector2(10.14, 2)
 scale = Vector2(5.225, 5.225)
 tile_set = SubResource("TileSet_8i6lo")
 
-[node name="cornerFix" type="TileMapLayer" parent="."]
-light_mask = 2
-visibility_layer = 8
-y_sort_enabled = true
-texture_filter = 1
-use_parent_material = true
-scale = Vector2(5.255, 5.255)
-tile_set = SubResource("TileSet_8i6lo")
-
-[node name="leveltransition" parent="." instance=ExtResource("17_4uyvb")]
-position = Vector2(1115, 511)
+[node name="leveltransition" parent="." instance=ExtResource("17_ju22u")]
+position = Vector2(1100, 509)
 
 [connection signal="pressed" from="staticCanvasLayer/MenuButton" to="staticCanvasLayer/MenuButton" method="_on_pressed"]
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]

@@ -19,6 +19,7 @@ This is a game created for the **ROG Challenge 2024**.
 - [Social media icon pack by craftpix](https://free-game-assets.itch.io/free-social-media-icons-pixel-art)
 - [Cyberpunk guns by craftpix](https://free-game-assets.itch.io/free-guns-for-cyberpunk-characters-pixel-art)
 - [Free smoke pixel fx 2 by bdragon1727](https://bdragon1727.itch.io/free-smoke-fx-pixel-2?download)
+- [Dimensional Portal by pixelnauta](https://pixelnauta.itch.io/pixel-dimensional-portal-32x32)
 
 
 ## License

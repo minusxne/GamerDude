@@ -1,21 +1,83 @@
-[gd_scene load_steps=3 format=3 uid="uid://pmf6qf2h3k3a"]
+[gd_scene load_steps=11 format=3 uid="uid://pmf6qf2h3k3a"]
 
-[ext_resource type="Script" path="res://gun_item.gd" id="1_a2q7f"]
+[ext_resource type="Script" path="res://leveltransition.gd" id="1_38wsm"]
+[ext_resource type="Texture2D" uid="uid://rlcs4atpu56b" path="res://assets/Dimensional_Portal.png" id="2_vok7h"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4utuf"]
-size = Vector2(45.2781, 59.8227)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ew0sq"]
+radius = 18.3446
+height = 103.553
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkbqq"]
+atlas = ExtResource("2_vok7h")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixq12"]
+atlas = ExtResource("2_vok7h")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqqf8"]
+atlas = ExtResource("2_vok7h")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cman7"]
+atlas = ExtResource("2_vok7h")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bi5sx"]
+atlas = ExtResource("2_vok7h")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jw6nj"]
+atlas = ExtResource("2_vok7h")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fpv8n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mkbqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixq12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqqf8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cman7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bi5sx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jw6nj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [node name="leveltransition" type="Area2D"]
 collision_layer = 8
 collision_mask = 8
-script = ExtResource("1_a2q7f")
+script = ExtResource("1_38wsm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(-1.90735e-06, -3.8147e-06)
+position = Vector2(4.54747e-13, -3.57628e-07)
 scale = Vector2(1.41731, 1.02363)
-shape = SubResource("RectangleShape2D_4utuf")
+shape = SubResource("CapsuleShape2D_ew0sq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-3, 0)
+scale = Vector2(3.71875, 3.39062)
+sprite_frames = SubResource("SpriteFrames_fpv8n")
+autoplay = "default"
+frame_progress = 0.686842
+
+[node name="FadeTimer" type="Timer" parent="."]
+unique_name_in_owner = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="FadeTimer" to="." method="_on_fade_timer_timeout"]

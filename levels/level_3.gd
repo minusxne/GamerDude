@@ -1,6 +1,6 @@
 extends Node2D
 
-var level = 1
+var level = 3
 
 func get_level():
 	return level

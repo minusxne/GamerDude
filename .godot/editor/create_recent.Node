@@ -1,5 +1,9 @@
-AnimatedSprite2D
 Timer
+ColorRect
+AnimationPlayer
+TextureRect
+Sprite2D
+AnimatedSprite2D
 Label
 Control
 CanvasLayer
@@ -8,7 +12,3 @@ RigidBody2D
 Area2D
 OptionButton
 MenuButton
-AnimationPlayer
-Sprite2D
-StaticBody2D
-Marker2D

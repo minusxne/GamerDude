@@ -8,7 +8,7 @@ res://default_bus_layout.tres::f79fcacca07a2d471d5d1918fc173cbc::1731178696::res
 res://gun.tscn::1fd0f11e8661bd7a8ee79d3909520bb5::1731517748::res://.godot/exported/133200997/export-b254bef953a17239ecd110db09321b87-gun.scn
 res://player.tscn::760116e33d263b5c597b087f062700ad::1731443192::res://.godot/exported/133200997/export-36a25e342948d0ceacc500772b5412b3-player.scn
 res://progress_bar.tscn::920aaa616f5d0b5a226f579cbb051b0c::1731435728::res://.godot/exported/133200997/export-34d7895b17ec39a3f4a421f8adc1170c-progress_bar.scn
-res://survivors_game.tscn::3d9dba7cb195e021a756875960632299::1731522278::res://.godot/exported/133200997/export-aec2b102d84bb89f68fff5ad31f206fa-survivors_game.scn
+res://survivors_game.tscn::3d9dba7cb195e021a756875960632299::1732124166::res://.godot/exported/133200997/export-aec2b102d84bb89f68fff5ad31f206fa-survivors_game.scn
 res://anon.tscn::115fb91db6e2ad66c752054e84eb8ea6::1731178696::res://.godot/exported/133200997/export-eb6da915824903d55d48eb0a05b32e30-anon.scn
 res://enemy_anon.tscn::95761004b464108e03eee4e078157e32::1731178696::res://.godot/exported/133200997/export-23444684527a5b6bebd310fbc6c04bcb-enemy_anon.scn
 res://enemy_lenny.tscn::818b9e6a8694eef18665a76e0f13a691::1731178696::res://.godot/exported/133200997/export-41aed77052249de700b6d78ecf97e7a0-enemy_lenny.scn
@@ -26,7 +26,7 @@ res://weapons/sword.tscn::f6bebc9cce93f13eebe61d04e2e36e8f::1731178696::res://.g
 res://speed_up.tscn::eef0239dca152047e0f78756a4367510::1731435728::res://.godot/exported/133200997/export-e9221b1bc2a4a17eb1903395f691771c-speed_up.scn
 res://weapons/bullets/red_bullet_old.tscn::d65fd004291ff6808cc63d021dc26a18::1731178696::res://.godot/exported/133200997/export-b6c89d73b5b737e7ad7651e48903a247-red_bullet_old.scn
 res://weapons/red_pistol.tscn::9828c98c11cb3afdad59acc0764c075e::1731443192::res://.godot/exported/133200997/export-a16fd0545605950f10258caa341b96d7-red_pistol.scn
-res://gun_item.tscn::cc930cd876a7923aaf932c4f66c3aa8f::1731443848::res://.godot/exported/133200997/export-73d3653b2931a819f7cc08a876568575-gun_item.scn
+res://gun_item.tscn::566e5f720ac034169e43bf2095d0b2d0::1732045825::res://.godot/exported/133200997/export-73d3653b2931a819f7cc08a876568575-gun_item.scn
 res://laser_gun_item.tscn::dc1b604d493032c3cf516511502a24af::1731178731::res://.godot/exported/133200997/export-8b4977bb084943f44b305287410fced6-laser_gun_item.scn
 res://red_bullet.tscn::0a4bddefb142784afdbf1e4501b33f5f::1731443192::res://.godot/exported/133200997/export-65039ed05d0bb0ac749efe942e5c3b59-red_bullet.scn
 res://red_gun_item.tscn::28ab7738e49f930d189e2135ac206b85::1731517748::res://.godot/exported/133200997/export-463d26d3e149696dc35cf9e876fda282-red_gun_item.scn
@@ -43,9 +43,12 @@ res://powerup_health_up.tscn::c684806ff6df14c2c525fc71cc4d88f6::1731435728::res:
 res://poison_cloud.tscn::6488f9c09ed1dab84668913d22f1da3b::1731520525::res://.godot/exported/133200997/export-aed5396be2b48cede2a2073f5a7ebb09-poison_cloud.scn
 res://poison_gun.tscn::7107d11a52ed7acde1cbcb65df4134cc::1731520525::res://.godot/exported/133200997/export-fc55296869a367aa989dbc583865ae58-poison_gun.scn
 res://poison_gun_item.tscn::21f4d687c4de1196caddd17506659fcd::1731520526::res://.godot/exported/133200997/export-b2698dd20c51ae1ad4487cd6a4d87f57-poison_gun_item.scn
-res://golden_bullet.tscn::523f8db71bbb602fdee734637c6ee4d7::1731522278::res://.godot/exported/133200997/export-9e16c9c058ccd6908ba845733e19aa21-golden_bullet.scn
-res://golden_gun.tscn::c598f3efab3d2caf526c2edaa5d9bf46::1731522278::res://.godot/exported/133200997/export-47de9e4a11f0d5bffe8feca7d081378b-golden_gun.scn
-res://golden_gun_item.tscn::c67c943f1f008995ce825913c57c3834::1731522278::res://.godot/exported/133200997/export-2401ea2bbb6e788a1543b7c5cf2ca60d-golden_gun_item.scn
+res://golden_bullet.tscn::523f8db71bbb602fdee734637c6ee4d7::1732045825::res://.godot/exported/133200997/export-9e16c9c058ccd6908ba845733e19aa21-golden_bullet.scn
+res://golden_gun.tscn::c598f3efab3d2caf526c2edaa5d9bf46::1732045825::res://.godot/exported/133200997/export-47de9e4a11f0d5bffe8feca7d081378b-golden_gun.scn
+res://golden_gun_item.tscn::c67c943f1f008995ce825913c57c3834::1732045825::res://.godot/exported/133200997/export-2401ea2bbb6e788a1543b7c5cf2ca60d-golden_gun_item.scn
 res://sawn_off.tscn::d8f61c529a0d34ab6c63ba558efad082::1731517748::res://.godot/exported/133200997/export-8e68ad75175239da85bfddb9424dcf94-sawn_off.scn
 res://sawn_off_item.tscn::9dbba52b0ebc3163474f0b941dff2886::1731178731::res://.godot/exported/133200997/export-6c31e5abd950264e1f460ead1427a4f5-sawn_off_item.scn
 res://shell.tscn::493b9a806b39e183c49a64612d1f0f03::1731178696::res://.godot/exported/133200997/export-8bca22963116d8df9f3435613094e1ec-shell.scn
+res://levels/level1.tscn::09817cb1cab3c16f3e0f38d781c4241e::1732124166::res://.godot/exported/133200997/export-b4587a2a7cb4026c0e83dd630b893882-level1.scn
+res://levels/level2.tscn::f1dbd890e6cab8a4453d5ee21b2c6106::1732124167::res://.godot/exported/133200997/export-0395fb0b237cf46a4009ef1e6d9cca7e-level2.scn
+res://leveltransition.tscn::a857454463eb3129cc888223e18b7dc8::1732124166::res://.godot/exported/133200997/export-ffe92d52c2ef20ceb6c525a381436b24-leveltransition.scn
