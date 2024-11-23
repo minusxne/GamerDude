@@ -12,7 +12,6 @@ func _process(delta: float) -> void:
 	if checkinvstate:
 		player = get_node("/root/Game/Player")
 		inventory = get_node("/root/Game/staticCanvasLayer/MenuButton")
-	
 
 func remember_weapon(gun_name: int):
 	lastgun = gun_name  # Save the last used gun

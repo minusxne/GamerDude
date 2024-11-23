@@ -2,6 +2,9 @@ extends Node2D
 
 var level = 2
 
+func _ready() -> void:
+	GameData.checkinvstate = true
+
 func _process(float) -> void:
 	if (GameData.inventory != null && GameData.player != null && GameData.checkinvstate==true):
 		GameData.restore_weapon_state()
