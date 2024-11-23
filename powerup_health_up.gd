@@ -14,7 +14,7 @@ func _on_body_entered(body: Node2D) -> void:
 	picked_up = true
 	if (%pickupeffect != null):
 		%pickupeffect.play("default")
-	# increase speed
+	# increase health
 	player.increase_health()
 
 

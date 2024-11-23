@@ -48,7 +48,7 @@ func _on_item_pressed(id: int):
 		gun.active = false
 	
 	match id:
-		#TODO make an if instead of a match here
+		#TODO make a for instead of a match here
 		0:
 			guns[id].visible = true
 			guns[id].active = true

@@ -2,14 +2,15 @@ extends CharacterBody2D
 
 signal health_depleted
 
-var health = 100.0
+var health = GameData.health
 var last_direction = Vector2(0, 1)
 var damage_timer = 0.0
-var speed = 450
+var speed = GameData.speed
 const damage_interval = 0.5
 const damage_rate = 5
 
 func _ready() -> void:
+	
 	add_to_group("character")
 
 func _physics_process(delta):
@@ -52,21 +53,16 @@ func animations():
 			$Player_Sprite.play("default_up")
 
 func increase_speed():
-	speed += 17.5
+	GameData.speed += 17.5
+	speed = GameData.speed
 
 func increase_health():
+	if (GameData.health <= 90):
+		GameData.health += 10
 	%Health.value += 10
 
 func increase_dps():
-	 # List of valid gun names
-	var gun_names = ["red_pistol", "laser_pistol", "Shotgun", "Gun", "SawnOff", "mac_10", "bk47", "nurf"]
-	var decrease_amount = 0.1
-	# Loop through each gun name and check if the player node has a matching child
-	for gun_name in gun_names:
-		if has_node(gun_name):
-			var gun_node = get_node(gun_name)
-			if gun_node.active:
-				decrease_fire_rate(gun_node, decrease_amount)
+	GameData.increasegundps()
 
 func decrease_fire_rate(gun_node: Node, decrease_amount: float) -> void:
 	if gun_node.has_node("Timer"):

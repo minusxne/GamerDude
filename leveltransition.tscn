@@ -78,6 +78,7 @@ frame_progress = 0.686842
 
 [node name="FadeTimer" type="Timer" parent="."]
 unique_name_in_owner = true
+wait_time = 0.5
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="FadeTimer" to="." method="_on_fade_timer_timeout"]

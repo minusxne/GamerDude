@@ -75,9 +75,13 @@ Settings/Show_Tooltips=true
 [application]
 
 config/name="ROGdude"
-run/main_scene="res://survivors_game.tscn"
+run/main_scene="res://levels/level1.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.png"
+
+[autoload]
+
+GameData="*res://GameData.gd"
 
 [display]
 

@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var player = get_node("/root/Game/Player")
+@onready var inventory = get_node("/root/Game/staticCanvasLayer/MenuButton")
 @onready var transition = %transition
 @onready var fadetimer = %FadeTimer
 var next_scene: PackedScene = null
@@ -19,9 +20,9 @@ func _transition_to_next_level():
 		var current_level = current_scene.get_level()  # Custom function in level script
 		var next_level_scene_path = "res://levels/level" + str(current_level + 1) + ".tscn"
 		next_scene = load(next_level_scene_path)
-		print(next_level_scene_path)
 		# Load the next scene
 		if ResourceLoader.exists(next_level_scene_path):  # Check if the scene exists
+			GameData.remember_weapon(inventory.current_gun_id)
 			fadetimer.start()
 			transition.play("fadeout")
 
