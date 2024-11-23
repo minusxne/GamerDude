@@ -20,7 +20,12 @@ This is a game created for the **ROG Challenge 2024**.
 - [Cyberpunk guns by craftpix](https://free-game-assets.itch.io/free-guns-for-cyberpunk-characters-pixel-art)
 - [Free smoke pixel fx 2 by bdragon1727](https://bdragon1727.itch.io/free-smoke-fx-pixel-2?download)
 - [Dimensional Portal by pixelnauta](https://pixelnauta.itch.io/pixel-dimensional-portal-32x32)
+- [peaberry by emhuo](https://emhuo.itch.io/peaberry-pixel-font)
 
+
+## Plugins Used
+
+- [EzDialogue by DeveloperEzra](https://github.com/real-ezTheDev/GodotEzDialoguePlugin)
 
 ## License
 

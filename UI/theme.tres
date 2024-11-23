@@ -1,0 +1,37 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://brcqgrvo72ads"]
+
+[ext_resource type="FontFile" uid="uid://doj68xfflynau" path="res://PeaberryBase.ttf" id="1_6lpik"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ink4a"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vssw5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32dqq"]
+bg_color = Color(0, 0, 0, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wngae"]
+bg_color = Color(0, 0, 0, 1)
+corner_detail = 7
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4dnt"]
+bg_color = Color(0, 0, 0, 1)
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/constants/outline_size = 8
+Button/font_sizes/font_size = 18
+Button/fonts/font = ExtResource("1_6lpik")
+Button/styles/disabled = SubResource("StyleBoxFlat_ink4a")
+Button/styles/focus = SubResource("StyleBoxTexture_vssw5")
+Button/styles/hover = SubResource("StyleBoxFlat_32dqq")
+Button/styles/normal = SubResource("StyleBoxFlat_wngae")
+Button/styles/pressed = SubResource("StyleBoxFlat_f4dnt")
+Label/constants/outline_size = 8
+Label/font_sizes/font_size = 20
+Label/fonts/font = ExtResource("1_6lpik")
+VBoxContainer/constants/separation = 15

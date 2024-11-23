@@ -1,0 +1,32 @@
+[
+	{
+		"commands_raw": "Woah, hey there!\n\n?> hello! -> 1\n?> WHERE AM I ?! -> 2",
+		"gnode_name": "start",
+		"id": 0,
+		"name": "start",
+		"position": [
+			360,
+			880
+		]
+	},
+	{
+		"commands_raw": "Are you new around here? \nI've never seen you before...",
+		"gnode_name": "1",
+		"id": 1,
+		"name": "1",
+		"position": [
+			520,
+			820
+		]
+	},
+	{
+		"commands_raw": "Woah, calm down, you're in the second nand chip!\n",
+		"gnode_name": "2",
+		"id": 2,
+		"name": "2",
+		"position": [
+			520,
+			940
+		]
+	}
+]

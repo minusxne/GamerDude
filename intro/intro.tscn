@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhocm0bpn1x8r"]
+
+[ext_resource type="Script" path="res://intro/intro.gd" id="1_6hiul"]
+[ext_resource type="Texture2D" uid="uid://delhyccx2pn1k" path="res://assets/agameby.png" id="1_x28h7"]
+
+[sub_resource type="Animation" id="Animation_vdu76"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_omtyo"]
+resource_name = "new_animation"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.26667, 2.36667, 4.43333, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h6wc3"]
+_data = {
+"RESET": SubResource("Animation_vdu76"),
+"new_animation": SubResource("Animation_omtyo")
+}
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_6hiul")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_h6wc3")
+}
+autoplay = "new_animation"
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimationPlayer"]
+texture_filter = 1
+position = Vector2(962, 542.5)
+scale = Vector2(5.42697, 5.63402)
+texture = ExtResource("1_x28h7")
+
+[node name="ColorRect" type="ColorRect" parent="AnimationPlayer"]
+offset_left = -38.0
+offset_top = -29.0
+offset_right = 1995.0
+offset_bottom = 1131.0
+color = Color(0, 0, 0, 1)
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

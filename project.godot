@@ -74,8 +74,8 @@ Settings/Show_Tooltips=true
 
 [application]
 
-config/name="ROGdude"
-run/main_scene="res://levels/level1.tscn"
+config/name="gamer dude"
+run/main_scene="res://intro/intro.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.png"
 
@@ -98,7 +98,7 @@ project/assembly_name="Getting started with Godot 4"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/colorpicker_presets/plugin.cfg")
+enabled=PackedStringArray("res://addons/colorpicker_presets/plugin.cfg", "res://addons/ez_dialogue/plugin.cfg")
 
 [input]
 

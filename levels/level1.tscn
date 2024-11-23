@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://ugbgpgc2m7oa"]
+[gd_scene load_steps=44 format=4 uid="uid://ugbgpgc2m7oa"]
 
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_hw741"]
 [ext_resource type="Shader" path="res://levels/leveltransition.gdshader" id="2_odj3t"]
@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://c2wsmmjynx08p" path="res://player.tscn" id="15_503c6"]
 [ext_resource type="Texture2D" uid="uid://8y8wadvg45uh" path="res://assets/Ws.png" id="16_68va0"]
 [ext_resource type="PackedScene" uid="uid://pmf6qf2h3k3a" path="res://leveltransition.tscn" id="17_4uyvb"]
-[ext_resource type="PackedScene" uid="uid://c2kvcybcbtvu7" path="res://fire_rate_up.tscn" id="19_b42uh"]
+[ext_resource type="PackedScene" uid="uid://bolxoofedqx0u" path="res://handye.tscn" id="19_oxsj7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n6tru"]
 shader = ExtResource("2_odj3t")
@@ -653,7 +653,6 @@ offset_bottom = 1055.0
 layer = -1
 
 [node name="white" type="ColorRect" parent="CanvasLayer"]
-visible = false
 anchors_preset = -1
 anchor_left = -0.0609375
 anchor_top = -0.125926
@@ -675,6 +674,7 @@ color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="staticCanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 4
 
 [node name="ColorRect" type="ColorRect" parent="staticCanvasLayer"]
 material = SubResource("ShaderMaterial_sigjn")
@@ -723,7 +723,7 @@ script = ExtResource("14_xyiip")
 
 [node name="Player" parent="." instance=ExtResource("15_503c6")]
 y_sort_enabled = true
-position = Vector2(976, 519)
+position = Vector2(461, 530)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.3
@@ -759,6 +759,7 @@ texture_filter = 1
 use_parent_material = true
 position = Vector2(10.14, 2)
 scale = Vector2(5.225, 5.225)
+tile_map_data = PackedByteArray("AAAMAAQAAAAKAAkAAAALAAQAAAAKAAkAAAAKAAQAAAAKAAkAAAAJAAQAAAAKAAkAAAAIAAQAAAAKAAkAAAAHAAQAAAAKAAkAAAAGAAQAAAAKAAkAAAAGAAMAAAAKAAkAAAAHAAMAAAAKAAkAAAAIAAMAAAAKAAkAAAAJAAMAAAAKAAkAAAAKAAMAAAAKAAkAAAALAAMAAAAKAAkAAAAMAAMAAAAKAAkAAAAFAAQAAAAKAAkAAAAEAAQAAAAKAAkAAAAEAAUAAAAKAAkAAAADAAUAAAAKAAkAAAAFAAUAAAAKAAkAAAAGAAUAAAAKAAkAAAAHAAUAAAAKAAkAAAAIAAUAAAAKAAkAAAAJAAUAAAAKAAkAAAAKAAUAAAAKAAkAAAALAAUAAAAKAAkAAAAFAAYAAAAKAAkAAAAEAAYAAAAKAAkAAAAGAAYAAAAKAAkAAAAHAAYAAAAKAAkAAAAIAAYAAAAKAAkAAAAJAAYAAAAKAAkAAAAKAAYAAAAKAAkAAAALAAYAAAAKAAkAAAAMAAYAAAAKAAkAAAAMAAUAAAAKAAkAAAADAAYAAAAKAAkAAAADAAcAAAAKAAkAAAACAAcAAAAKAAkAAAAEAAcAAAAKAAkAAAAFAAcAAAAKAAkAAAAGAAcAAAAKAAkAAAAHAAcAAAAKAAkAAAAIAAcAAAAKAAkAAAAJAAcAAAAKAAkAAAAKAAcAAAAKAAkAAAAGAAgAAAAKAAkAAAAHAAgAAAAKAAkAAAAIAAgAAAAKAAkAAAAJAAgAAAAKAAkAAAAKAAgAAAAKAAkAAAALAAcAAAAKAAkAAAAMAAcAAAAKAAkAAAANAAcAAAAKAAkAAAANAAYAAAAKAAkAAAANAAUAAAAKAAkAAAANAAQAAAAKAAkAAAANAAMAAAAKAAkAAAANAAgAAAAKAAkAAAAMAAgAAAAKAAkAAAALAAgAAAAKAAkAAAAFAAgAAAAKAAkAAAAEAAgAAAAKAAkAAAADAAgAAAAKAAkAAAACAAgAAAAKAAkAAAACAAYAAAAKAAkAAAACAAUAAAAKAAkAAAACAAQAAAAKAAkAAAADAAQAAAAKAAkAAAADAAMAAAAKAAkAAAAEAAMAAAAKAAkAAAAFAAMAAAAKAAkAAAACAAMAAAAKAAkAAAA=")
 tile_set = SubResource("TileSet_8i6lo")
 
 [node name="cornerFix" type="TileMapLayer" parent="."]
@@ -773,17 +774,8 @@ tile_set = SubResource("TileSet_8i6lo")
 [node name="leveltransition" parent="." instance=ExtResource("17_4uyvb")]
 position = Vector2(1115, 511)
 
-[node name="powerup_fire_rate_up" parent="." instance=ExtResource("19_b42uh")]
-position = Vector2(599, 451)
-
-[node name="powerup_fire_rate_up2" parent="." instance=ExtResource("19_b42uh")]
-position = Vector2(505, 499)
-
-[node name="powerup_fire_rate_up3" parent="." instance=ExtResource("19_b42uh")]
-position = Vector2(570, 593)
-
-[node name="powerup_fire_rate_up4" parent="." instance=ExtResource("19_b42uh")]
-position = Vector2(641, 542)
+[node name="handye" parent="." instance=ExtResource("19_oxsj7")]
+z_as_relative = false
 
 [connection signal="pressed" from="staticCanvasLayer/MenuButton" to="staticCanvasLayer/MenuButton" method="_on_pressed"]
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]

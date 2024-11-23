@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://wad8260io54k"]
+
+[ext_resource type="Script" path="res://choice_button.gd" id="1_mkvqt"]
+
+[node name="ChoiceButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "sample text"
+script = ExtResource("1_mkvqt")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

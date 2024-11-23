@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://dss86mmg0qfpr"]
+[gd_scene load_steps=41 format=3 uid="uid://dss86mmg0qfpr"]
 
 [ext_resource type="Script" path="res://levels/level_2.gd" id="1_khruf"]
 [ext_resource type="PackedScene" uid="uid://dtkngk0ftv5ak" path="res://progress_bar.tscn" id="2_ww6tv"]
@@ -17,7 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://c2wsmmjynx08p" path="res://player.tscn" id="15_2eo6q"]
 [ext_resource type="Texture2D" uid="uid://8y8wadvg45uh" path="res://assets/Ws.png" id="16_lsp73"]
 [ext_resource type="PackedScene" uid="uid://pmf6qf2h3k3a" path="res://leveltransition.tscn" id="17_ju22u"]
-[ext_resource type="PackedScene" uid="uid://cs7u60q0yajiy" path="res://bk_47_item.tscn" id="18_o1im1"]
 
 [sub_resource type="Animation" id="Animation_ljxdv"]
 length = 0.001
@@ -766,12 +765,6 @@ tile_set = SubResource("TileSet_8i6lo")
 
 [node name="leveltransition" parent="." instance=ExtResource("17_ju22u")]
 position = Vector2(1100, 509)
-
-[node name="bk47_item" parent="." instance=ExtResource("18_o1im1")]
-position = Vector2(855, 382)
-
-[node name="bk47_item2" parent="." instance=ExtResource("18_o1im1")]
-position = Vector2(932, 658)
 
 [connection signal="pressed" from="staticCanvasLayer/MenuButton" to="staticCanvasLayer/MenuButton" method="_on_pressed"]
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]

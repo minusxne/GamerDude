@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://cnfeog2ehgg1y"]
+
+[ext_resource type="Script" path="res://dialogue_box.gd" id="1_j5rvk"]
+[ext_resource type="Script" path="res://dialogue.gd" id="1_mynnl"]
+[ext_resource type="JSON" path="res://dialogue/dialogue.json" id="2_dhhqn"]
+[ext_resource type="Script" path="res://addons/ez_dialogue/ez_dialogue_node.gd" id="2_gtei3"]
+[ext_resource type="Texture2D" uid="uid://nsarpiomam1p" path="res://assets/dialoguebox.png" id="3_uvoe8"]
+[ext_resource type="Theme" uid="uid://brcqgrvo72ads" path="res://UI/theme.tres" id="4_5dwwl"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_mynnl")
+dialogue_json = ExtResource("2_dhhqn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(306.5, 70)
+scale = Vector2(0.422759, 0.3)
+texture = ExtResource("3_uvoe8")
+
+[node name="DialogueBox" type="Node2D" parent="."]
+position = Vector2(23, 23)
+script = ExtResource("1_j5rvk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogueBox"]
+z_index = 9
+z_as_relative = false
+texture_filter = 1
+offset_left = -2.0
+offset_top = 4.0
+offset_right = 565.0
+offset_bottom = 47.0
+theme = ExtResource("4_5dwwl")
+
+[node name="Text" type="Label" parent="DialogueBox/VBoxContainer"]
+layout_mode = 2
+text = "hello, if you're seeing this it means you're a legend
+go to dontpad.com/102qq for a surprise"
+
+[node name="EzDialogue" type="Node" parent="."]
+script = ExtResource("2_gtei3")
+
+[connection signal="dialogue_generated" from="EzDialogue" to="." method="_on_ez_dialogue_dialogue_generated"]

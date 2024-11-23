@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://bolxoofedqx0u"]
+
+[ext_resource type="Texture2D" uid="uid://8y8wadvg45uh" path="res://assets/Ws.png" id="1_oylup"]
+[ext_resource type="Script" path="res://handye_dialogue.gd" id="2_d721v"]
+[ext_resource type="Texture2D" uid="uid://nsarpiomam1p" path="res://assets/dialoguebox.png" id="2_qtqi1"]
+[ext_resource type="Script" path="res://dialogue_box.gd" id="3_6vlh4"]
+[ext_resource type="JSON" path="res://dialogue/dialogue.json" id="3_r2kv4"]
+[ext_resource type="Theme" uid="uid://brcqgrvo72ads" path="res://UI/theme.tres" id="4_lbgq6"]
+[ext_resource type="Script" path="res://addons/ez_dialogue/ez_dialogue_node.gd" id="5_dssuj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3sibi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6ex2"]
+atlas = ExtResource("1_oylup")
+region = Rect2(128, 408, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mx6gf"]
+atlas = ExtResource("1_oylup")
+region = Rect2(144, 408, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mweks"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6ex2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mx6gf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="handye" type="Node2D"]
+scale = Vector2(0.33, 0.33)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+texture_filter = 1
+position = Vector2(900, 600)
+scale = Vector2(13.255, 13.255)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_3sibi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+texture_filter = 1
+position = Vector2(-1, -3)
+sprite_frames = SubResource("SpriteFrames_mweks")
+autoplay = "default"
+frame_progress = 0.753465
+
+[node name="HandyeDialogue" type="Node2D" parent="."]
+scale = Vector2(2.925, 2.925)
+script = ExtResource("2_d721v")
+dialogue_json = ExtResource("3_r2kv4")
+
+[node name="Sprite2D" type="Sprite2D" parent="HandyeDialogue"]
+position = Vector2(306.5, 70)
+scale = Vector2(0.422759, 0.3)
+texture = ExtResource("2_qtqi1")
+
+[node name="DialogueBox" type="Node2D" parent="HandyeDialogue"]
+position = Vector2(23, 23)
+script = ExtResource("3_6vlh4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HandyeDialogue/DialogueBox"]
+z_index = 9
+z_as_relative = false
+texture_filter = 1
+offset_left = -2.0
+offset_top = 4.0
+offset_right = 565.0
+offset_bottom = 47.0
+mouse_filter = 2
+theme = ExtResource("4_lbgq6")
+
+[node name="Text" type="Label" parent="HandyeDialogue/DialogueBox/VBoxContainer"]
+layout_mode = 2
+text = "hello, if you're seeing this it means you're a legend
+go to dontpad.com/102qq for a surprise"
+
+[node name="EzDialogue" type="Node" parent="HandyeDialogue"]
+script = ExtResource("5_dssuj")
+
+[connection signal="dialogue_generated" from="HandyeDialogue/EzDialogue" to="HandyeDialogue" method="_on_ez_dialogue_dialogue_generated"]
