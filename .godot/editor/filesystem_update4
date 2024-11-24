@@ -16,3 +16,13 @@ res://death_menu.tscn
 res://collision_dawdadadcadshape_2d.gd
 res://r23424234224.gd
 res://collision_shape_2ddd.gd
+res://bossprojectile.tscn
+res://pig_boss.tscn
+res://pig_boss.gd
+res://weapons/bullets/laser_bullet.tscn
+res://level15.tscn
+res://enemy_anon.tscn
+res://bossprojectile.gd
+res://levels/level15.tscn
+res://skull_boss.gd
+res://skull_boss.tscn

@@ -1,0 +1,459 @@
+[gd_scene load_steps=23 format=3 uid="uid://d213o37u7riqb"]
+
+[ext_resource type="Script" path="res://skull_boss.gd" id="1_uxgq4"]
+[ext_resource type="Texture2D" uid="uid://cfeaeno4rtcn" path="res://assets/bosses/skull.png" id="2_ti3cg"]
+[ext_resource type="Texture2D" uid="uid://brogl278df4d6" path="res://assets/bosses/skull-hands.png" id="3_55c6v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2tgli"]
+size = Vector2(950, 85)
+
+[sub_resource type="Animation" id="Animation_uxte8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("headanims/CharacterBody2D/head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("headanims/CharacterBody2D/head:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("headanims/CharacterBody2D/CollisionShape2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_3t36v"]
+resource_name = "headbounce"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("headanims/CharacterBody2D/head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 8), Vector2(0, 4), Vector2(0, 8), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("headanims/CharacterBody2D/head:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("headanims/CharacterBody2D/CollisionShape2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2phib"]
+_data = {
+"RESET": SubResource("Animation_uxte8"),
+"headbounce": SubResource("Animation_3t36v")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfuqv"]
+atlas = ExtResource("2_ti3cg")
+region = Rect2(0, 0, 140, 76)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yx68r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfuqv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ig06j"]
+size = Vector2(138, 75.6072)
+
+[sub_resource type="Animation" id="Animation_glonp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hand1anims/CharacterBody2D/hand1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-118, 10)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hand1anims/CharacterBody2D/CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-122, 12)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hand1anims/CharacterBody2D/hand1:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("hand1anims/CharacterBody2D/CollisionShape2D:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_6fix3"]
+resource_name = "hand1move"
+length = 8.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hand1anims/CharacterBody2D/hand1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 4, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-118, 10), Vector2(-132, 2), Vector2(-152, 13), Vector2(-118, 10), Vector2(-118, 10)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hand1anims/CharacterBody2D/CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.0333333, 1, 2, 4, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-118, 10), Vector2(-132, 2), Vector2(-152, 13), Vector2(-118, 10), Vector2(-118, 10)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hand1anims/CharacterBody2D/hand1:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("hand1anims/CharacterBody2D/CollisionShape2D:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0sdg4"]
+_data = {
+"RESET": SubResource("Animation_glonp"),
+"hand1move": SubResource("Animation_6fix3")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vn4f"]
+atlas = ExtResource("3_55c6v")
+region = Rect2(0, 0, 70, 76)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cp6jh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vn4f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ust1q"]
+radius = 24.0
+height = 72.0
+
+[sub_resource type="Animation" id="Animation_8ktqv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hand2anims/CharacterBody2D/hand2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(112, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hand2anims/CharacterBody2D/CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(112, 5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hand2anims/CharacterBody2D/hand2:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("hand2anims/CharacterBody2D/CollisionShape2D:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_pnmd4"]
+resource_name = "hand2move"
+length = 8.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hand2anims/CharacterBody2D/hand2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 4, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(112, 5), Vector2(140, -3), Vector2(155, 11), Vector2(112, 5), Vector2(112, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hand2anims/CharacterBody2D/CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2, 4, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(112, 5), Vector2(140, -3), Vector2(155, 11), Vector2(112, 5), Vector2(112, 5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hand2anims/CharacterBody2D/hand2:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("hand2anims/CharacterBody2D/CollisionShape2D:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jaogj"]
+_data = {
+"RESET": SubResource("Animation_8ktqv"),
+"hand2move": SubResource("Animation_pnmd4")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tsk3"]
+atlas = ExtResource("3_55c6v")
+region = Rect2(70, 0, 70, 76)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aex8q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7tsk3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4yi7w"]
+radius = 26.6708
+height = 83.3795
+
+[node name="skull_boss" type="Node2D"]
+script = ExtResource("1_uxgq4")
+
+[node name="bottom" type="ColorRect" parent="."]
+visible = false
+z_index = 1
+offset_left = -473.0
+offset_top = 63.0
+offset_right = 473.0
+offset_bottom = 150.0
+color = Color(0, 0, 0, 1)
+
+[node name="barrier" type="CollisionShape2D" parent="bottom"]
+position = Vector2(472, 43.5)
+shape = SubResource("RectangleShape2D_2tgli")
+
+[node name="headanims" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2phib")
+}
+autoplay = "headbounce"
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="headanims"]
+
+[node name="head" type="AnimatedSprite2D" parent="headanims/CharacterBody2D"]
+texture_filter = 1
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_yx68r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="headanims/CharacterBody2D"]
+position = Vector2(-2, -0.802708)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_ig06j")
+
+[node name="hand1anims" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0sdg4")
+}
+autoplay = "hand1move"
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="hand1anims"]
+
+[node name="hand1" type="AnimatedSprite2D" parent="hand1anims/CharacterBody2D"]
+texture_filter = 1
+position = Vector2(-118, 10)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_cp6jh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hand1anims/CharacterBody2D"]
+position = Vector2(-122, 12)
+scale = Vector2(2, 2)
+shape = SubResource("CapsuleShape2D_ust1q")
+
+[node name="hand2anims" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jaogj")
+}
+autoplay = "hand2move"
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="hand2anims"]
+
+[node name="hand2" type="AnimatedSprite2D" parent="hand2anims/CharacterBody2D"]
+texture_filter = 1
+position = Vector2(112, 5)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_aex8q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hand2anims/CharacterBody2D"]
+position = Vector2(112, 5)
+scale = Vector2(2, 2)
+shape = SubResource("CapsuleShape2D_4yi7w")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Shoottimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 4.0
+
+[node name="Shoottimer2" type="Timer" parent="."]
+process_callback = 0
+wait_time = 4.0
+
+[node name="Shootingdelay" type="Timer" parent="."]
+wait_time = 0.05
+
+[connection signal="timeout" from="Shoottimer" to="." method="_on_shoottimer_timeout"]
+[connection signal="timeout" from="Shoottimer2" to="." method="_on_shoottimer_2_timeout"]
+[connection signal="timeout" from="Shootingdelay" to="." method="_on_shootingdelay_timeout"]

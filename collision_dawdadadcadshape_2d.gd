@@ -12,7 +12,6 @@ func _process(delta):
 	if clicked:
 		animationplayer.play("play")
 		%CollisionShape2D.clickforce = true
-		$"../../../AnimationPlayer4".play("new_animation")
 		$"../../../PlayerMenu".pressed=true
 		
 		var timer = Timer.new()
