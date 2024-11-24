@@ -4,6 +4,7 @@ var speed = 450
 var health = 100
 var lastgun = -1
 var checkinvstate = false
+var playerdeathpos
 
 @onready var player = get_node("/root/Game/Player")
 @onready var inventory = get_node("/root/Game/staticCanvasLayer/MenuButton")
@@ -20,6 +21,10 @@ func remember_weapon(gun_name: int):
 func restore_weapon_state():
 	if (lastgun > -1):
 		inventory._on_item_pressed(lastgun)
+
+func deathscreen():
+	var death_scene: PackedScene = preload("res://death_menu.tscn")
+	get_tree().change_scene_to_packed(death_scene)
 
 func increasegundps():
 	var gun_names = ["red_pistol", "laser_pistol", "Shotgun", "Gun", "SawnOff", "mac_10", "bk47", "nurf", "golden_gun", "poison_gun"]

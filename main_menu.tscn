@@ -1,10 +1,12 @@
-[gd_scene load_steps=19 format=3 uid="uid://bel48b5ab4ay4"]
+[gd_scene load_steps=22 format=3 uid="uid://bel48b5ab4ay4"]
 
 [ext_resource type="Texture2D" uid="uid://lgw86luy8u8t" path="res://assets/title.png" id="1_47e0d"]
 [ext_resource type="Script" path="res://main_menu.gd" id="1_ivy40"]
 [ext_resource type="PackedScene" uid="uid://yptckhdb2wdr" path="res://player_menu.tscn" id="2_0lfwl"]
 [ext_resource type="Script" path="res://collision_shape_2dd.gd" id="2_4wu2g"]
 [ext_resource type="Texture2D" uid="uid://qaysa4li4d41" path="res://assets/PLAY.png" id="2_dr4p7"]
+[ext_resource type="Script" path="res://collision_dawdadadcadshape_2d.gd" id="2_m42yc"]
+[ext_resource type="Texture2D" uid="uid://cmoywpxrrlhm1" path="res://assets/553a5a145816a4778ad69f9bfb0ee090.png" id="3_o28wk"]
 [ext_resource type="Script" path="res://collision_shape_2d.gd" id="3_qo76r"]
 
 [sub_resource type="Animation" id="Animation_g4y1w"]
@@ -58,6 +60,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [1]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer4/RigidBody2D:visibility_layer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
 
 [sub_resource type="Animation" id="Animation_ihieg"]
 resource_name = "play"
@@ -75,6 +89,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [1, 0, 1]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer4/RigidBody2D:visibility_layer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 0, 1]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dfv21"]
 _data = {
@@ -82,8 +108,11 @@ _data = {
 "play": SubResource("Animation_ihieg")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oi2ps"]
-size = Vector2(228.678, 71.1905)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xwln"]
+size = Vector2(187.898, 36.1111)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ou2a4"]
+size = Vector2(233.84, 73.254)
 
 [sub_resource type="Animation" id="Animation_g5clb"]
 length = 0.001
@@ -242,6 +271,27 @@ offset_right = 2122.0
 offset_bottom = 1282.0
 color = Color(0, 0, 0, 0)
 
+[node name="AnimationPlayer4" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dfv21")
+}
+
+[node name="RigidBody2D" type="RigidBody2D" parent="AnimationPlayer4"]
+position = Vector2(-13, 194)
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimationPlayer4/RigidBody2D"]
+position = Vector2(1675, 536)
+scale = Vector2(1.93722, 1.93846)
+shape = SubResource("RectangleShape2D_6xwln")
+script = ExtResource("2_m42yc")
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimationPlayer4/RigidBody2D"]
+texture_filter = 1
+position = Vector2(1676.78, 536)
+scale = Vector2(0.887802, 0.923077)
+texture = ExtResource("3_o28wk")
+
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_dfv21")
@@ -251,9 +301,9 @@ libraries = {
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimationPlayer2/RigidBody2D"]
-position = Vector2(1615.5, 542)
+position = Vector2(1619.5, 548)
 scale = Vector2(1.93722, 1.93846)
-shape = SubResource("RectangleShape2D_oi2ps")
+shape = SubResource("RectangleShape2D_ou2a4")
 script = ExtResource("2_4wu2g")
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimationPlayer2/RigidBody2D"]
@@ -286,14 +336,14 @@ script = ExtResource("3_qo76r")
 
 [node name="BG" type="ColorRect" parent="AnimationPlayer"]
 z_index = -1
-offset_left = -42.0
-offset_top = -45.0
-offset_right = 2034.0
-offset_bottom = 1194.0
+offset_left = -52.0
+offset_top = -47.0
+offset_right = 2024.0
+offset_bottom = 1192.0
 color = Color(0, 0, 0, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimationPlayer"]
 
 [node name="PlayerMenu" parent="." instance=ExtResource("2_0lfwl")]
-position = Vector2(344, 671)
+position = Vector2(382, 697)
 scale = Vector2(5.26, 5.26)

@@ -8,7 +8,7 @@ func _ready() -> void:
 	$CanvasLayer/white.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	$CanvasLayer/black.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	$staticCanvasLayer/ColorRect.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	
+	$staticCanvasLayer/MenuButton.mouse_filter = Control.MOUSE_FILTER_PASS
 
 func get_level():
 	return level

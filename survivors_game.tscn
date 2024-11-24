@@ -154,7 +154,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(8, -4.125, 8, 3.875, -8, 3.875, -8, -4)])
 agent_radius = 0.0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0p0e7"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wjqae"]
 texture = ExtResource("4_yvf77")
 2:1/0 = 0
 6:1/0 = 0
@@ -575,7 +575,7 @@ physics_layer_1/collision_layer = 1
 physics_layer_2/collision_layer = 1
 physics_layer_3/collision_layer = 1
 navigation_layer_0/layers = 1
-sources/0 = SubResource("TileSetAtlasSource_0p0e7")
+sources/0 = SubResource("TileSetAtlasSource_wjqae")
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true

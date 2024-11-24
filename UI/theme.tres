@@ -32,6 +32,6 @@ Button/styles/hover = SubResource("StyleBoxFlat_32dqq")
 Button/styles/normal = SubResource("StyleBoxFlat_wngae")
 Button/styles/pressed = SubResource("StyleBoxFlat_f4dnt")
 Label/constants/outline_size = 8
-Label/font_sizes/font_size = 20
+Label/font_sizes/font_size = 25
 Label/fonts/font = ExtResource("1_6lpik")
 VBoxContainer/constants/separation = 15

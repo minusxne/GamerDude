@@ -12,8 +12,8 @@ script = ExtResource("1_mynnl")
 dialogue_json = ExtResource("2_dhhqn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(306.5, 70)
-scale = Vector2(0.422759, 0.3)
+position = Vector2(306.5, 77.5)
+scale = Vector2(0.422759, 0.334091)
 texture = ExtResource("3_uvoe8")
 
 [node name="DialogueBox" type="Node2D" parent="."]

@@ -9,6 +9,26 @@ var dir = 1
 var knockback_dir = dir * -1
 const speed = 150
 
+var items = [
+	"res://bk_47_item.tscn",
+	"res://golden_gun_item.tscn",
+	"res://gun_item.tscn",
+	"res://laser_gun_item.tscn",
+	"res://mac_10_item.tscn",
+	"res://nurf_item.tscn",
+	"res://poison_gun_item.tscn",
+	"res://red_gun_item.tscn",
+	"res://sawn_off_item.tscn",
+	"res://shotgun_item.tscn"
+]
+
+var powerups = [
+	"res://powerup_health_up.tscn",
+	"res://fire_rate_up.tscn",
+	"res://speed_up.tscn"
+]
+
+
 @onready var player = get_node("/root/Game/Player")
 @onready var nav_agent = $"%NavigationAgent2D"
 @onready var animated_sprite = $AnimatedSprite2D
@@ -68,8 +88,33 @@ func take_damage():
 	health -= 1
 	knockbackenemy()
 	$DamageAnimTimer.start()
+	
 	if health == 0:
+		# 25% chance to drop an item or powerup
+		if randi() % 4 == 0:  # 1 in 4 chance (25%)
+			# Weighted probability: 75% spawnpowerup, 25% spawnitem
+			if randi() % 4 < 3:  # 3 out of 4 chance for spawnpowerup
+				spawnpowerup()
+			else:  # 1 out of 4 chance for spawnitem
+				spawnitem()
 		explode()
+
+func spawnpowerup():
+	randomize()
+	var random_index = randi() % powerups.size()
+	var dropped_item = load(powerups[random_index])
+	var dropped_item_instance = dropped_item.instantiate()
+	dropped_item_instance.position = position
+	get_tree().root.add_child(dropped_item_instance)
+
+func spawnitem():
+	randomize()
+	var random_index = randi() % items.size()
+	var dropped_item = load(items[random_index])
+	var dropped_item_instance = dropped_item.instantiate()
+	dropped_item_instance.position = position
+	get_tree().root.add_child(dropped_item_instance)
+
 
 func explode():
 	# Update particle texture based on current sprite frame

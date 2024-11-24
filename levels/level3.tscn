@@ -677,6 +677,7 @@ offset_right = 2200.0
 offset_bottom = 1320.0
 
 [node name="MenuButton" type="MenuButton" parent="staticCanvasLayer"]
+visible = false
 offset_right = 151.0
 offset_bottom = 31.0
 toggle_mode = false

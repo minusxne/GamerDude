@@ -51,6 +51,7 @@ autoplay = "default"
 frame_progress = 0.753465
 
 [node name="HandyeDialogue" type="Node2D" parent="."]
+z_index = 5
 scale = Vector2(2.925, 2.925)
 script = ExtResource("2_d721v")
 dialogue_json = ExtResource("3_r2kv4")

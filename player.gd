@@ -10,7 +10,6 @@ const damage_interval = 0.5
 const damage_rate = 5
 
 func _ready() -> void:
-	
 	add_to_group("character")
 
 func _physics_process(delta):
@@ -80,4 +79,4 @@ func cameraoffset():
 	$Camera2D.offset = (get_global_mouse_position() - global_position) * 0.10
 
 func game_over():
-	print("Game Over")
+	GameData.deathscreen()
