@@ -1,0 +1,220 @@
+[gd_scene load_steps=17 format=3 uid="uid://cr32t23r0otgb"]
+
+[ext_resource type="Texture2D" uid="uid://bu115538acjo5" path="res://assets/bosses/bill.png" id="1_h8uqn"]
+[ext_resource type="Texture2D" uid="uid://hwjulden3foe" path="res://assets/bosses/bill-hands.png" id="2_c25b6"]
+[ext_resource type="Texture2D" uid="uid://cn1nm38fhnub5" path="res://assets/bosses/bill-hat.png" id="3_qub31"]
+[ext_resource type="Script" path="res://handye_dialogue.gd" id="4_71oq0"]
+[ext_resource type="JSON" path="res://dialogue/bill_dialogue.json" id="5_0c6go"]
+[ext_resource type="Texture2D" uid="uid://nsarpiomam1p" path="res://assets/dialoguebox.png" id="6_ajbxv"]
+[ext_resource type="Script" path="res://dialogue_box.gd" id="7_t3frr"]
+[ext_resource type="Theme" uid="uid://brcqgrvo72ads" path="res://UI/theme.tres" id="8_vtfo7"]
+[ext_resource type="Script" path="res://addons/ez_dialogue/ez_dialogue_node.gd" id="9_1ph60"]
+
+[sub_resource type="Animation" id="Animation_gscaw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, -2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/AnimatedSprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-74, 5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/AnimatedSprite2D2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(88, 6)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/Sprite2D2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(9, -95)]
+}
+
+[sub_resource type="Animation" id="Animation_npvmb"]
+resource_name = "idle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, -2), Vector2(1, 1), Vector2(1, -2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/AnimatedSprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-74, 5), Vector2(-74, 0), Vector2(-74, 5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/AnimatedSprite2D2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(88, 6), Vector2(88, 1), Vector2(88, 6)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/Sprite2D2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(9, -95), Vector2(11, -105), Vector2(9, -95)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5fsqx"]
+_data = {
+"RESET": SubResource("Animation_gscaw"),
+"idle": SubResource("Animation_npvmb")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jy71o"]
+atlas = ExtResource("2_c25b6")
+region = Rect2(0, 0, 70, 76)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5jeoq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jy71o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bsgh"]
+atlas = ExtResource("2_c25b6")
+region = Rect2(70, 0, 70, 76)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c3wqp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bsgh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+texture_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5fsqx")
+}
+autoplay = "idle"
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimationPlayer"]
+texture_filter = 1
+position = Vector2(1, -2)
+scale = Vector2(2, 2)
+texture = ExtResource("1_h8uqn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimationPlayer"]
+texture_filter = 1
+position = Vector2(-74, 5)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_5jeoq")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="AnimationPlayer"]
+texture_filter = 1
+position = Vector2(88, 6)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_c3wqp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="AnimationPlayer"]
+texture_filter = 1
+position = Vector2(9, -95)
+scale = Vector2(2, 2)
+texture = ExtResource("3_qub31")
+
+[node name="HandyeDialogue" type="Node2D" parent="."]
+z_index = 5
+position = Vector2(-290, -247)
+script = ExtResource("4_71oq0")
+dialogue_json = ExtResource("5_0c6go")
+
+[node name="Sprite2D" type="Sprite2D" parent="HandyeDialogue"]
+position = Vector2(306.5, 70)
+scale = Vector2(0.422759, 0.3)
+texture = ExtResource("6_ajbxv")
+
+[node name="DialogueBox" type="Node2D" parent="HandyeDialogue"]
+position = Vector2(23, 23)
+script = ExtResource("7_t3frr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HandyeDialogue/DialogueBox"]
+z_index = 9
+z_as_relative = false
+texture_filter = 1
+offset_left = -2.0
+offset_top = 4.0
+offset_right = 565.0
+offset_bottom = 47.0
+mouse_filter = 2
+theme = ExtResource("8_vtfo7")
+
+[node name="Text" type="Label" parent="HandyeDialogue/DialogueBox/VBoxContainer"]
+layout_mode = 2
+
+[node name="EzDialogue" type="Node" parent="HandyeDialogue"]
+script = ExtResource("9_1ph60")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="dialogue_generated" from="HandyeDialogue/EzDialogue" to="HandyeDialogue" method="_on_ez_dialogue_dialogue_generated"]

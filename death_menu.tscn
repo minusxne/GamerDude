@@ -251,7 +251,7 @@ libraries = {
 }
 
 [node name="RigidBody2D2" type="RigidBody2D" parent="AnimationPlayer2"]
-position = Vector2(-31, 286)
+position = Vector2(-12, 286)
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimationPlayer2/RigidBody2D2"]
@@ -300,7 +300,7 @@ color = Color(0, 0, 0, 1)
 position = Vector2(1, -1)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(10, -45)
+position = Vector2(-42, -59)
 gravity_scale = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]

@@ -78,8 +78,6 @@ theme = ExtResource("4_lbgq6")
 
 [node name="Text" type="Label" parent="HandyeDialogue/DialogueBox/VBoxContainer"]
 layout_mode = 2
-text = "hello, if you're seeing this it means you're a legend
-go to dontpad.com/102qq for a surprise"
 
 [node name="EzDialogue" type="Node" parent="HandyeDialogue"]
 script = ExtResource("5_dssuj")

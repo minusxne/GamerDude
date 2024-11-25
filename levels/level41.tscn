@@ -1,0 +1,189 @@
+[gd_scene load_steps=8 format=3 uid="uid://dtypeencglh6a"]
+
+[ext_resource type="Texture2D" uid="uid://delhyccx2pn1k" path="res://assets/agameby.png" id="1_3fb8b"]
+[ext_resource type="Script" path="res://levels/level_41.gd" id="1_ev2ak"]
+[ext_resource type="Texture2D" uid="uid://i4cjdwy1kcoj" path="res://icon.png" id="2_k61jl"]
+[ext_resource type="Theme" uid="uid://brcqgrvo72ads" path="res://UI/theme.tres" id="3_yq4mt"]
+
+[sub_resource type="Animation" id="Animation_mexnj"]
+length = 35.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Agameby:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(925, 629), Vector2(925, -3200)]
+}
+
+[sub_resource type="Animation" id="Animation_cypju"]
+resource_name = "new_animation"
+length = 35.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Agameby:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 34.8333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(927, 1700), Vector2(927, -4550)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dsh36"]
+_data = {
+"RESET": SubResource("Animation_mexnj"),
+"new_animation": SubResource("Animation_cypju")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ev2ak")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -251.0
+offset_top = -178.0
+offset_right = 2228.0
+offset_bottom = 1244.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dsh36")
+}
+autoplay = "new_animation"
+
+[node name="Agameby" type="Sprite2D" parent="AnimationPlayer"]
+texture_filter = 1
+position = Vector2(925, 629)
+scale = Vector2(3.046, 3.165)
+texture = ExtResource("1_3fb8b")
+
+[node name="Icon" type="Sprite2D" parent="AnimationPlayer/Agameby"]
+position = Vector2(137.424, -69.5894)
+scale = Vector2(4.24908, 0.583874)
+texture = ExtResource("2_k61jl")
+
+[node name="Label" type="Label" parent="AnimationPlayer/Agameby"]
+offset_left = -102.312
+offset_top = -109.866
+offset_right = 422.688
+offset_bottom = 2.1338
+theme = ExtResource("3_yq4mt")
+theme_override_font_sizes/font_size = 40
+text = "A GAME BY"
+
+[node name="Label2" type="Label" parent="AnimationPlayer/Agameby"]
+offset_left = -257.873
+offset_top = 231.592
+offset_right = 267.127
+offset_bottom = 343.592
+theme = ExtResource("3_yq4mt")
+theme_override_font_sizes/font_size = 40
+text = "WITH SPECIAL
+THANKS TO "
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="AnimationPlayer/Agameby"]
+offset_left = -259.036
+offset_top = 372.113
+offset_right = 265.964
+offset_bottom = 484.113
+theme = ExtResource("3_yq4mt")
+theme_override_font_sizes/font_size = 40
+text = "CHAT GPT &
+GITHUB COPILOT
+"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="AnimationPlayer/Agameby"]
+offset_left = -258.803
+offset_top = 592.069
+offset_right = 266.197
+offset_bottom = 704.069
+theme = ExtResource("3_yq4mt")
+theme_override_font_sizes/font_size = 40
+text = "A GAME INSPIRED BY"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="AnimationPlayer/Agameby/Label4"]
+layout_mode = 0
+offset_left = -15.5793
+offset_top = 60.8627
+offset_right = 509.421
+offset_bottom = 172.863
+theme = ExtResource("3_yq4mt")
+theme_override_font_sizes/font_size = 34
+text = "ENTER THE GUNGEON
+THE BINDING OF ISAAC
+KINITO PET
+THIS IS NOT A GAME
+"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="AnimationPlayer/Agameby"]
+offset_left = -253.455
+offset_top = 961.721
+offset_right = 271.545
+offset_bottom = 1073.72
+theme = ExtResource("3_yq4mt")
+theme_override_font_sizes/font_size = 40
+text = "SOUND DESIGN BY"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="AnimationPlayer/Agameby/Label5"]
+layout_mode = 0
+offset_left = -15.5793
+offset_top = 60.8627
+offset_right = 509.421
+offset_bottom = 172.863
+theme = ExtResource("3_yq4mt")
+theme_override_font_sizes/font_size = 34
+text = "BRUH THIS GAME HAS NO SOUND"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="AnimationPlayer/Agameby"]
+offset_left = -253.455
+offset_top = 1199.58
+offset_right = 271.545
+offset_bottom = 1311.58
+theme = ExtResource("3_yq4mt")
+theme_override_font_sizes/font_size = 40
+text = "wow you're... still here"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="AnimationPlayer/Agameby/Label6"]
+layout_mode = 0
+offset_left = -15.5793
+offset_top = 60.8627
+offset_right = 509.421
+offset_bottom = 172.863
+theme = ExtResource("3_yq4mt")
+theme_override_font_sizes/font_size = 34
+text = "hope you enjoyed my game
+go play the endless mode
+|
+V"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="AnimationPlayer/Agameby/Label6/Label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.043
+anchor_bottom = 3.207
+offset_left = -95.3781
+offset_top = 25.9444
+offset_right = 76.0469
+offset_bottom = 59.7603
+theme_override_font_sizes/font_size = 60
+text = "> main menu < 
+"
+
+[connection signal="pressed" from="AnimationPlayer/Agameby/Label6/Label/Button" to="." method="_on_button_pressed"]
