@@ -643,8 +643,9 @@ autoplay = "fadein"
 speed_scale = 0.5
 
 [node name="ColorRect" type="ColorRect" parent="transition"]
-offset_left = -346.0
-offset_top = -296.0
+z_index = 6
+offset_left = -2198.0
+offset_top = -776.0
 offset_right = 2374.0
 offset_bottom = 1402.0
 color = Color(0, 0, 0, 0)

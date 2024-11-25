@@ -1,6 +1,6 @@
 extends Node
 
-var speed = 450
+var speed = 400
 var health = 100
 var lastgun = -1
 var checkinvstate = false
@@ -23,8 +23,25 @@ func restore_weapon_state():
 		inventory._on_item_pressed(lastgun)
 
 func deathscreen():
+	clean_node_tree(get_tree().root)
 	var death_scene: PackedScene = preload("res://death_menu.tscn")
 	get_tree().change_scene_to_packed(death_scene)
+
+
+func clean_node_tree(node: Node) -> void:
+	# Recursively clean up a node and its children
+	for child in node.get_children():
+		clean_node_tree(child)  # Clean the child nodes first
+	# Disconnect all signals
+	if node.has_meta("_connected_signals"):
+		var signals = node.get_meta("_connected_signals")
+		for Signal in signals:
+			if node.has_signal(Signal.name):
+				node.disconnect(Signal.name, Signal.target)
+	# Stop Timers
+	if node is Timer:
+		node.stop()
+
 
 func increasegundps():
 	var gun_names = ["red_pistol", "laser_pistol", "Shotgun", "Gun", "SawnOff", "mac_10", "bk47", "nurf", "golden_gun", "poison_gun"]

@@ -11,6 +11,7 @@ func _physics_process(delta):
 	pass
 
 func _transition_to_next_level():
+	
 	# Get the current scene
 	var current_scene = get_tree().current_scene
 	

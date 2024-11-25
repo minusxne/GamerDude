@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://vgemtgqmhfko"]
+[gd_scene load_steps=42 format=4 uid="uid://vgemtgqmhfko"]
 
 [ext_resource type="Script" path="res://levels/level_15.gd" id="1_k8rj5"]
 [ext_resource type="PackedScene" uid="uid://dtkngk0ftv5ak" path="res://progress_bar.tscn" id="2_l8fbt"]
@@ -18,11 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://8y8wadvg45uh" path="res://assets/Ws.png" id="16_2gj2t"]
 [ext_resource type="PackedScene" uid="uid://ciu7qicwtw772" path="res://pig_boss.tscn" id="17_5n6gl"]
 [ext_resource type="PackedScene" uid="uid://pmf6qf2h3k3a" path="res://leveltransition.tscn" id="18_m2svq"]
-[ext_resource type="PackedScene" uid="uid://bu8ksvemwyy6m" path="res://enemy_anon.tscn" id="19_qxf54"]
-[ext_resource type="PackedScene" uid="uid://bt2rab5k2tnj7" path="res://enemy_lenny.tscn" id="20_34me2"]
-[ext_resource type="PackedScene" uid="uid://dodvlx7ww6880" path="res://enemy_troll.tscn" id="21_7elkl"]
-[ext_resource type="PackedScene" uid="uid://cmc6vbae6ysuv" path="res://enemy_virus.tscn" id="22_mkna3"]
-[ext_resource type="PackedScene" uid="uid://c023ftxj4fjxk" path="res://pi_enemy.tscn" id="23_f5q0c"]
 
 [sub_resource type="Animation" id="Animation_ljxdv"]
 length = 0.001
@@ -779,33 +774,6 @@ position = Vector2(1, 0)
 
 [node name="leveltransition" parent="." instance=ExtResource("18_m2svq")]
 position = Vector2(207, 247)
-
-[node name="enemy" parent="." instance=ExtResource("19_qxf54")]
-position = Vector2(-133, 2603)
-
-[node name="enemy2" parent="." instance=ExtResource("20_34me2")]
-position = Vector2(129, 1942)
-
-[node name="enemy3" parent="." instance=ExtResource("21_7elkl")]
-position = Vector2(-103, 1212)
-
-[node name="enemy4" parent="." instance=ExtResource("22_mkna3")]
-position = Vector2(-103, 768)
-
-[node name="enemy5" parent="." instance=ExtResource("23_f5q0c")]
-position = Vector2(134, 1418)
-
-[node name="enemy6" parent="." instance=ExtResource("20_34me2")]
-position = Vector2(-100, 2163)
-
-[node name="enemy7" parent="." instance=ExtResource("21_7elkl")]
-position = Vector2(151, 2261)
-
-[node name="enemy8" parent="." instance=ExtResource("21_7elkl")]
-position = Vector2(-109, 1417)
-
-[node name="enemy9" parent="." instance=ExtResource("21_7elkl")]
-position = Vector2(135, 979)
 
 [connection signal="pressed" from="staticCanvasLayer/MenuButton" to="staticCanvasLayer/MenuButton" method="_on_pressed"]
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]

@@ -7,7 +7,7 @@ var knockback_strength = 100  # Adjust this value to change knockback strength
 var normal_speed = 100  # Normal movement speed
 var dir = 1
 var knockback_dir = dir * -1
-const speed = 150
+const speed = 175
 
 var items = [
 	"res://bk_47_item.tscn",
@@ -92,11 +92,12 @@ func take_damage():
 	if health == 0:
 		# 25% chance to drop an item or powerup
 		if randi() % 4 == 0:  # 1 in 4 chance (25%)
-			# Weighted probability: 75% spawnpowerup, 25% spawnitem
-			if randi() % 4 < 3:  # 3 out of 4 chance for spawnpowerup
-				spawnpowerup()
-			else:  # 1 out of 4 chance for spawnitem
+			if randi() % 2 == 0:  # 1 out of 2 chance for spawnpowerup
+				#spawnpowerup()
 				spawnitem()
+			else:  # 1 out of 2 chance for spawnitem
+				spawnpowerup()
+				#spawnitem()
 		explode()
 
 func spawnpowerup():
@@ -104,7 +105,7 @@ func spawnpowerup():
 	var random_index = randi() % powerups.size()
 	var dropped_item = load(powerups[random_index])
 	var dropped_item_instance = dropped_item.instantiate()
-	dropped_item_instance.position = position
+	dropped_item_instance.position = global_position
 	get_tree().root.add_child(dropped_item_instance)
 
 func spawnitem():
@@ -112,7 +113,7 @@ func spawnitem():
 	var random_index = randi() % items.size()
 	var dropped_item = load(items[random_index])
 	var dropped_item_instance = dropped_item.instantiate()
-	dropped_item_instance.position = position
+	dropped_item_instance.position = global_position
 	get_tree().root.add_child(dropped_item_instance)
 
 
@@ -153,7 +154,8 @@ func explode():
 	)
 	# Queue free after particles finish emitting
 	var lifetime_timer = get_tree().create_timer(explosion_particles.lifetime)
-	lifetime_timer.timeout.connect(func(): fade_timer.stop())
+	
+	#lifetime_timer.timeout.connect(func(): fade_timer.stop())
 
 
 func preprocess_texture(texture: Texture2D) -> Texture2D:

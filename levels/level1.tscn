@@ -616,6 +616,7 @@ sources/0 = SubResource("TileSetAtlasSource_0p0e7")
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
+position = Vector2(4000, 4000)
 script = ExtResource("1_hw741")
 
 [node name="transition" type="AnimationPlayer" parent="."]
@@ -627,10 +628,11 @@ autoplay = "fadein"
 speed_scale = 0.5
 
 [node name="ColorRect" type="ColorRect" parent="transition"]
-offset_left = -346.0
-offset_top = -296.0
-offset_right = 2374.0
-offset_bottom = 1402.0
+z_index = 22
+offset_left = 1977.0
+offset_top = 2569.0
+offset_right = 7701.0
+offset_bottom = 6011.0
 color = Color(0, 0, 0, 0)
 
 [node name="GUI" type="CanvasLayer" parent="."]

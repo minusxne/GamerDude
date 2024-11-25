@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://b540kpf7i3bcu"]
+[gd_scene load_steps=43 format=4 uid="uid://b540kpf7i3bcu"]
 
 [ext_resource type="Script" path="res://levels/level_30.gd" id="1_vv8rs"]
 [ext_resource type="PackedScene" uid="uid://dtkngk0ftv5ak" path="res://progress_bar.tscn" id="2_1bx3e"]
@@ -17,11 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://c2wsmmjynx08p" path="res://player.tscn" id="15_cf12k"]
 [ext_resource type="Texture2D" uid="uid://8y8wadvg45uh" path="res://assets/Ws.png" id="16_qk2px"]
 [ext_resource type="PackedScene" uid="uid://pmf6qf2h3k3a" path="res://leveltransition.tscn" id="17_l6df7"]
-[ext_resource type="PackedScene" uid="uid://bu8ksvemwyy6m" path="res://enemy_anon.tscn" id="18_ouoyo"]
-[ext_resource type="PackedScene" uid="uid://bt2rab5k2tnj7" path="res://enemy_lenny.tscn" id="19_85kqc"]
-[ext_resource type="PackedScene" uid="uid://dodvlx7ww6880" path="res://enemy_troll.tscn" id="20_stjkv"]
-[ext_resource type="PackedScene" uid="uid://cmc6vbae6ysuv" path="res://enemy_virus.tscn" id="21_hp8t5"]
-[ext_resource type="PackedScene" uid="uid://c023ftxj4fjxk" path="res://pi_enemy.tscn" id="22_3ldx1"]
 [ext_resource type="PackedScene" uid="uid://d213o37u7riqb" path="res://skull_boss.tscn" id="23_0emg2"]
 [ext_resource type="PackedScene" uid="uid://dyjn4p1k5bkts" path="res://powerup_health_up.tscn" id="24_jhmes"]
 
@@ -778,65 +773,8 @@ tile_set = SubResource("TileSet_8i6lo")
 [node name="leveltransition" parent="." instance=ExtResource("17_l6df7")]
 position = Vector2(3, 249)
 
-[node name="enemy" parent="." instance=ExtResource("18_ouoyo")]
-position = Vector2(-133, 2603)
-
-[node name="enemy2" parent="." instance=ExtResource("19_85kqc")]
-position = Vector2(129, 1942)
-
-[node name="enemy3" parent="." instance=ExtResource("20_stjkv")]
-position = Vector2(-103, 1212)
-
-[node name="enemy4" parent="." instance=ExtResource("21_hp8t5")]
-position = Vector2(-103, 768)
-
-[node name="enemy5" parent="." instance=ExtResource("22_3ldx1")]
-position = Vector2(134, 1418)
-
-[node name="enemy6" parent="." instance=ExtResource("19_85kqc")]
-position = Vector2(-100, 2163)
-
-[node name="enemy7" parent="." instance=ExtResource("20_stjkv")]
-position = Vector2(151, 2261)
-
-[node name="enemy8" parent="." instance=ExtResource("20_stjkv")]
-position = Vector2(-109, 1417)
-
-[node name="enemy9" parent="." instance=ExtResource("20_stjkv")]
-position = Vector2(135, 979)
-
 [node name="skull_boss" parent="." instance=ExtResource("23_0emg2")]
 position = Vector2(-3, 3)
-
-[node name="enemy10" parent="." instance=ExtResource("20_stjkv")]
-position = Vector2(-466, 516)
-
-[node name="enemy11" parent="." instance=ExtResource("19_85kqc")]
-position = Vector2(-162, 488)
-
-[node name="enemy12" parent="." instance=ExtResource("22_3ldx1")]
-position = Vector2(222, 592)
-
-[node name="enemy13" parent="." instance=ExtResource("21_hp8t5")]
-position = Vector2(502, 704)
-
-[node name="enemy14" parent="." instance=ExtResource("20_stjkv")]
-position = Vector2(-330, 784)
-
-[node name="enemy15" parent="." instance=ExtResource("19_85kqc")]
-position = Vector2(226, 784)
-
-[node name="enemy16" parent="." instance=ExtResource("18_ouoyo")]
-position = Vector2(338, 864)
-
-[node name="enemy17" parent="." instance=ExtResource("22_3ldx1")]
-position = Vector2(-138, 956)
-
-[node name="enemy18" parent="." instance=ExtResource("21_hp8t5")]
-position = Vector2(322, 1084)
-
-[node name="enemy19" parent="." instance=ExtResource("18_ouoyo")]
-position = Vector2(-346, 1148)
 
 [node name="powerup_hp_up" parent="." instance=ExtResource("24_jhmes")]
 position = Vector2(-500, 277)
