@@ -7,7 +7,7 @@ var knockback_strength = 100  # Adjust this value to change knockback strength
 var normal_speed = 100  # Normal movement speed
 var dir = 1
 var knockback_dir = dir * -1
-const speed = 175
+const speed = 185
 
 var items = [
 	"res://bk_47_item.tscn",
