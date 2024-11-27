@@ -1,6 +1,6 @@
 [gd_scene load_steps=49 format=4 uid="uid://jxg21nplqskd"]
 
-[ext_resource type="Script" path="res://level_22.gd" id="1_0j8cv"]
+[ext_resource type="Script" path="res://levels/level_22.gd" id="1_0j8cv"]
 [ext_resource type="PackedScene" uid="uid://dtkngk0ftv5ak" path="res://progress_bar.tscn" id="2_e8pn5"]
 [ext_resource type="Shader" path="res://survivors_game.gdshader" id="3_1y24w"]
 [ext_resource type="Texture2D" uid="uid://dq7564jwrmf3m" path="res://assets/weapons/laser_pistol.png" id="4_85nms"]
