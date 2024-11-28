@@ -18,11 +18,11 @@
 [ext_resource type="Texture2D" uid="uid://8y8wadvg45uh" path="res://assets/Ws.png" id="16_cpl2r"]
 [ext_resource type="PackedScene" uid="uid://pmf6qf2h3k3a" path="res://leveltransition.tscn" id="17_2ighy"]
 [ext_resource type="Script" path="res://handye_dialogue.gd" id="19_3h4jg"]
-[ext_resource type="PackedScene" uid="uid://dyjn4p1k5bkts" path="res://powerup_health_up.tscn" id="20_0ulx2"]
-[ext_resource type="JSON" path="res://dialogue/handye_dialogue_10.json" id="20_uj8xx"]
+[ext_resource type="JSON" path="res://dialogue/handye_dialogue_10.json" id="19_veye1"]
 [ext_resource type="Texture2D" uid="uid://nsarpiomam1p" path="res://assets/dialoguebox.png" id="21_t0rhl"]
 [ext_resource type="Script" path="res://dialogue_box.gd" id="22_edb1j"]
 [ext_resource type="Theme" uid="uid://brcqgrvo72ads" path="res://UI/theme.tres" id="23_2e56f"]
+[ext_resource type="PackedScene" uid="uid://dyjn4p1k5bkts" path="res://powerup_health_up.tscn" id="24_4a3js"]
 [ext_resource type="Script" path="res://addons/ez_dialogue/ez_dialogue_node.gd" id="24_n7oet"]
 
 [sub_resource type="Animation" id="Animation_ljxdv"]
@@ -802,66 +802,6 @@ tile_set = SubResource("TileSet_8i6lo")
 [node name="leveltransition" parent="." instance=ExtResource("17_2ighy")]
 position = Vector2(3568, 1266)
 
-[node name="powerup_hp_up" parent="." instance=ExtResource("20_0ulx2")]
-position = Vector2(3126, 1285)
-
-[node name="powerup_hp_up2" parent="." instance=ExtResource("20_0ulx2")]
-position = Vector2(3035, 1291)
-
-[node name="powerup_hp_up3" parent="." instance=ExtResource("20_0ulx2")]
-position = Vector2(2948, 1323)
-
-[node name="powerup_hp_up4" parent="." instance=ExtResource("20_0ulx2")]
-position = Vector2(2865, 1274)
-
-[node name="powerup_hp_up5" parent="." instance=ExtResource("20_0ulx2")]
-position = Vector2(2776, 1294)
-
-[node name="powerup_hp_up6" parent="." instance=ExtResource("20_0ulx2")]
-position = Vector2(2770, 1412)
-
-[node name="powerup_hp_up7" parent="." instance=ExtResource("20_0ulx2")]
-position = Vector2(2848, 1516)
-
-[node name="powerup_hp_up8" parent="." instance=ExtResource("20_0ulx2")]
-position = Vector2(2946, 1592)
-
-[node name="powerup_hp_up9" parent="." instance=ExtResource("20_0ulx2")]
-position = Vector2(3045, 1514)
-
-[node name="powerup_hp_up10" parent="." instance=ExtResource("20_0ulx2")]
-position = Vector2(3126, 1410)
-
-[node name="powerup_hp_up11" parent="." instance=ExtResource("20_0ulx2")]
-position = Vector2(4344, 1279)
-
-[node name="powerup_hp_up12" parent="." instance=ExtResource("20_0ulx2")]
-position = Vector2(4253, 1285)
-
-[node name="powerup_hp_up13" parent="." instance=ExtResource("20_0ulx2")]
-position = Vector2(4166, 1317)
-
-[node name="powerup_hp_up14" parent="." instance=ExtResource("20_0ulx2")]
-position = Vector2(4083, 1268)
-
-[node name="powerup_hp_up15" parent="." instance=ExtResource("20_0ulx2")]
-position = Vector2(3994, 1288)
-
-[node name="powerup_hp_up16" parent="." instance=ExtResource("20_0ulx2")]
-position = Vector2(3988, 1406)
-
-[node name="powerup_hp_up17" parent="." instance=ExtResource("20_0ulx2")]
-position = Vector2(4066, 1510)
-
-[node name="powerup_hp_up18" parent="." instance=ExtResource("20_0ulx2")]
-position = Vector2(4164, 1586)
-
-[node name="powerup_hp_up19" parent="." instance=ExtResource("20_0ulx2")]
-position = Vector2(4263, 1508)
-
-[node name="powerup_hp_up20" parent="." instance=ExtResource("20_0ulx2")]
-position = Vector2(4344, 1404)
-
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(3261.4, 1558.9)
 scale = Vector2(0.345, 0.345)
@@ -884,7 +824,7 @@ autoplay = "default"
 z_index = 5
 scale = Vector2(2.925, 2.925)
 script = ExtResource("19_3h4jg")
-dialogue_json = ExtResource("20_uj8xx")
+dialogue_json = ExtResource("19_veye1")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/HandyeDialogue"]
 position = Vector2(306.5, 70)
@@ -911,6 +851,78 @@ layout_mode = 2
 
 [node name="EzDialogue" type="Node" parent="Node2D/HandyeDialogue"]
 script = ExtResource("24_n7oet")
+
+[node name="powerup_hp_up" parent="." instance=ExtResource("24_4a3js")]
+position = Vector2(2977, 1302)
+
+[node name="powerup_hp_up2" parent="." instance=ExtResource("24_4a3js")]
+position = Vector2(2898, 1251)
+
+[node name="powerup_hp_up3" parent="." instance=ExtResource("24_4a3js")]
+position = Vector2(2813, 1266)
+
+[node name="powerup_hp_up4" parent="." instance=ExtResource("24_4a3js")]
+position = Vector2(2781, 1372)
+
+[node name="powerup_hp_up5" parent="." instance=ExtResource("24_4a3js")]
+position = Vector2(2841, 1462)
+
+[node name="powerup_hp_up6" parent="." instance=ExtResource("24_4a3js")]
+position = Vector2(2907, 1534)
+
+[node name="powerup_hp_up7" parent="." instance=ExtResource("24_4a3js")]
+position = Vector2(2981, 1593)
+
+[node name="powerup_hp_up8" parent="." instance=ExtResource("24_4a3js")]
+position = Vector2(3043, 1542)
+
+[node name="powerup_hp_up9" parent="." instance=ExtResource("24_4a3js")]
+position = Vector2(3111, 1493)
+
+[node name="powerup_hp_up10" parent="." instance=ExtResource("24_4a3js")]
+position = Vector2(3172, 1385)
+
+[node name="powerup_hp_up11" parent="." instance=ExtResource("24_4a3js")]
+position = Vector2(3139, 1285)
+
+[node name="powerup_hp_up12" parent="." instance=ExtResource("24_4a3js")]
+position = Vector2(3056, 1243)
+
+[node name="powerup_hp_up13" parent="." instance=ExtResource("24_4a3js")]
+position = Vector2(4161, 1302)
+
+[node name="powerup_hp_up14" parent="." instance=ExtResource("24_4a3js")]
+position = Vector2(4082, 1251)
+
+[node name="powerup_hp_up15" parent="." instance=ExtResource("24_4a3js")]
+position = Vector2(3997, 1266)
+
+[node name="powerup_hp_up16" parent="." instance=ExtResource("24_4a3js")]
+position = Vector2(3965, 1372)
+
+[node name="powerup_hp_up17" parent="." instance=ExtResource("24_4a3js")]
+position = Vector2(4025, 1462)
+
+[node name="powerup_hp_up18" parent="." instance=ExtResource("24_4a3js")]
+position = Vector2(4091, 1534)
+
+[node name="powerup_hp_up19" parent="." instance=ExtResource("24_4a3js")]
+position = Vector2(4165, 1593)
+
+[node name="powerup_hp_up20" parent="." instance=ExtResource("24_4a3js")]
+position = Vector2(4227, 1542)
+
+[node name="powerup_hp_up21" parent="." instance=ExtResource("24_4a3js")]
+position = Vector2(4295, 1493)
+
+[node name="powerup_hp_up22" parent="." instance=ExtResource("24_4a3js")]
+position = Vector2(4356, 1385)
+
+[node name="powerup_hp_up23" parent="." instance=ExtResource("24_4a3js")]
+position = Vector2(4323, 1285)
+
+[node name="powerup_hp_up24" parent="." instance=ExtResource("24_4a3js")]
+position = Vector2(4240, 1243)
 
 [connection signal="pressed" from="staticCanvasLayer/MenuButton" to="staticCanvasLayer/MenuButton" method="_on_pressed"]
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]

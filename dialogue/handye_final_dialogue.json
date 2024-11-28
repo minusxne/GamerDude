@@ -1,0 +1,82 @@
+[
+	{
+		"commands_raw": "ARE\n\n?> >>>>>>>>> -> 1",
+		"gnode_name": "start",
+		"id": 0,
+		"name": "start",
+		"position": [
+			40,
+			160
+		]
+	},
+	{
+		"commands_raw": "YOU\n\n?> >>>>>>>>> -> 2",
+		"gnode_name": "1",
+		"id": 1,
+		"name": "1",
+		"position": [
+			180,
+			160
+		]
+	},
+	{
+		"commands_raw": "READY?\n\n?> >>>>>>>>> -> 3",
+		"gnode_name": "2",
+		"id": 2,
+		"name": "2",
+		"position": [
+			320,
+			160
+		]
+	},
+	{
+		"commands_raw": "for the final boss...\n\n?> YES!!! -> 4\n?> no... -> 5",
+		"gnode_name": "3",
+		"id": 3,
+		"name": "3",
+		"position": [
+			460,
+			160
+		]
+	},
+	{
+		"commands_raw": "YOU GOT THIS",
+		"gnode_name": "4",
+		"id": 4,
+		"name": "4",
+		"position": [
+			640,
+			100
+		]
+	},
+	{
+		"commands_raw": "Well then, go refine your skills!\nSee that purple portal on the right?\n\n?> yeah -> 6",
+		"gnode_name": "5",
+		"id": 5,
+		"name": "5",
+		"position": [
+			640,
+			220
+		]
+	},
+	{
+		"commands_raw": "go try the previous level again\nBUT BE WARNED! getting items may result in\n?> in what? -> 7",
+		"gnode_name": "6",
+		"id": 6,
+		"name": "6",
+		"position": [
+			800,
+			220
+		]
+	},
+	{
+		"commands_raw": "crashin... I MEAN... \ndeath..., a horrible death...",
+		"gnode_name": "7",
+		"id": 7,
+		"name": "7",
+		"position": [
+			960,
+			220
+		]
+	}
+]

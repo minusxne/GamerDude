@@ -1,6 +1,6 @@
 extends Node2D
 
-var level = 40
+var level = 33
 
 func _ready() -> void:
 	GameData.checkinvstate = true
