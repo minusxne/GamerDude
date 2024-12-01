@@ -661,10 +661,10 @@ metadata/_edit_use_anchors_ = true
 anchors_preset = -1
 anchor_right = 0.165625
 anchor_bottom = 0.118519
-offset_left = -158.0
-offset_top = -51.0
-offset_right = 1757.0
-offset_bottom = 1027.0
+offset_left = -1137.0
+offset_top = -484.0
+offset_right = 778.0
+offset_bottom = 594.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
@@ -672,10 +672,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="staticCanvasLayer"]
 material = SubResource("ShaderMaterial_sigjn")
-offset_left = -241.0
-offset_top = -212.0
-offset_right = 2200.0
-offset_bottom = 1320.0
+offset_left = -1281.0
+offset_top = -578.0
+offset_right = 1160.0
+offset_bottom = 954.0
 
 [node name="MenuButton" type="MenuButton" parent="staticCanvasLayer"]
 visible = false

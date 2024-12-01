@@ -4,10 +4,10 @@
 [ext_resource type="Script" path="res://main_menu.gd" id="1_ivy40"]
 [ext_resource type="PackedScene" uid="uid://yptckhdb2wdr" path="res://player_menu.tscn" id="2_0lfwl"]
 [ext_resource type="Script" path="res://collision_shape_2dd.gd" id="2_4wu2g"]
-[ext_resource type="Texture2D" uid="uid://qaysa4li4d41" path="res://assets/PLAY.png" id="2_dr4p7"]
 [ext_resource type="Script" path="res://collision_dawdadadcadshape_2d.gd" id="2_m42yc"]
-[ext_resource type="Texture2D" uid="uid://cmoywpxrrlhm1" path="res://assets/553a5a145816a4778ad69f9bfb0ee090.png" id="3_o28wk"]
+[ext_resource type="Texture2D" uid="uid://bgbwqu18q5q21" path="res://assets/endless.png" id="3_5tfdo"]
 [ext_resource type="Script" path="res://collision_shape_2d.gd" id="3_qo76r"]
+[ext_resource type="Texture2D" uid="uid://bcmf4e5f3xoah" path="res://assets/play.png" id="5_8e34n"]
 [ext_resource type="Theme" uid="uid://brcqgrvo72ads" path="res://UI/theme.tres" id="8_4a7rc"]
 
 [sub_resource type="Animation" id="Animation_g4y1w"]
@@ -110,7 +110,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6xwln"]
-size = Vector2(187.898, 36.1111)
+size = Vector2(198.738, 38.6905)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ou2a4"]
 size = Vector2(233.84, 73.254)
@@ -254,7 +254,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_le0sd"]
-size = Vector2(1134, 149)
+size = Vector2(887, 340)
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_ivy40")
@@ -282,7 +282,7 @@ position = Vector2(-13, 194)
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimationPlayer4/RigidBody2D"]
-position = Vector2(1675, 536)
+position = Vector2(1664.5, 533.5)
 scale = Vector2(1.93722, 1.93846)
 shape = SubResource("RectangleShape2D_6xwln")
 script = ExtResource("2_m42yc")
@@ -291,7 +291,7 @@ script = ExtResource("2_m42yc")
 texture_filter = 1
 position = Vector2(1676.78, 536)
 scale = Vector2(0.887802, 0.923077)
-texture = ExtResource("3_o28wk")
+texture = ExtResource("3_5tfdo")
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 libraries = {
@@ -310,9 +310,9 @@ script = ExtResource("2_4wu2g")
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimationPlayer2/RigidBody2D"]
 texture_filter = 1
-position = Vector2(1618, 544)
-scale = Vector2(1.93722, 1.93846)
-texture = ExtResource("2_dr4p7")
+position = Vector2(1594.04, 546.992)
+scale = Vector2(2.8654, 2.62524)
+texture = ExtResource("5_8e34n")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -333,17 +333,19 @@ texture = ExtResource("1_47e0d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimationPlayer/title"]
 unique_name_in_owner = true
+position = Vector2(-12.68, 18.125)
 shape = SubResource("RectangleShape2D_le0sd")
 script = ExtResource("3_qo76r")
 
 [node name="Label" type="Label" parent="AnimationPlayer/title"]
-offset_left = -527.0
-offset_top = 88.0
-offset_right = 539.0
-offset_bottom = 166.0
+offset_left = -474.0
+offset_top = 86.0
+offset_right = 542.0
+offset_bottom = 161.0
 theme = ExtResource("8_4a7rc")
-theme_override_font_sizes/font_size = 50
-text = "Joc realizat pentru ROG Challenge 2024"
+theme_override_font_sizes/font_size = 35
+text = "Joc realizat pentru
+ROG Challenge 2024"
 
 [node name="BG" type="ColorRect" parent="AnimationPlayer"]
 z_index = -1
@@ -354,7 +356,8 @@ offset_bottom = 1192.0
 color = Color(0, 0, 0, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimationPlayer"]
+position = Vector2(-1, 0)
 
 [node name="PlayerMenu" parent="." instance=ExtResource("2_0lfwl")]
-position = Vector2(382, 697)
-scale = Vector2(5.26, 5.26)
+position = Vector2(574, 735)
+scale = Vector2(5.98, 5.98)

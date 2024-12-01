@@ -1,3 +1,4 @@
+Camera2D
 Timer
 AudioStreamPlayer
 Label
@@ -7,7 +8,6 @@ AnimationPlayer
 RichTextLabel
 ColorRect
 AnimatedSprite2D
-Camera2D
 Sprite2D
 CharacterBody2D
 CollisionShape2D
