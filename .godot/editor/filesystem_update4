@@ -11,3 +11,5 @@ res://levels/level30.tscn
 res://levels/level15.tscn
 res://pig_boss.tscn
 res://skull_boss.tscn
+res://death_menu.tscn
+res://main_menu.gd
