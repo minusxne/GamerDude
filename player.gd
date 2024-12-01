@@ -11,6 +11,7 @@ const damage_rate = 5
 
 func _ready() -> void:
 	add_to_group("character")
+	%Health.value=GameData.health
 
 func _physics_process(delta):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -23,6 +24,7 @@ func _physics_process(delta):
 	if damage_timer <= 0:
 		if overlapping_bodies.size() > 0:
 			%Health.value -= damage_rate * overlapping_bodies.size()
+			GameData.health -= damage_rate * overlapping_bodies.size()
 			if %Health.value <= 0:
 				game_over()
 		damage_timer = damage_interval

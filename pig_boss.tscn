@@ -452,7 +452,7 @@ process_callback = 0
 wait_time = 4.0
 
 [node name="Shootingdelay" type="Timer" parent="."]
-wait_time = 0.15
+wait_time = 0.5
 
 [connection signal="timeout" from="Shoottimer" to="." method="_on_shoottimer_timeout"]
 [connection signal="timeout" from="Shoottimer2" to="." method="_on_shoottimer_2_timeout"]

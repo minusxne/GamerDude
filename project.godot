@@ -82,6 +82,8 @@ config/icon="res://icon.png"
 [autoload]
 
 GameData="*res://GameData.gd"
+DefaultBusLayout="*res://default_bus_layout.tres"
+Music="*res://music.tscn"
 
 [display]
 
