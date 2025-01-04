@@ -6,7 +6,7 @@ This is a game created for the **ROG Challenge 2024**.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/minusonee/ROG.git
+   git clone https://github.com/minusxne/GamerDude.git
    ```
 
 2. Open the project in godot.
